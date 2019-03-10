@@ -1,15 +1,19 @@
 package bean;
 
-public class CommonSearch {
+import java.util.ArrayList;
+import java.util.List;
 
-    private String keywords;
+public class CommonSearch extends Search{
 
-    public String getKeywords() {
-        return keywords;
-    }
+    public List<SearchResult> search(){
+//        return null;
+        List<SearchResult> temp = new ArrayList<>();
 
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
+        for (int i = 0; i < 5; ++i){
+            temp.add(new SearchResult("Amon ssss", "/planet/Amonssss"));
+        }
+
+        return temp;
     }
 
 }

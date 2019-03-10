@@ -1,26 +1,19 @@
 package bean;
 
-import org.springframework.context.annotation.Bean;
+import java.util.ArrayList;
+import java.util.List;
 
-public class GraphSearch {
+public class GraphSearch extends Search{
 
-    private String keywords;
+    public List<SearchResult> search(){
+//        return null;
+        List<SearchResult> temp = new ArrayList<>();
 
-//    @Bean(name = "graphSearchBean")
-//    public GraphSearch graphSearch() {
-//        return new GraphSearch();
-//    }
+        for (int i = 0; i < 5; ++i){
+            temp.add(new SearchResult("Amon ssss", "/planet/Amonssss"));
+        }
 
-    public String getKeywords() {
-        return keywords;
-    }
-
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
-    }
-
-    public void check(){
-        System.out.println("check");
+        return temp;
     }
 
 }
