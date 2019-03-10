@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,11 +48,11 @@
 			<p>搜索结果:</p>
 			<hr style="border: 0.5px solid #c0baba;">
 			<ul class="result">
-				<li><a href="">ssdsbdhn</a></li>
-				<li><a href="">ssdsbdhn</a></li>
-				<li><a href="">ssdsbdhn</a></li>
-				<li><a href="">ssdsbdhn</a></li>
-				<li><a href="">ssdsbdhn</a></li>
+				<!--<li><a href="">ssdsbdhn</a></li>-->
+				<!--<li><a href="">ssdsbdhn</a></li>-->
+				<!--<li><a href="">ssdsbdhn</a></li>-->
+				<!--<li><a href="">ssdsbdhn</a></li>-->
+				<!--<li><a href="">ssdsbdhn</a></li>-->
 			</ul>
 		</div>
 	</div>

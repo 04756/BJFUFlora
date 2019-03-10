@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +11,10 @@
 	<div class="header">
 		<div class="guid">
 			<ul class="left-guid">
-				<li><a href="">首页</a></li>
-				<li><a href="">植物地图</a></li>
-				<li><a href="">植物搜索</a></li>
-				<li><a href="">植物图谱</a></li>
+				<li><a href="hello">首页</a></li>
+				<li><a href="map">植物地图</a></li>
+				<li><a href="search">植物搜索</a></li>
+				<li><a href="graph">植物图谱</a></li>
 			</ul>
 			<ul class="right-guid" style="float: right;">
 				<li><a href="">联系我们</a></li>

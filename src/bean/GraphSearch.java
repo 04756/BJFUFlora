@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GraphSearch extends Search{
 
-    public List<SearchResult> search(){
+    public List<SearchResult> search(String keyWords){
 //        return null;
         List<SearchResult> temp = new ArrayList<>();
 
