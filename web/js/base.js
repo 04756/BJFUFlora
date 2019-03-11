@@ -7,19 +7,19 @@ $(function(){
 
 	// 搜索方法
 	$(".search-bar").click(function(){
-        var url = "result.htm?type=" + $(".select").text() + "&keyWords=" + ($("input[name='search-bar']").text()=="普通搜索")?CommonSearch:GraphSearch;
+        var url = "searchResult?type=" + ($(".select").text()=="普通搜索"?'commonSearch':'graphSearch') + "&keyWords=" + $("input[name='search-bar']").text();
 		window.location.href = url;
 	});
 
-	if(window.location.href.search("result"))
+	if(window.location.href.search("Result") >= 0)
 	    getResultData();
 
 })
 
 function getResultData() {
     var temp = {
-    	type : $.query.get("type"),
-    	keyWords :$.query.get("keyWords")
+    	type : getUrlParam("type"),
+    	keyWords :getUrlParam("keyWords")
     }
     $.ajax({
         type : "POST",
@@ -36,4 +36,10 @@ function getResultData() {
             alert("error");
         }
     });
+}
+
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r != null) return unescape(r[2]); return null; //返回参数值
 }

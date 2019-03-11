@@ -1,11 +1,15 @@
 package bean;
 
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
 import java.lang.reflect.Constructor;
 import java.util.List;
 
-public abstract class Search {
+public class Search {
 
-    protected  String keywords;
+    private String keywords;
     private String type;
 
     public String getType() {
@@ -24,15 +28,11 @@ public abstract class Search {
         this.keywords = keywords;
     }
 
-    public List<SearchResult> search(){
-        switch (type){
-            case "CommonSearch" :
-                return new CommonSearch().search(keywords);
-            case "GraphSearch" :
-                return new GraphSearch().search(keywords);
-            default:
-                return null;
-        }
+    public List search(){
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+
+        SInterface s = (SInterface) context.getBean(type);
+        return s.search(keywords);
     }
 
 }

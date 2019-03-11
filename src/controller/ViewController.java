@@ -1,10 +1,12 @@
 package controller;
 
+import bean.CommonSearch;
 import bean.Search;
-import bean.SearchResult;
+import com.google.gson.Gson;
+import jdk.nashorn.internal.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,8 +18,23 @@ public class ViewController {
         return "index";
     }
 
+    @RequestMapping(value = "searchResult", method = RequestMethod.GET)
+    public String searchHtml(){
+        return "searchResult";
+    }
+
     @RequestMapping(value = "search", method = RequestMethod.POST)
-    public List<SearchResult> search(Search s){
-        return s.search();
+    @ResponseBody
+//    @Autowired
+//    自动装配有问题，未解决
+    public List search(@RequestBody String s){
+        try{
+            Search search = new Gson().fromJson(s, Search.class);
+        return search.search();
+       }
+        catch (Exception e){
+           e.printStackTrace();
+           return null;
+        }
     }
 }
