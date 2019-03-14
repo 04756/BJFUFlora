@@ -19,7 +19,20 @@
 
 
     <!--启动注解功能-->
-    <mvc:annotation-driven/>
+    <!--<mvc:annotation-driven/>-->
+    <bean id="utf8Charset" class="java.nio.charset.Charset"
+          factory-method="forName">
+        <constructor-arg value="UTF-8"/>
+    </bean>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg ref="utf8Charset"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
     <!--配置静态文件拦截-->
     <mvc:resources mapping="/images/**" location="/images/" />
     <mvc:resources mapping="/js/**" location="/js/" />

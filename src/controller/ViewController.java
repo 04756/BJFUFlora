@@ -44,4 +44,9 @@ public class ViewController {
         return "detail";
     }
 
+    @RequestMapping(path = "/planetMap", method = RequestMethod.GET)
+    public String mapPage(Model model){
+        return "map";
+    }
+
 }
