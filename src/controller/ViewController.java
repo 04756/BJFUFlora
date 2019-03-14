@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import jdk.nashorn.internal.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,4 +38,10 @@ public class ViewController {
            return null;
         }
     }
+
+    @RequestMapping(path = "/planet/{planetName}", method = RequestMethod.GET)
+    public String planetPage(@PathVariable String planetName, Model model){
+        return "detail";
+    }
+
 }
