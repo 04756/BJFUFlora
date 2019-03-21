@@ -8,19 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/search.css">
 </head>
 <body>
-	<div class="header">
-		<div class="guid">
-			<ul class="left-guid">
-				<li><a href="">首页</a></li>
-				<li><a href="">植物地图</a></li>
-				<li><a href="">植物搜索</a></li>
-				<li><a href="">植物图谱</a></li>
-			</ul>
-			<ul class="right-guid" style="float: right;">
-				<li><a href="">联系我们</a></li>
-			</ul>
-		</div>
-	</div>
+    <jsp:include page="header.jsp"/>
 
 	<div class="middle">
 		<div class="search-block">
@@ -33,16 +21,9 @@
 			<img src="images/searchbar.png" class="search-bar">
 		</div>
 		<div class="folder">
-			<ul class="layer-1">
-				<li>+<img src="images/folder.png">sdfgfhjk</li>
-				<li>+<img src="images/folder.png">sdfgfhjk</li>
-				<li>+<img src="images/folder.png">sdfgfhjk</li>
-				<li>+<img src="images/folder.png">sdfgfhjk</li>
-				<li>+<img src="images/folder.png">sdfgfhjk</li>
-				<li>+<img src="images/folder.png">sdfgfhjk</li>
-				<li>+<img src="images/folder.png">sdfgfhjk</li>
-				<li>+<img src="images/folder.png">sdfgfhjk</li>
-			</ul>
+            <ul class="tree">
+
+            </ul>
 		</div>
 		<div class="search-result">
 			<p>搜索结果:</p>
@@ -61,4 +42,6 @@
 </body>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/NodeLink.js"></script>
+    <script type="text/javascript" src="js/treeNode.js"></script>
 </html>

@@ -6,6 +6,12 @@ public class TreeNode {
     private String text;
     private String parent;
 
+    public TreeNode(String id, String text, String parent) {
+        this.id = id;
+        this.text = text;
+        this.parent = parent;
+    }
+
     public String getId() {
         return id;
     }

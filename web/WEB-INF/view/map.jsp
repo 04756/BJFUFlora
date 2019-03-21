@@ -14,23 +14,11 @@
     <link rel="stylesheet" type="text/css" href="css/map.css">
 </head>
 <body>
-<div class="header">
-    <div class="guid">
-        <ul class="left-guid">
-            <li><a href="">首页</a></li>
-            <li><a href="">植物地图</a></li>
-            <li><a href="">植物搜索</a></li>
-            <li><a href="">植物图谱</a></li>
-        </ul>
-        <ul class="right-guid" style="float: right;">
-            <li><a href="">联系我们</a></li>
-        </ul>
-    </div>
-</div>
+<jsp:include page="header.jsp"/>
 
 <div class="middle">
     <div class="left">
-        <ul class="tree" id="god">
+        <ul class="tree">
 
         </ul>
     </div><!--

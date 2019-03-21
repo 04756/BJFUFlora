@@ -11,7 +11,7 @@ $(function(){
 		window.location.href = url;
 	});
 
-	if(window.location.href.search("Result") >= 0)
+	if(window.location.href.search("keyWords") >= 0)
 	    getResultData();
 
 })

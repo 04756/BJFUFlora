@@ -4,7 +4,7 @@ $(function(){
 		// jQuery.getJSON( url [, data ] [, success ] )
 	$.getJSON("raceJson", "", function(data) {
 	    　  //each循环 使用$.each方法遍历返回的数据date
-	       $.each(data.nodes, function(i, item) {
+	       $.each(data, function(i, item) {
 	            addTreeNode(item.parent, item.text, item.id);
 	       })
 	       while(DELAYQUEUE.isEmpty() != true){

@@ -9,7 +9,7 @@ public class CommonSearch implements SInterface{
         List<SearchResult> temp = new ArrayList<SearchResult>();
 
         for (int i = 0; i < 5; ++i){
-            temp.add(new SearchResult("Amon ssss", "/planet/Amonssss"));
+            temp.add(new SearchResult("Amon ssss", "planet/Amonssss"));
         }
 
         return temp;

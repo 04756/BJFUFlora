@@ -11,7 +11,7 @@ public class GraphSearch implements SInterface{
         List<SearchResult> temp = new ArrayList<>();
 
         for (int i = 0; i < 5; ++i){
-            temp.add(new SearchResult("Amon ssss", "/planet/Amonssss"));
+            temp.add(new SearchResult("Amon ssss", "planet/Amonssss"));
         }
 
         return temp;
