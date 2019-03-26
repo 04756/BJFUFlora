@@ -21,14 +21,15 @@ public class InvokePythonProject extends Thread implements Callable<String> {
     }
 
 
-    public void invokePython(String command, String planet, SyncPipe out) throws IOException {
+    public String invokePython(String command, String planet, SyncPipe out) throws IOException {
 //        先启动cmd，再运行命令，查看报错。
 //        该方法能够详细的查看到报错
 //        直接模拟cmd执行命令只能从waitfor返回的数字猜测原因不能查看具体错误
         String[] com = { "cmd", };
-        Process p = null;
-        //创建一个线程池对象
+        Process p = null;//创建一个线程池对象
         ExecutorService pool = Executors.newCachedThreadPool(); //创建一个有返回值的任务
+        String returnValue = "";//创建一个字符串存放返回结果
+
         try {
             p = Runtime.getRuntime().exec(com);
             out = new SyncPipe(p.getInputStream(), System.out);
@@ -47,7 +48,7 @@ public class InvokePythonProject extends Thread implements Callable<String> {
                  // 注意： 如果不加判断直接调用get方法，此时如果线程未完成，get将阻塞，直至结果准备就绪
                   if(future2.isDone()) {
                       try {
-                          String returnValue = future2.get().toString();
+                          returnValue = future2.get().toString();
                           System.out.println("线程返回值:"+returnValue);
                       }catch (Exception e){
                           e.printStackTrace();
@@ -58,14 +59,10 @@ public class InvokePythonProject extends Thread implements Callable<String> {
                        break;
                   }
              }
+             return returnValue;
         } catch (Exception e) {
             throw new RuntimeException("编译出现错误：" + e.getMessage());
         }
-    }
-
-    public static void main(String[] args) throws IOException, InterruptedException{
-        SyncPipe out = new SyncPipe(null, null);
-        new InvokePythonProject().invokePython("D:/test.py","test", out);
     }
 
 }

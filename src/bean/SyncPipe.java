@@ -26,21 +26,7 @@ public class SyncPipe implements Callable<String> {
         } catch (Exception e) {
             throw new RuntimeException("处理命令出现错误：" + e.getMessage());
         }
-        //pool-1-thread-1 return "线程返回值是:"+this.value;
         return result.toString();
-    }
-
-    public void run() {
-        try {
-            final byte[] buffer = new byte[1024];
-            for (int length = 0; (length = istrm_.read(buffer)) != -1;) {
-                ostrm_.write(buffer, 0, length);
-                result.append(new String(buffer, 0, length));
-            }
-        } catch (Exception e) {
-            throw new RuntimeException("处理命令出现错误：" + e.getMessage());
-        }
-//        notifyAll();
     }
 
     public StringBuffer getResult() {

@@ -44,3 +44,11 @@
 	font-size: 20px;
 	line-height: 28px;
 }
+.node{
+    fill: #528969;
+}
+.node-text{
+    width: 30px;
+    height: 30px;
+    overflow:hidden;
+}

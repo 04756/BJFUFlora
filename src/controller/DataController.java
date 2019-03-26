@@ -31,61 +31,6 @@ public class DataController {
         arr.add(t4);
         arr.add(t5);
         return arr;
-
-//
-//        return "{\n" +
-//                "\t\"nodes\": [{\n" +
-//                "\t\t\t\"id\": \"2546\",\n" +
-//                "\t\t\t\"text\": \"无法慰安妇\",\n" +
-//                "\t\t\t\"parent\": \"2547\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2547\",\n" +
-//                "\t\t\t\"text\": \"测却\",\n" +
-//                "\t\t\t\"parent\": \"\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2548\",\n" +
-//                "\t\t\t\"text\": \"劝我放弃二\",\n" +
-//                "\t\t\t\"parent\": \"2549\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2549\",\n" +
-//                "\t\t\t\"text\": \"父亲二分\",\n" +
-//                "\t\t\t\"parent\": \"\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2550\",\n" +
-//                "\t\t\t\"text\": \"全五分外国人\",\n" +
-//                "\t\t\t\"parent\": \"2551\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2551\",\n" +
-//                "\t\t\t\"text\": \"案说法我如果乳房\",\n" +
-//                "\t\t\t\"parent\": \"2553\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2552\",\n" +
-//                "\t\t\t\"text\": \"安抚人生观\",\n" +
-//                "\t\t\t\"parent\": \"\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2553\",\n" +
-//                "\t\t\t\"text\": \"按时发生感染\",\n" +
-//                "\t\t\t\"parent\": \"\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2554\",\n" +
-//                "\t\t\t\"text\": \"阿三发射点给v\",\n" +
-//                "\t\t\t\"parent\": \"2555\"\n" +
-//                "\t\t},\n" +
-//                "\t\t{\n" +
-//                "\t\t\t\"id\": \"2555\",\n" +
-//                "\t\t\t\"text\": \"胜多负少v\",\n" +
-//                "\t\t\t\"parent\": \"\"\n" +
-//                "\t\t}\n" +
-//                "\t]\n" +
-//                "}";
     }
 
     //    植物生长地数据
@@ -110,4 +55,54 @@ public class DataController {
         }
     }
 
+    //    植物图谱数据
+    @RequestMapping(value = "graph", method = RequestMethod.GET)
+    @ResponseBody
+    public String graphData(){
+        return "{\n" +
+                "\t\"nodes\":[\n" +
+                "\t\t{\n" +
+                "\t\t\t\"name\" : \"给微软\",\n" +
+                "\t\t\t\"e-name\" : \"dccd\",\n" +
+                "\t\t\t\"status\" : 0,\n" +
+                "\t\t\t\"r\" : 32\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
+                "\t\t\t\"name\" : \"上的v二\",\n" +
+                "\t\t\t\"e-name\" : \"fever\",\n" +
+                "\t\t\t\"status\" : 0,\n" +
+                "\t\t\t\"r\" : 38\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
+                "\t\t\t\"name\" : \"fweweg\",\n" +
+                "\t\t\t\"e-name\" : \"vger\",\n" +
+                "\t\t\t\"status\" : 0,\n" +
+                "\t\t\t\"r\" : 38\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
+                "\t\t\t\"name\" : \"围观我\",\n" +
+                "\t\t\t\"e-name\" : \"dsffever\",\n" +
+                "\t\t\t\"status\" : 0,\n" +
+                "\t\t\t\"r\" : 32\n" +
+                "\t\t}\n" +
+                "\t],\n" +
+                "\t\"lines\":[\n" +
+                "\t\t{\n" +
+                "\t\t\t\"source\": \"给微软\",\n" +
+                "\t\t\t\"target\": \"围观我\",\n" +
+                "\t\t\t\"text\" : \"11111\"\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
+                "\t\t\t\"source\": \"围观我\",\n" +
+                "\t\t\t\"target\": \"fweweg\",\n" +
+                "\t\t\t\"text\" : \"22222\"\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
+                "\t\t\t\"source\": \"上的v二\",\n" +
+                "\t\t\t\"target\": \"fweweg\",\n" +
+                "\t\t\t\"text\" : \"333\"\n" +
+                "\t\t}\n" +
+                "\t]\n" +
+                "}";
+    }
 }
