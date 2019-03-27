@@ -14,10 +14,10 @@
     <div class="header">
         <div class="guid">
             <ul class="left-guid">
-                <li><a href="hello">首页</a></li>
-                <li><a href="planetMap">植物地图</a></li>
-                <li><a href="searchResult">植物搜索</a></li>
-                <li><a href="">植物图谱</a></li>
+                <li><a href="${pageContext.request.contextPath}/hello">首页</a></li>
+                <li><a href="${pageContext.request.contextPath}/planetMap">植物地图</a></li>
+                <li><a href="${pageContext.request.contextPath}/searchResult">植物搜索</a></li>
+                <%--<li><a href="">植物图谱</a></li>--%>
             </ul>
             <ul class="right-guid" style="float: right;">
                 <li><a href="">联系我们</a></li>

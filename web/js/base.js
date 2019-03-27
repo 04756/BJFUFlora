@@ -7,7 +7,7 @@ $(function(){
 
 	// 搜索方法
 	$(".search-bar").click(function(){
-        var url = "searchResult?type=" + ($(".select").text()=="普通搜索"?'commonSearch':'graphSearch') + "&keyWords=" + $("input[name='search-bar']").text();
+        var url = "searchResult?type=" + ($(".select").text()=="普通搜索"?'commonSearch':'graphSearch') + "&keyWords=" + $("input[name='search-bar']").val();
 		window.location.href = url;
 	});
 

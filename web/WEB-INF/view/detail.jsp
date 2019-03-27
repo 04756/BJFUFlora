@@ -11,31 +11,19 @@
 	<link rel="stylesheet" type="text/css" href="../css/detail.css">
 </head>
 <body>
-	<div class="header">
-		<div class="guid">
-			<ul class="left-guid">
-				<li><a href="">首页</a></li>
-				<li><a href="">植物地图</a></li>
-				<li><a href="">植物搜索</a></li>
-				<li><a href="">植物图谱</a></li>
-			</ul>
-			<ul class="right-guid" style="float: right;">
-				<li><a href="">联系我们</a></li>
-			</ul>
-		</div>
-	</div>
+    <jsp:include page="header.jsp"/>
 
 	<div class="middle">
 		<div class="left">
             <div class="title">${planet.cName}<button id="open">查看该植物的图谱</button></div>
 			<div class="title">${planet.eName}</div>
-			<%--<img src="images/flower1.jpg">--%>
-			<%--<img src="images/flower1.jpg">--%>
-			<%--<img src="images/leaf1.jpg">--%>
 			<div class="contain">
                 ${planet.content}
-            </div>
-		</div>
+		    </div>
+            <c:forEach items="${imgList}" var="im">
+                <img src="${im}">
+            </c:forEach>
+        </div>
 		<hr style="border-left:1px solid black;width:0px;height:500px;display: inline-block;margin-left: 20px;" />
 		<div class="right">
 			<p style="font-weight: bold;line-height: 24px;">所属类群：</p>
