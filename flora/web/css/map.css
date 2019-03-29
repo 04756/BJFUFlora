@@ -1,0 +1,22 @@
+.middle{
+	padding: 30px;
+	margin-bottom: 30px;
+}
+.left{
+	width: 300px;
+	height: 600px;
+	overflow: scroll;
+	margin-left: 10px;
+	display: inline-block;
+}
+.right{
+	width: 800px;
+	height: 600px;
+	border: 1px solid #eee;
+	display: inline-block;
+	float: right;
+}
+#map{
+	width: 100%;
+	height: 100%;
+}
