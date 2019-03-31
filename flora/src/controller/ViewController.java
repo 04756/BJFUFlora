@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.cors.CorsConfiguration;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class ViewController {
     }
 
     @RequestMapping(path = "/planet/{planetName}", method = RequestMethod.GET)
-    public String planetPage(@PathVariable String planetName, Model model, HttpServletResponse response) throws IOException {
+    public String planetPage(@PathVariable String planetName, Model model, HttpServletRequest request) throws IOException {
 //        所属类群，一个SearchResult的list
         List race = new ArrayList();
         race.add(new SearchResult("是服务范围",""));
@@ -39,7 +40,7 @@ public class ViewController {
         race.add(new SearchResult("是服务范围",""));
         race.add(new SearchResult("是服务范围",""));
         model.addAttribute("race",race);
-        model.addAttribute("imgList", new Image().getPlanetImgLinks(""));
+        model.addAttribute("imgList", new Image().getPlanetImgLinks(planetName, request));
 //        植物的详细信息
         model.addAttribute("planet",new Planet("六道木属","AAAAAAA ssss","迥旺建瓯评价我怕v经常我怕v紧哦碰我的"));
 

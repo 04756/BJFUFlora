@@ -34,6 +34,7 @@
         </element>
       </element>
       <element id="javaee-facet-resources" facet="flora/web/Web" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/bean/test.py" />
     </root>
   </artifact>
 </component>
