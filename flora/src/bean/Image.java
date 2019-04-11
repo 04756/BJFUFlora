@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 调用python程序通过百度搜索api获取相关植物的有关图片
+ */
 public class Image {
 
     public Image() {

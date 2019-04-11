@@ -4,6 +4,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.concurrent.Callable;
 
+/**
+ * 异步执行python程序
+ */
 public class SyncPipe implements Callable<String> {
 
     private final OutputStream ostrm_;

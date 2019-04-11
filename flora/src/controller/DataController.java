@@ -1,5 +1,6 @@
 package controller;
 
+import bean.Line;
 import bean.Planet;
 import bean.Search;
 import com.google.gson.Gson;
@@ -43,7 +44,7 @@ public class DataController {
     @RequestMapping(value = "search", method = RequestMethod.POST)
     @ResponseBody
 //    @Autowired
-//    自动装配有问题，暂未解决
+//    自动装配有问题，暂未解决，暂时不重要，因为页面效果不一定。。再说吧
     public List search(@RequestBody String s){
         try{
             Search search = new Gson().fromJson(s, Search.class);
@@ -59,6 +60,12 @@ public class DataController {
     @RequestMapping(value = "graph", method = RequestMethod.GET)
     @ResponseBody
     public String graphData(){
+        List lines = new ArrayList<Line>();
+        List nodes = new ArrayList<Planet>();
+        List result = new ArrayList();
+        result.add(lines);
+        result.add(nodes);
+        //返回一个lines和nodes的集合，解析为json为类似下面的json字符串
         return "{\n" +
                 "\t\"nodes\":[\n" +
                 "\t\t{\n" +

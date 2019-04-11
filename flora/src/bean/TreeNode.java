@@ -2,9 +2,9 @@ package bean;
 
 public class TreeNode {
 
-    private String id;
-    private String text;
-    private String parent;
+    private String id;//植物id
+    private String text;//植物名字
+    private String parent;//植物父亲id（上级节点id）
 
     public TreeNode(String id, String text, String parent) {
         this.id = id;

@@ -223,5 +223,6 @@
     <orderEntry type="library" name="commons-logging-1.2" level="project" />
     <orderEntry type="library" name="gson-2.0" level="project" />
     <orderEntry type="library" name="aopalliance-1.0" level="project" />
+    <orderEntry type="library" name="neo4j-java-driver-1.7.2" level="project" />
   </component>
 </module>

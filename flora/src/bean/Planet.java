@@ -2,11 +2,14 @@ package bean;
 
 import java.util.List;
 
+/**
+ * 植物类
+ */
 public class Planet {
 
-    private String cName;
-    private String eName;
-    private String content;
+    private String cName;//植物中文名
+    private String eName;//植物英文名
+    private String content;//植物介绍内容
 
     public Planet(String cName, String eName, String content) {
         this.cName = cName;

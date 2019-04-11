@@ -9,6 +9,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+/**
+ * 通过cmd程序执行python文件并获取结果
+ * 要求cmd具有python环境
+ */
 public class InvokePythonProject extends Thread implements Callable<String> {
 
     SyncPipe t1;
