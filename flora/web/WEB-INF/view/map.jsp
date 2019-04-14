@@ -28,11 +28,13 @@
     </div>
 </div>
 
+<script>
 
+</script>
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/base.js"></script>
-<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/map.js" defer="defer"></script>
 <script type="text/javascript" src="js/NodeLink.js"></script>
 <script type="text/javascript" src="js/treeNode.js"></script>
 </html>

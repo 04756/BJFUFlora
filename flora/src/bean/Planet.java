@@ -11,6 +11,10 @@ public class Planet {
     private String eName;//植物英文名
     private String content;//植物介绍内容
 
+    public Planet(){
+
+    }
+
     public Planet(String cName, String eName, String content) {
         this.cName = cName;
         this.eName = eName;

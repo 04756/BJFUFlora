@@ -21,6 +21,10 @@
 			<img src="images/searchbar.png" class="search-bar">
 		</div>
 		<div class="folder">
+            <select onchange="classifyType(this.value)">
+                <option value="1">生物分类法</option>
+                <option value="2">新维度分类</option>
+            </select>
             <ul class="tree">
 
             </ul>

@@ -2,33 +2,93 @@ DELAYQUEUE = new NodeLink("","","",null);
 
 $(function(){
 		// jQuery.getJSON( url [, data ] [, success ] )
-	$.getJSON("raceJson", "", function(data) {
-	    　  //each循环 使用$.each方法遍历返回的数据date
-	       $.each(data, function(i, item) {
-	            addTreeNode(item.parent, item.text, item.id);
-	       })
-	       while(DELAYQUEUE.isEmpty() != true){
-	       		var temp = DELAYQUEUE.next;
-	       		addTreeNode(temp.parentId, temp.text, temp.id);
-	       		temp.removeSelf();
-	       }
-	       $(".tree li").children("ul.sub-tree").slideUp("fast");
-	       $(".node").click(function(){
-	       		if($(this).parent().children(".plus").length != 0)
-		       		$(this).parent().children("ul.sub-tree").slideToggle("slow");
-	       })
-
-        // 点击显示植物生长地点
-           $(".leaf").click(function () {
-               var temp = {
-                   "planet" : $(this).text()
-               }
-               $.get("planetGrowing",JSON.stringify(temp), function (data) {
-                   addMapMarker(data);
-               })
-           });
-	});
+    tranditionalLayer();
 });
+
+function classifyType(val) {
+    $(".tree").empty();
+    if(val == 1)
+        tranditionalLayer();
+    else
+        untraditionalLayer();
+}
+
+function tranditionalLayer() {
+    $.getJSON("raceJson", "", function(data) {
+        //each循环 使用$.each方法遍历返回的数据date
+        $.each(data, function(i, item) {
+            addTreeNode(item.parent, item.text, item.id);
+        })
+        while(DELAYQUEUE.isEmpty() != true){
+            var temp = DELAYQUEUE.next;
+            addTreeNode(temp.parentId, temp.text, temp.id);
+            temp.removeSelf();
+        }
+        $(".tree li").children("ul.sub-tree").slideUp("fast");
+        $(".node").click(function(){
+            if($(this).parent().children(".plus").length != 0)
+                $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        })
+
+        if(window.location.href.match("Map").index < 0){
+            // 点击显示植物
+            $(".leaf").click(function () {
+                $("ul.result").empty();
+                var temp = {
+                    type : $(this).text(),
+                    keyWords : "graphSearch"
+                }
+                getResultData(temp);
+            });
+        }
+        else{
+            $(".leaf").click(function () {
+                $.get("planetGrowing?planet="+$(this).text(), function (data) {
+                    addMapMarker(data);
+                })
+            });
+        }
+    });
+}
+
+function untraditionalLayer() {
+    $.getJSON("untraditionalRaceJson", "", function(data) {
+        //each循环 使用$.each方法遍历返回的数据date
+        $.each(data, function(i, item) {
+            addTreeNode(item.parent, item.text, item.id);
+        })
+        while(DELAYQUEUE.isEmpty() != true){
+            var temp = DELAYQUEUE.next;
+            addTreeNode(temp.parentId, temp.text, temp.id);
+            temp.removeSelf();
+        }
+        $(".tree li").children("ul.sub-tree").slideUp("fast");
+        $(".node").click(function(){
+            if($(this).parent().children(".plus").length != 0)
+                $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        })
+        if(window.location.href.match("Map") != null && window.location.href.match("Map").index < 0){
+            // 点击显示植物
+            $(".leaf").click(function () {
+                $("ul.result").empty();
+                var temp = {
+                    type : $(this).text(),
+                    keyWords : "graphSearch"
+                }
+                getResultData(temp);
+            });
+        }
+        else{
+            $(".leaf").click(function () {
+                $(".leaf").click(function () {
+                    $.get("planetGrowing?planet="+$(this).text(), function (data) {
+                        addMapMarker(data);
+                    })
+                });
+            });
+        }
+    });
+}
 
 function addTreeNode(parentId, text, id){
 	var node = "<li id='"+id+"'><span class='minus'></span><div class='leaf'>"+text+"</div></li>";

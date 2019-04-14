@@ -11,16 +11,17 @@ $(function(){
 		window.location.href = url;
 	});
 
-	if(window.location.href.search("keyWords") >= 0)
-	    getResultData();
+	if(window.location.href.search("keyWords") >= 0) {
+        var temp = {
+            type : getUrlParam("type"),
+            keyWords :getUrlParam("keyWords")
+        }
+        getResultData(temp);
+    }
 
 })
 
-function getResultData() {
-    var temp = {
-    	type : getUrlParam("type"),
-    	keyWords :getUrlParam("keyWords")
-    }
+function getResultData(temp) {
     $.ajax({
         type : "POST",
         contentType : 'application/json;charset=UTF-8',
@@ -31,9 +32,12 @@ function getResultData() {
             for ( i =0; i < data.length; ++i ){
                 $("ul.result").append('<li><a href="'+ data[i].resultLink +'">'+ data[i].resultName +'</a></li>')
             }
+            if(data.length == 0)
+                $("ul.result").append("无搜索结果......");
         },
         error : function(){
             alert("error");
+            $("ul.result").append("无搜索结果......");
         }
     });
 }

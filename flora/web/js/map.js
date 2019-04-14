@@ -34,7 +34,7 @@ var provinces = [
 	{'name' : '云南', 'px': '101.592952', 'py' : '24.864213'},
 	{'name' : '浙江', 'px': '119.957202', 'py' : '29.159494'}
 ]
-	
+
 
 function initialize(){
 	map = new BMap.Map('map');
