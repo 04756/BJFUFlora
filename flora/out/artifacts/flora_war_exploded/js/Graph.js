@@ -206,12 +206,12 @@ Chart.prototype.drawing = function(nodes, lines){
     Chart.prototype.init = function(){
 
         var _this = this;
-        if(typeStr(_this.data)=='[object string]'){
-            $.getJSON(_this.data,"",function(data){
-                // if(error) throw error ;
-                _this.data = data;
-                _this.drawing(_this.data.nodes,_this.data.lines);
-            });
-        }
-
-}
+        // if(typeStr(_this.data)=='[object string]'){
+        //     $.getJSON(_this.data,"",function(data){
+        //         // if(error) throw error ;
+        //         _this.data = data;
+        //
+        //     });
+        // }
+        _this.drawing(_this.data.nodes,_this.data.lines);
+    }

@@ -12,7 +12,7 @@
 
 	<div class="middle">
 		<div class="search-type">
-			<p>普通搜索</p>
+			<p class="select">普通搜索</p>
 			<img src="images/split.png">
 			<p>概念搜索</p>
 		</div>

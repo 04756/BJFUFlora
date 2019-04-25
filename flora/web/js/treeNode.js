@@ -30,7 +30,7 @@ function tranditionalLayer() {
                 $(this).parent().children("ul.sub-tree").slideToggle("slow");
         })
 
-        if(window.location.href.match("Map").index < 0){
+        if(window.location.href.match("Map") != null && window.location.href.match("Map").index < 0){
             // 点击显示植物
             $(".leaf").click(function () {
                 $("ul.result").empty();

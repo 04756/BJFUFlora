@@ -31,6 +31,7 @@
           <element id="library" level="project" name="commons-logging-1.2" />
           <element id="library" level="project" name="gson-2.0" />
           <element id="library" level="project" name="aopalliance-1.0" />
+          <element id="library" level="project" name="neo4j-java-driver-1.7.2" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="flora/web/Web" />

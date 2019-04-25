@@ -1,4 +1,7 @@
 $(function(){
+    $(".left-guid").slideDown(1000);
+    $(".t").animate({marginLeft:'300px'},1000);
+
 	// 搜索方式选择
 	$(".search-type p").click(function(){
 		$(".search-type p").removeClass("select");

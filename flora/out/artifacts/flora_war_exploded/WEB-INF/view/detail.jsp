@@ -49,14 +49,30 @@
     <script type="text/javascript" src="../js/Graph.js"></script>
     <script type="text/javascript" src="../js/graph.activity.js"></script>
     <script type="text/javascript">
-        var tpoption = {
-            container:'#Container',
-            data:'../graph',
-            width:window.innerWidth || document.documentElement.clientWidth,
-            height:window.innerHeight || document.documentElement.innerHeight
-        };
-        var tp = new Chart(tpoption);
-        tp.init();
+        var temp = {
+            "cName" : "${planet.cName}"
+        }
+        $.ajax({
+            type : "POST",
+            contentType : 'application/json;charset=UTF-8',
+            url : '../graph',
+            data : JSON.stringify(temp),
+            dataType : 'json',
+            success : function(datas){
+                var tpoption = {
+                    container:'#Container',
+                    data: datas,
+                    width:window.innerWidth || document.documentElement.clientWidth,
+                    height:window.innerHeight || document.documentElement.innerHeight
+                };
+                var tp = new Chart(tpoption);
+                tp.init();
+            },
+            error : function(e){
+                console.log(e);
+            }
+        });
+
     </script>
 </body>
 

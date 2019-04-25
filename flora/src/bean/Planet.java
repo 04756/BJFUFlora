@@ -1,5 +1,6 @@
 package bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,7 +47,11 @@ public class Planet {
     }
 
     public static List getGrowing(String pName){
-        return null;
+        List place = new ArrayList();
+        place.add("广西");
+        place.add("贵州");
+        place.add("北京");
+        return place;
     }
 
 }
