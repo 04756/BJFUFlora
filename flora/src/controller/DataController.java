@@ -4,6 +4,10 @@ import bean.Line;
 import bean.Planet;
 import bean.Search;
 import com.google.gson.Gson;
+import db.Neo4jDB;
+import org.neo4j.driver.v1.Record;
+import org.neo4j.driver.v1.Session;
+import org.neo4j.driver.v1.StatementResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,22 +20,28 @@ import bean.TreeNode;
 @Controller
 public class DataController {
 
+    Neo4jDB db=new Neo4jDB();
     //    植物种属层级数据
     @RequestMapping(value = "raceJson", method = RequestMethod.GET)
     @ResponseBody
     public List raceJsonData(){
-//        返回一个TreeNode的数组，js需要小改动
+
+        Neo4jDB.connectGraphDB();
         List arr = new ArrayList();
-        TreeNode t1 = new TreeNode("2546","AMOUSSSSS","");
-        TreeNode t2 = new TreeNode("2547","BJIOSJDPOS","");
-        TreeNode t3 = new TreeNode("2548","小叶铮铮铮","2546");
-        TreeNode t4 = new TreeNode("2549","六道木","2547");
-        TreeNode t5 = new TreeNode("2550","多佛尔就","2548");
-        arr.add(t1);
-        arr.add(t2);
-        arr.add(t3);
-        arr.add(t4);
-        arr.add(t5);
+        try (Session session = db.getDriver().session()) {
+            StatementResult result = session.run("match(n)-[r:isSubClass]->(m) where n.name<>m.name return n.name,m.name");
+            while (result.hasNext()) {
+                Record record = result.next();
+                String son = record.get("n.name").asString();
+                String father = record.get("m.name").asString();
+                TreeNode t=new TreeNode(son,son,father);
+                arr.add(t);
+                System.out.println(son + "的" + "父类" + "是" + father);
+            }
+        }
+        Neo4jDB.close();
+//        返回一个TreeNode的数组，js需要小改动
+
         return arr;
     }
 
