@@ -2,19 +2,43 @@ DELAYQUEUE = new NodeLink("","","",null);
 
 $(function(){
 		// jQuery.getJSON( url [, data ] [, success ] )
-    tranditionalLayer();
+    PlanetLayer("raceJson", "")
+    //     .callback(function (){
+    //     $(".tree li").children("ul.sub-tree").slideUp("fast")
+    // });
+    $(document).on('click', '.node', function(){
+        $(this).parent().children("ul.sub-tree").empty();
+        var temp = {
+            node:$(this).parent("li").attr("id")
+        }
+        var childsLength = PlanetLayer("getChildsRaceJson", temp);
+        if(childsLength == 0){
+            $(this).parent().children("span").removeClass("plus");
+            $(this).parent().children("span").addClass("minus");
+            $(this).removeClass("node");
+            $(this).addClass("leaf");
+            $(this).click();
+        }
+        if ($(this).parent().children(".plus").length != 0)
+            $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        else if($(this).parent().children("ul.sub-tree").children("li").length > 0){
+            $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        }
+    });
 });
 
 function classifyType(val) {
     $(".tree").empty();
     if(val == 1)
-        tranditionalLayer();
+        PlanetLayer("raceJson", "");
     else
-        untraditionalLayer();
+        PlanetLayer("untraditionalRaceJson", "");
 }
 
-function tranditionalLayer() {
-    $.getJSON("raceJson", "", function(data) {
+function PlanetLayer(url, d){
+    var resultLength = 0;
+    $.ajaxSettings.async = false;
+    $.getJSON(url, d, function(data) {
         //each循环 使用$.each方法遍历返回的数据date
         $.each(data, function(i, item) {
             addTreeNode(item.parent, item.text, item.id);
@@ -24,11 +48,8 @@ function tranditionalLayer() {
             addTreeNode(temp.parentId, temp.text, temp.id);
             temp.removeSelf();
         }
-        $(".tree li").children("ul.sub-tree").slideUp("fast");
-        $(".node").click(function(){
-            if($(this).parent().children(".plus").length != 0)
-                $(this).parent().children("ul.sub-tree").slideToggle("slow");
-        })
+
+
 
         if(window.location.href.match("Map") != null && window.location.href.match("Map").index < 0){
             // 点击显示植物
@@ -48,51 +69,16 @@ function tranditionalLayer() {
                 })
             });
         }
+        resultLength = data.length;
     });
+    $.ajaxSettings.async = true;
+    return resultLength;
 }
 
-function untraditionalLayer() {
-    $.getJSON("untraditionalRaceJson", "", function(data) {
-        //each循环 使用$.each方法遍历返回的数据date
-        $.each(data, function(i, item) {
-            addTreeNode(item.parent, item.text, item.id);
-        })
-        while(DELAYQUEUE.isEmpty() != true){
-            var temp = DELAYQUEUE.next;
-            addTreeNode(temp.parentId, temp.text, temp.id);
-            temp.removeSelf();
-        }
-        $(".tree li").children("ul.sub-tree").slideUp("fast");
-        $(".node").click(function(){
-            if($(this).parent().children(".plus").length != 0)
-                $(this).parent().children("ul.sub-tree").slideToggle("slow");
-        })
-        if(window.location.href.match("Map") != null && window.location.href.match("Map").index < 0){
-            // 点击显示植物
-            $(".leaf").click(function () {
-                $("ul.result").empty();
-                var temp = {
-                    type : $(this).text(),
-                    keyWords : "graphSearch"
-                }
-                getResultData(temp);
-            });
-        }
-        else{
-            $(".leaf").click(function () {
-                $(".leaf").click(function () {
-                    $.get("planetGrowing?planet="+$(this).text(), function (data) {
-                        addMapMarker(data);
-                    })
-                });
-            });
-        }
-    });
-}
 
 function addTreeNode(parentId, text, id){
-	var node = "<li id='"+id+"'><span class='minus'></span><div class='leaf'>"+text+"</div></li>";
-	if(parentId == "")
+	var node = "<li id='"+id+"'><span class='plus'></span><div class='node'>"+text+"</div></li>";
+	if(parentId == "" || parentId == id)
 		$("ul.tree").append(node);
 	else{
 		if($('li#'+parentId).length == 0){
@@ -104,10 +90,10 @@ function addTreeNode(parentId, text, id){
 		}
 		if($('li#'+parentId).children("ul.sub-tree").length <= 0){
 			$('li#'+parentId).append("<ul class='sub-tree'></ul>");
-			$('li#'+parentId).children("span").removeClass("minus");
-			$('li#'+parentId).children("span").addClass("plus");
-			$('li#'+parentId).children("div").removeClass("leaf");
-			$('li#'+parentId).children("div").addClass("node");
+			// $('li#'+parentId).children("span").removeClass("minus");
+			// $('li#'+parentId).children("span").addClass("plus");
+			// $('li#'+parentId).children("div").removeClass("leaf");
+			// $('li#'+parentId).children("div").addClass("node");
 		}
 		$('li#'+parentId).children("ul.sub-tree").append(node);
 	}

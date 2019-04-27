@@ -2,37 +2,83 @@ DELAYQUEUE = new NodeLink("","","",null);
 
 $(function(){
 		// jQuery.getJSON( url [, data ] [, success ] )
-	$.getJSON("raceJson", "", function(data) {
-	    　  //each循环 使用$.each方法遍历返回的数据date
-	       $.each(data, function(i, item) {
-	            addTreeNode(item.parent, item.text, item.id);
-	       })
-	       while(DELAYQUEUE.isEmpty() != true){
-	       		var temp = DELAYQUEUE.next;
-	       		addTreeNode(temp.parentId, temp.text, temp.id);
-	       		temp.removeSelf();
-	       }
-	       $(".tree li").children("ul.sub-tree").slideUp("fast");
-	       $(".node").click(function(){
-	       		if($(this).parent().children(".plus").length != 0)
-		       		$(this).parent().children("ul.sub-tree").slideToggle("slow");
-	       })
-
-        // 点击显示植物生长地点
-           $(".leaf").click(function () {
-               var temp = {
-                   "planet" : $(this).text()
-               }
-               $.get("planetGrowing",JSON.stringify(temp), function (data) {
-                   addMapMarker(data);
-               })
-           });
-	});
+    PlanetLayer("raceJson", "")
+    //     .callback(function (){
+    //     $(".tree li").children("ul.sub-tree").slideUp("fast")
+    // });
+    $(document).on('click', '.node', function(){
+        $(this).parent().children("ul.sub-tree").empty();
+        var temp = {
+            node:$(this).parent("li").attr("id")
+        }
+        var childsLength = PlanetLayer("getChildsRaceJson", temp);
+        if(childsLength == 0){
+            $(this).parent().children("span").removeClass("plus");
+            $(this).parent().children("span").addClass("minus");
+            $(this).removeClass("node");
+            $(this).addClass("leaf");
+            $(this).click();
+        }
+        if ($(this).parent().children(".plus").length != 0)
+            $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        else if($(this).parent().children("ul.sub-tree").children("li").length > 0){
+            $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        }
+    });
 });
 
+function classifyType(val) {
+    $(".tree").empty();
+    if(val == 1)
+        PlanetLayer("raceJson", "");
+    else
+        PlanetLayer("untraditionalRaceJson", "");
+}
+
+function PlanetLayer(url, d){
+    var resultLength = 0;
+    $.ajaxSettings.async = false;
+    $.getJSON(url, d, function(data) {
+        //each循环 使用$.each方法遍历返回的数据date
+        $.each(data, function(i, item) {
+            addTreeNode(item.parent, item.text, item.id);
+        })
+        while(DELAYQUEUE.isEmpty() != true){
+            var temp = DELAYQUEUE.next;
+            addTreeNode(temp.parentId, temp.text, temp.id);
+            temp.removeSelf();
+        }
+
+
+
+        if(window.location.href.match("Map") != null && window.location.href.match("Map").index < 0){
+            // 点击显示植物
+            $(".leaf").click(function () {
+                $("ul.result").empty();
+                var temp = {
+                    type : $(this).text(),
+                    keyWords : "graphSearch"
+                }
+                getResultData(temp);
+            });
+        }
+        else{
+            $(".leaf").click(function () {
+                $.get("planetGrowing?planet="+$(this).text(), function (data) {
+                    addMapMarker(data);
+                })
+            });
+        }
+        resultLength = data.length;
+    });
+    $.ajaxSettings.async = true;
+    return resultLength;
+}
+
+
 function addTreeNode(parentId, text, id){
-	var node = "<li id='"+id+"'><span class='minus'></span><div class='leaf'>"+text+"</div></li>";
-	if(parentId == "")
+	var node = "<li id='"+id+"'><span class='plus'></span><div class='node'>"+text+"</div></li>";
+	if(parentId == "" || parentId == id)
 		$("ul.tree").append(node);
 	else{
 		if($('li#'+parentId).length == 0){
@@ -44,10 +90,10 @@ function addTreeNode(parentId, text, id){
 		}
 		if($('li#'+parentId).children("ul.sub-tree").length <= 0){
 			$('li#'+parentId).append("<ul class='sub-tree'></ul>");
-			$('li#'+parentId).children("span").removeClass("minus");
-			$('li#'+parentId).children("span").addClass("plus");
-			$('li#'+parentId).children("div").removeClass("leaf");
-			$('li#'+parentId).children("div").addClass("node");
+			// $('li#'+parentId).children("span").removeClass("minus");
+			// $('li#'+parentId).children("span").addClass("plus");
+			// $('li#'+parentId).children("div").removeClass("leaf");
+			// $('li#'+parentId).children("div").addClass("node");
 		}
 		$('li#'+parentId).children("ul.sub-tree").append(node);
 	}

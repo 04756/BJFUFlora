@@ -14,7 +14,7 @@
     <div class="header">
         <div class="guid">
             <ul class="left-guid" style="display: none;">
-                <li style="float: left;"><img src="${pageContext.request.contextPath}/images/logo.png"></li>
+                <li><img src="${pageContext.request.contextPath}/images/logo.png"></li>
                 <li class="t"><a href="${pageContext.request.contextPath}/hello">首页</a></li>
                 <li><a href="${pageContext.request.contextPath}/planetMap">植物地图</a></li>
                 <li><a href="${pageContext.request.contextPath}/searchResult">植物搜索</a></li>
