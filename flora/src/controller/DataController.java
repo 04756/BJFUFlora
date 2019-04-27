@@ -26,6 +26,18 @@ public class DataController {
     @ResponseBody
     public List raceJsonData(){
 
+        List arr = new ArrayList();
+//        返回一个TreeNode的数组，js需要小改动
+
+        return arr;
+    }
+
+    //    植物种属非传统型层级数据
+//    花草叶维度层级
+    @RequestMapping(value = "untraditionalRaceJson", method = RequestMethod.GET)
+    @ResponseBody
+    public List raceUnTraditionalJsonData(){
+//        返回一个TreeNode的数组，js需要小改动
         Neo4jDB.connectGraphDB();
         List arr = new ArrayList();
         try (Session session = db.getDriver().session()) {
@@ -40,28 +52,6 @@ public class DataController {
             }
         }
         Neo4jDB.close();
-//        返回一个TreeNode的数组，js需要小改动
-
-        return arr;
-    }
-
-    //    植物种属非传统型层级数据
-//    花草叶维度层级
-    @RequestMapping(value = "untraditionalRaceJson", method = RequestMethod.GET)
-    @ResponseBody
-    public List raceUnTraditionalJsonData(){
-//        返回一个TreeNode的数组，js需要小改动
-        List arr = new ArrayList();
-        TreeNode t1 = new TreeNode("2546","AMOUSSSSS","");
-        TreeNode t2 = new TreeNode("2547","BJIOSJDPOS","");
-        TreeNode t3 = new TreeNode("2548","小叶铮铮铮","2546");
-        TreeNode t4 = new TreeNode("2549","六道木","2547");
-        TreeNode t5 = new TreeNode("2550","新维度","2548");
-        arr.add(t1);
-        arr.add(t2);
-        arr.add(t3);
-        arr.add(t4);
-        arr.add(t5);
         return arr;
     }
 
