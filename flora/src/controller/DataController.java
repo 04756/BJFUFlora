@@ -1,21 +1,13 @@
 package controller;
 
-import bean.Line;
-import bean.Planet;
-import bean.Search;
+import bean.*;
 import com.google.gson.Gson;
 import db.Neo4jDB;
-import org.neo4j.driver.v1.Record;
-import org.neo4j.driver.v1.Session;
-import org.neo4j.driver.v1.StatementResult;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import bean.TreeNode;
 
 @Controller
 public class DataController {
@@ -25,27 +17,7 @@ public class DataController {
     @RequestMapping(value = "raceJson", method = RequestMethod.GET)
     @ResponseBody
     public List raceJsonData(){
-
-        List arr = new ArrayList();
-////        返回一个TreeNode的数组，js需要小改动
-//        Neo4jDB.connectGraphDB();
-//        try (Session session = db.getDriver().session()) {
-//            StatementResult result = session.run("match(n)-[r:isSubClass]->(m) where n.name<>m.name return n.name,m.name");
-//            while (result.hasNext()) {
-//                Record record = result.next();
-//                String son = record.get("n.name").asString();
-//                String father = record.get("m.name").asString();
-//                TreeNode t=new TreeNode(son,son,father);
-//                arr.add(t);
-//                System.out.println(son + "的" + "父类" + "是" + father);
-//            }
-//        }
-//        Neo4jDB.close();
-        TreeNode t1 = new TreeNode("2546","AMOUSSSSS","");
-        TreeNode t2 = new TreeNode("2547","BJIOSJDPOS","");
-        arr.add(t1);
-        arr.add(t2);
-        return arr;
+        return Cypther.raceuntraditionalData();
     }
 
     //    植物种属非传统型层级数据
@@ -54,24 +26,15 @@ public class DataController {
     @ResponseBody
     public List raceUnTraditionalJsonData(){
 //        返回一个TreeNode的数组，js需要小改动
-        List arr = new ArrayList();
-
-        return arr;
+        return Cypther.raceuntraditionalData();
     }
 
     //    植物种属非传统型层级数据
-//    花草叶维度层级
+//    花草叶维度层级java何时关闭neo4j连接
     @RequestMapping(value = "getChildsRaceJson", method = RequestMethod.GET)
     @ResponseBody
     public List raceChildsJsonData(@RequestParam("node")String node){
-        System.out.println(node);
-//        返回一个TreeNode的数组，js需要小改动
-        List arr = new ArrayList();
-        TreeNode t3 = new TreeNode("2548","小叶铮铮铮","2546");
-        TreeNode t4 = new TreeNode("2549","六道木","2546");
-        arr.add(t3);
-        arr.add(t4);
-        return arr;
+        return Cypther.childData(node);
     }
 
     //    植物生长地数据
