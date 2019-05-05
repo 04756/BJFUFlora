@@ -7,37 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/flora_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/flora_Web_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/CommonSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/CommonSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/GraphSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/GraphSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/Image.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/InvokePythonProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/InvokePythonProject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/Planet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/Planet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/SyncPipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/SyncPipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/ViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/glassfish-web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/map.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/map.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/searchResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/searchResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/map.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/map.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/Graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/Graph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/treeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/treeNode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/flora/bean.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/treeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/treeNode.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -52,12 +23,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="70" column="56" lean-forward="true" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+            <state relative-caret-position="-48">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1908#1909#0" expanded="true" />
-                <element signature="e#1956#1957#0" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1033#1034#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-45">
+            <state relative-caret-position="105">
               <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -78,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+            <state relative-caret-position="-1203">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -87,11 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
+            <state relative-caret-position="240">
               <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -100,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/web/js/NodeLink.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -171,8 +141,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="63" />
-    <option name="y" value="6" />
+    <option name="x" value="268" />
+    <option name="y" value="30" />
     <option name="width" value="1098" />
     <option name="height" value="788" />
   </component>
@@ -182,6 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,13 +200,12 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556372551196" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556621900046" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -425,7 +395,8 @@
       <workItem from="1556169698467" duration="5009000" />
       <workItem from="1556279125367" duration="71000" />
       <workItem from="1556359259788" duration="5201000" />
-      <workItem from="1556364931098" duration="7488000" />
+      <workItem from="1556364931098" duration="7713000" />
+      <workItem from="1556618425691" duration="2589000" />
     </task>
     <task id="LOCAL-00001" summary="仓库合并后基本配置以及测试完成">
       <created>1553839332668</created>
@@ -448,11 +419,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555236984213</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="更改部分treenode.js以及增加一个Data接口用于分批获取层级数据">
+      <created>1556372641724</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556372641740</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42984000" />
+    <option name="totallyTimeSpent" value="45798000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,7 +445,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.63760215" visible="true" weight="0.301059" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.63760215" visible="true" weight="0.30711043" />
       <window_info id="Structure" order="1" sideWeight="0.36239782" side_tool="true" weight="0.24130106" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -478,7 +456,7 @@
       <window_info id="Persistence" order="8" sideWeight="0.32828283" side_tool="true" weight="0.28441754" />
       <window_info anchor="bottom" id="Spring" order="0" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49924356" weight="0.32786885" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.38360655" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.35737705" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3442623" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5015129" side_tool="true" weight="0.38360655" />
       <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48487142" weight="0.3622951" />
@@ -525,14 +503,15 @@
     <MESSAGE value="python调用图片接口基本测试完成" />
     <MESSAGE value="添加程序注释" />
     <MESSAGE value="完善接口以及说明" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善接口以及说明" />
+    <MESSAGE value="更改部分treenode.js以及增加一个Data接口用于分批获取层级数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="更改部分treenode.js以及增加一个Data接口用于分批获取层级数据" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/DataController.java</url>
-          <line>112</line>
+          <line>75</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -544,19 +523,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/DataController.java</url>
-          <line>47</line>
+          <line>20</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/DataController.java</url>
-          <line>68</line>
+          <line>37</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/DataController.java</url>
-          <line>66</line>
+          <line>36</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -873,38 +852,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/NodeLink.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="70" column="56" lean-forward="true" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+        <state relative-caret-position="-48">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1908#1909#0" expanded="true" />
-            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
+        <state relative-caret-position="105">
           <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -912,10 +876,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/NodeLink.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+        <state relative-caret-position="-1203">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
