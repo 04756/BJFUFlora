@@ -15,6 +15,27 @@ public class Cypther {
     static{
         Neo4jDB.connectGraphDB();
     }
+
+    //返回传统生物学分类的根节点
+    public static List racetraditionalData(){
+        long startTime = System.currentTimeMillis();
+        List arr = new ArrayList();
+//        返回一个TreeNode的数组，js需要小改动
+        try (Session session = db.getDriver().session()) {
+            StatementResult result = session.run("match(n:Tradition) where apoc.node.degree.out(n,\"isSubClass\")=0 return n.name");
+            while (result.hasNext()) {
+                Record record = result.next();
+                String son = record.get("n.name").asString();
+                TreeNode t=new TreeNode(son,son,son);
+                arr.add(t);
+                System.out.println(son);
+            }
+        }
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+        return arr;
+    }
+
     //返回花叶果根茎
     public static List raceuntraditionalData(){
         long startTime = System.currentTimeMillis();
@@ -58,7 +79,6 @@ public class Cypther {
     }
 
     public static void main(String[] arge){
-        Cypther.raceuntraditionalData();
-        Cypther.childData("花");
+
     }
 }
