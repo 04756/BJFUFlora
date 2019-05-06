@@ -59,7 +59,7 @@ public class Cypther {
         List arr = new ArrayList();
 //        返回一个TreeNode的数组，js需要小改动
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n)-[r:isSubClass]->(m)  where m.name=n.name return n.name");
+            StatementResult result = session.run("match(n:Untradition) where apoc.node.degree.out(n,\"isSubClass\")=0 return n.name");
             while (result.hasNext()) {
                 Record record = result.next();
                 String son = record.get("n.name").asString();
@@ -80,7 +80,7 @@ public class Cypther {
 //        返回一个TreeNode的数组，js需要小改动
 
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n)-[r:isSubClass]->(m{name:\""+nodename+"\"}) where m.name<>n.name  return n.name");
+            StatementResult result = session.run("match(n)-[r:isSubClass]->(m{name:\""+nodename+"\"})return n.name");
             while (result.hasNext()) {
                 Record record = result.next();
                 String son = record.get("n.name").asString();
