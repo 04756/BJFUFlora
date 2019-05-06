@@ -36,6 +36,23 @@ public class Cypther {
         return arr;
     }
 
+    public static List plantLocation(String plant){
+        long startTime = System.currentTimeMillis();
+        List arr = new ArrayList();
+        try (Session session = db.getDriver().session()) {
+            StatementResult result = session.run("match(n:Plant{name:\""+plant+"\"})-[r:located]->(m) return m.name");
+            while (result.hasNext()) {
+                Record record = result.next();
+                String location = record.get("m.name").asString();
+                arr.add(location);
+                System.out.println(location);
+            }
+        }
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+        return arr;
+    }
+
     //返回花叶果根茎
     public static List raceuntraditionalData(){
         long startTime = System.currentTimeMillis();
@@ -79,6 +96,6 @@ public class Cypther {
     }
 
     public static void main(String[] arge){
-
+        plantLocation("6. 醉鱼草状六道木（中国高等植物图鉴）图版30: 1-2");
     }
 }
