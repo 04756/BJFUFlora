@@ -34,7 +34,7 @@ public class DataController {
     @RequestMapping(value = "getChildsRaceJson", method = RequestMethod.GET)
     @ResponseBody
     public List raceChildsJsonData(@RequestParam("node")String node){
-        return Cypther.unTraChildData(node);
+        return Cypther.TraChildData(node);
     }
 
 
@@ -43,7 +43,7 @@ public class DataController {
     @RequestMapping(value = "getUntranChildsRaceJson", method = RequestMethod.GET)
     @ResponseBody
     public List getUntranChildsRaceJson(@RequestParam("node")String node){
-        return Cypther.childData(node);
+        return Cypther.unTrachildData(node);
     }
 
     //    植物生长地数据
