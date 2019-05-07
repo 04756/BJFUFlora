@@ -17,7 +17,7 @@ public class DataController {
     @RequestMapping(value = "raceJson", method = RequestMethod.GET)
     @ResponseBody
     public List raceJsonData(){
-        return Cypther.raceuntraditionalData();
+        return Cypther.racetraditionalData();
     }
 
     //    植物种属非传统型层级数据
@@ -34,7 +34,7 @@ public class DataController {
     @RequestMapping(value = "getChildsRaceJson", method = RequestMethod.GET)
     @ResponseBody
     public List raceChildsJsonData(@RequestParam("node")String node){
-        return Cypther.childData(node);
+        return Cypther.unTraChildData(node);
     }
 
 
