@@ -29,11 +29,20 @@ public class DataController {
         return Cypther.raceuntraditionalData();
     }
 
-    //    植物种属非传统型层级数据
-//    花草叶维度层级java何时关闭neo4j连接
+    //    植物种属传统型层级数据
+//    传统维度层级java何时关闭neo4j连接
     @RequestMapping(value = "getChildsRaceJson", method = RequestMethod.GET)
     @ResponseBody
     public List raceChildsJsonData(@RequestParam("node")String node){
+        return Cypther.childData(node);
+    }
+
+
+    //    植物种属非传统型层级数据
+//    花草叶维度层级java何时关闭neo4j连接
+    @RequestMapping(value = "getUntranChildsRaceJson", method = RequestMethod.GET)
+    @ResponseBody
+    public List getUntranChildsRaceJson(@RequestParam("node")String node){
         return Cypther.childData(node);
     }
 

@@ -7,7 +7,12 @@ $(function(){
         var temp = {
             node:$(this).parent("li").attr("id")
         }
-        var childsLength = PlanetLayer("getChildsRaceJson", temp);
+        var childsLength = 0;
+        if($(".folder > select").val() == 1)
+            childsLength = PlanetLayer("getChildsRaceJson", temp);
+        else
+            childsLength = PlanetLayer("getUntranChildsRaceJson", temp);
+
         if(childsLength == 0){
             $(this).parent().children("span").removeClass("plus");
             $(this).parent().children("span").addClass("minus");

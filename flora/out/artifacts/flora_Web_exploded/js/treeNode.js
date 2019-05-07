@@ -19,11 +19,14 @@ $(function(){
             $(this).addClass("leaf");
             $(this).click();
         }
-        if ($(this).parent().children(".plus").length != 0)
-            $(this).parent().children("ul.sub-tree").slideToggle("slow");
-        else if($(this).parent().children("ul.sub-tree").children("li").length > 0){
-            $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        // if ($(this).parent().children(".plus").length != 0)
+        //     $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        if($(this).parent().children("ul.sub-tree").children("li").length > 0){
+            $(this).parent().children("ul.sub-tree").toggle("slow");
         }
+    });
+    $(".tree").children("li").forEach(function () {
+       this.click();
     });
 });
 
