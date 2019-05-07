@@ -114,7 +114,7 @@ public class Cypther {
                 String reference=keyword[0];
                 reference=reference.replace("或","|");
                 try (Session session = db.getDriver().session()) {
-                    StatementResult result = session.run("match(n:Plant)-[r]->(m:Untradition{name:\""+node+"\"}) where r.reference=\""+reference+"\" return distinct n.name limit 25");
+                    StatementResult result = session.run("match(n:Plant)-[r]->(m:Untradition{name:\""+node+"\"}) where r.reference=\""+reference+"\" and apoc.node.degree.out(n,\"located\")>0 return distinct n.name");
                     while (result.hasNext()) {
                         Record record = result.next();
                         String son = record.get("n.name").asString();
@@ -150,7 +150,7 @@ public class Cypther {
         if(arr.isEmpty()){
             System.out.println("是传统叶子节点");
             try (Session session = db.getDriver().session()) {
-                StatementResult result = session.run("match(n:Plant)-[r:traditionalType]->(m:Tradition{name:\""+nodename+"\"}) return n.name");
+                StatementResult result = session.run("match(n:Plant)-[r:traditionalType]->(m:Tradition{name:\""+nodename+"\"}) where apoc.node.degree.out(n,\"located\")>0 return n.name");
                 while (result.hasNext()) {
                     Record record = result.next();
                     String son = record.get("n.name").asString();
