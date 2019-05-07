@@ -1,17 +1,18 @@
 DELAYQUEUE = new NodeLink("","","",null);
 
 $(function(){
-		// jQuery.getJSON( url [, data ] [, success ] )
     PlanetLayer("raceJson", "")
-    //     .callback(function (){
-    //     $(".tree li").children("ul.sub-tree").slideUp("fast")
-    // });
     $(document).on('click', '.node', function(){
         $(this).parent().children("ul.sub-tree").empty();
         var temp = {
             node:$(this).parent("li").attr("id")
         }
-        var childsLength = PlanetLayer("getChildsRaceJson", temp);
+        var childsLength = 0;
+        if($("select").val() == 1)
+            childsLength = PlanetLayer("getChildsRaceJson", temp);
+        else
+            childsLength = PlanetLayer("getUntranChildsRaceJson", temp);
+
         if(childsLength == 0){
             $(this).parent().children("span").removeClass("plus");
             $(this).parent().children("span").addClass("minus");
@@ -25,8 +26,8 @@ $(function(){
             $(this).parent().children("ul.sub-tree").toggle("slow");
         }
     });
-    $(".tree").children("li").forEach(function () {
-       this.click();
+    $(".tree").children("li").each(function () {
+       $(this).click();
     });
 });
 
