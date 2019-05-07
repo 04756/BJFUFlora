@@ -95,6 +95,40 @@ public class Cypther {
         return arr;
     }
 
+    public static List unTraChildData(String nodename){
+        long startTime = System.currentTimeMillis();
+        List arr = new ArrayList();
+//        返回一个TreeNode的数组，js需要小改动
+
+        try (Session session = db.getDriver().session()) {
+            StatementResult result = session.run("match(n)-[r:isSubClass]->(m{name:\""+nodename+"\"})return n.name");
+            while (result.hasNext()) {
+                Record record = result.next();
+                String son = record.get("n.name").asString();
+                TreeNode t=new TreeNode(son,son,nodename);
+                arr.add(t);
+                System.out.println(son+" "+nodename);
+            }
+        }
+        if(arr.isEmpty()){
+            System.out.println("是叶子节点");
+            try (Session session = db.getDriver().session()) {
+                StatementResult result = session.run("match(n:Plant)-[r:traditionalType]->(m:Tradition{name:\""+nodename+"\"}) return n.name");
+                while (result.hasNext()) {
+                    Record record = result.next();
+                    String son = record.get("n.name").asString();
+                    TreeNode t=new TreeNode(son,son,nodename);
+                    arr.add(t);
+                    System.out.println(son+" "+nodename);
+                }
+            }
+        }
+
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+        return arr;
+    }
+
     public static void main(String[] arge){
         plantLocation("6. 醉鱼草状六道木（中国高等植物图鉴）图版30: 1-2");
     }
