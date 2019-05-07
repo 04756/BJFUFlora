@@ -8,7 +8,7 @@ $(function(){
             node:$(this).parent("li").attr("id")
         }
         var childsLength = 0;
-        if($(".folder > select").val() == 1)
+        if($("select").val() == 1)
             childsLength = PlanetLayer("getChildsRaceJson", temp);
         else
             childsLength = PlanetLayer("getUntranChildsRaceJson", temp);

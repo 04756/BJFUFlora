@@ -18,6 +18,10 @@
 
 <div class="middle">
     <div class="left">
+        <select onchange="classifyType(this.value)">
+            <option value="1">生物分类法</option>
+            <option value="2">新维度分类</option>
+        </select>
         <ul class="tree">
 
         </ul>

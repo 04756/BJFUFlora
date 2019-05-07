@@ -9,6 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 import sys
 import json
+import xlwt
 
 def getImg(planet):
     requests.adapters.DEFAULT_RETRIES = 5 # 增加重连次数
