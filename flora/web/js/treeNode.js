@@ -3,29 +3,55 @@ DELAYQUEUE = new NodeLink("","","",null);
 $(function(){
     PlanetLayer("raceJson", "")
     $(document).on('click', '.node', function(){
-        $(this).parent().children("ul.sub-tree").empty();
-        var temp = {
-            node:$(this).parent("li").attr("id")
-        }
-        var childsLength = 0;
-        if($("select").val() == 1)
-            childsLength = PlanetLayer("getChildsRaceJson", temp);
-        else
-            childsLength = PlanetLayer("getUntranChildsRaceJson", temp);
-
-        if(childsLength == 0){
-            $(this).parent().children("span").removeClass("plus");
-            $(this).parent().children("span").addClass("minus");
-            $(this).removeClass("node");
-            $(this).addClass("leaf");
-            $(this).click();
-        }
-        // if ($(this).parent().children(".plus").length != 0)
-        //     $(this).parent().children("ul.sub-tree").slideToggle("slow");
+        //如果子树已建立
         if($(this).parent().children("ul.sub-tree").children("li").length > 0){
-            $(this).parent().children("ul.sub-tree").toggle("slow");
+            if($(this).parent().children("ul.sub-tree").hasClass("extend")) {
+                $(this).parent().children("ul.sub-tree").slideUp("slow");
+                $(this).parent().children("ul.sub-tree").removeClass("extend");
+            }
+            else {
+                $(this).parent().children("ul.sub-tree").slideDown("slow");
+                $(this).parent().children("ul.sub-tree").addClass("extend");
+            }
+        }else{
+            $(this).parent().children("ul.sub-tree").empty();
+            var temp = {
+                node:$(this).parent("li").attr("id")
+            }
+            var childsLength = 0;
+            if($("select").val() == 1)
+                childsLength = PlanetLayer("getChildsRaceJson", temp);
+            else
+                childsLength = PlanetLayer("getUntranChildsRaceJson", temp);
+
+            if(childsLength == 0){
+                $(this).parent().children("span").removeClass("plus");
+                $(this).parent().children("span").addClass("minus");
+                $(this).removeClass("node");
+                $(this).addClass("leaf");
+                $(this).click();
+            }
         }
+
     });
+    if(window.location.href.match("Map") == null){
+        // 点击显示植物
+        $(document).on('click', '.leaf', function(){
+            $("ul.result").empty();
+            var temp = {
+                type : "graphSearch",
+                keyWords : $(this).text()
+            }
+            getResultData(temp);
+        });
+    }
+    else{
+        $(document).on('click', '.leaf', function(){
+            $.get("planetGrowing?planet="+$(this).text(), function (data) {
+                addMapMarker(data);
+            })
+        });
+    }
     $(".tree").children("li").each(function () {
        $(this).click();
     });
@@ -51,27 +77,6 @@ function PlanetLayer(url, d){
             var temp = DELAYQUEUE.next;
             addTreeNode(temp.parentId, temp.text, temp.id);
             temp.removeSelf();
-        }
-
-
-
-        if(window.location.href.match("Map") != null && window.location.href.match("Map").index < 0){
-            // 点击显示植物
-            $(".leaf").click(function () {
-                $("ul.result").empty();
-                var temp = {
-                    type : $(this).text(),
-                    keyWords : "graphSearch"
-                }
-                getResultData(temp);
-            });
-        }
-        else{
-            $(".leaf").click(function () {
-                $.get("planetGrowing?planet="+$(this).text(), function (data) {
-                    addMapMarker(data);
-                })
-            });
         }
         resultLength = data.length;
     });

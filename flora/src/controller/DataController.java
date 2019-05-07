@@ -50,7 +50,7 @@ public class DataController {
     @RequestMapping(value = "/planetGrowing", method = RequestMethod.GET)
     @ResponseBody
     public List getGrow(@RequestParam("planet")String planet){
-        return Planet.getGrowing(planet);
+        return Cypther.plantLocation(planet);
     }
 
     //    搜索结果数据
