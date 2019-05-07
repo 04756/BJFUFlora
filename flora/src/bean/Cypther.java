@@ -73,7 +73,7 @@ public class Cypther {
     }
 
     //返回传入节点的下一层
-    public static List childData(String nodename){
+    public static List unTrachildData(String nodename){
 
         long startTime = System.currentTimeMillis();
         List arr = new ArrayList();
@@ -95,7 +95,7 @@ public class Cypther {
         return arr;
     }
 
-    public static List unTraChildData(String nodename){
+    public static List TraChildData(String nodename){
         long startTime = System.currentTimeMillis();
         List arr = new ArrayList();
 //        返回一个TreeNode的数组，js需要小改动
@@ -111,7 +111,7 @@ public class Cypther {
             }
         }
         if(arr.isEmpty()){
-            System.out.println("是叶子节点");
+            System.out.println("是传统叶子节点");
             try (Session session = db.getDriver().session()) {
                 StatementResult result = session.run("match(n:Plant)-[r:traditionalType]->(m:Tradition{name:\""+nodename+"\"}) return n.name");
                 while (result.hasNext()) {
