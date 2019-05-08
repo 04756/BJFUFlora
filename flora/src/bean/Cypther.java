@@ -166,6 +166,42 @@ public class Cypther {
         return arr;
     }
 
+    public static List graphData(String nodename){
+
+        List lines = new ArrayList<Line>();
+        List nodes = new ArrayList<Planet>();
+        List graphresult = new ArrayList();
+//        返回一个TreeNode的数组，js需要小改动
+        String node1="";
+        try (Session session = db.getDriver().session()) {
+            StatementResult result = session.run("match(n:Plant{name:\"9. 伞花六道木（中国高等植物图鉴）图版32: 6-7\"})-[r]->(m) return n.name,r.reference,m.name");
+            while (result.hasNext()) {
+                Record record = result.next();
+                 node1= record.get("n.name").asString();
+                String node2=record.get("m.name").asString();
+                String text=record.get("r.reference").asString();
+                Line line=new Line();
+                line.setSource(node1);
+                line.setTarget(node2);
+                line.setText(text);
+                lines.add(line);
+                Planet planet=new Planet();
+                planet.setcName(node2);
+                nodes.add(node2);
+
+            }
+            Planet planet=new Planet();
+            planet.setcName(node1);
+            nodes.add(planet);
+            graphresult.add(lines);
+            graphresult.add(nodes);
+            return graphresult;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return graphresult;
+    }
+
     public static void main(String[] arge){
         plantLocation("6. 醉鱼草状六道木（中国高等植物图鉴）图版30: 1-2");
     }
