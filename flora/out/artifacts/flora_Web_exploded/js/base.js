@@ -10,14 +10,19 @@ $(function(){
 
 	// 搜索方法
 	$(".search-bar").click(function(){
-        var url = "searchResult?type=" + ($(".select").text()=="普通搜索"?'commonSearch':'graphSearch') + "&keyWords=" + $("input[name='search-bar']").val();
-		window.location.href = url;
+        searchTurnTo($("input[name='search-bar']").val(),$(".select").text()=="普通搜索"?'commonSearch':'graphSearch')
 	});
+
+    $('input[name=\'search-bar\']').on('keypress',function(){
+        var evt = window.event || e;
+        if(evt.keyCode == 13)
+            searchTurnTo($("input[name='search-bar']").val(),$(".select").text()=="普通搜索"?'commonSearch':'graphSearch')
+    });
 
 	if(window.location.href.search("keyWords") >= 0) {
         var temp = {
             type : getUrlParam("type"),
-            keyWords :getUrlParam("keyWords")
+            keywords :getUrlParam("keyWords")
         }
         getResultData(temp);
     }
@@ -33,7 +38,7 @@ function getResultData(temp) {
         dataType : 'json',
         success : function(data){
             for ( i =0; i < data.length; ++i ){
-                $("ul.result").append('<li><img src="'+data[i].imageLink+'"><a href="'+ data[i].resultLink +'">'+ data[i].resultName +'</a></li>')
+                $("ul.result").append('<li><img src="'+data[i].imageLink+'"><a href="'+ data[i].resultLink +'" title="'+data[i].resultName+'">'+ data[i].resultName +'</a></li>')
             }
             if(data.length == 0)
                 $("ul.result").append("无搜索结果......");
@@ -49,4 +54,9 @@ function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
     var r = window.location.search.substr(1).match(reg);  //匹配目标参数
     if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+function searchTurnTo(key, type) {
+    var url = "searchResult?type=" + type + "&keyWords=" + key;
+    window.location.href = url;
 }
