@@ -17,7 +17,7 @@ $(function(){
 	if(window.location.href.search("keyWords") >= 0) {
         var temp = {
             type : getUrlParam("type"),
-            keyWords :getUrlParam("keyWords")
+            keywords :getUrlParam("keyWords")
         }
         getResultData(temp);
     }
