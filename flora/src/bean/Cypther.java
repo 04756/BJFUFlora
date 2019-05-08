@@ -306,27 +306,59 @@ public class Cypther {
 
                             }
                             return temp;
-                        }else{
-
+                        }else{//没找到
+                            temp.add(new SearchResult("无相应结果", "",""));
+                            return temp;
                         }
 
                     }
                 }
 
 
-            }else{
+            }else{//不包含#
+                for(int i=0;i<results.length;i++){
+                    if(results[i].contains("-")&&!results[i].contains("None")){
+                        String[] str2=results[i].split(" - ");
+                        String cypher="";
+                        if(results[i].contains("叶"))
+                            cypher="match(n:Plant)-[r:hasLeave]->(m:Leave) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1";
+                        if(results[i].contains("花"))
+                            cypher="match(n:Plant)-[r:hasFlower]->(m:Flower) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1";
+                        if(results[i].contains("果"))
+                            cypher="match(n:Plant)-[r:hasGuo]->(m:Guo) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1";
+                        if(results[i].contains("根茎"))
+                            cypher="match(n:Plant)-[r:hasRhizome]->(m:Rhizome) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1";
+
+                        StatementResult cypherresult=session.run(cypher);
+                        if(cypherresult.hasNext()){
+                            while(cypherresult.hasNext()){
+                                Record record=cypherresult.next();
+                                String plantname = record.get("n.name").asString();
+                                String imglink = record.get("n.pic1").asString();
+                                temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
+
+                            }
+                            return temp;
+                        }else{//没找到
+                            temp.add(new SearchResult("无相应结果", "",""));
+                            return temp;
+                        }
+                    }
+                }
 
             }
         }catch (Exception e)
         {
             e.printStackTrace();
+            temp.add(new SearchResult("无相应结果", "",""));
+            return temp;
         }
-
-        return null;
+        temp.add(new SearchResult("无相应结果", "",""));
+        return temp;
     }
 
     public static void main(String[] arge){
 
-        getPlantDetail("醉鱼草状六道木（中国高等植物图鉴）图版30:1-2");
+        graphSearch("");
     }
 }
