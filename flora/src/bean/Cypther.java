@@ -231,6 +231,7 @@ public class Cypther {
                 Record record = result.next();
                 String race=record.get("m.name").asString();
                 String describe=record.get("n.describe").asString();
+                describe=describe.replace("\n","<br/>");
                 String engname=record.get("n.engname").asString();
                 for(int j=1;j<=4;j++){
                     String imglink=record.get("n.pic"+j).asString();
@@ -261,8 +262,71 @@ public class Cypther {
         return planet;
     }
 
+    public static List graphSearch(String keyword){
+
+        //在此处调用python 分析keyword
+
+        List<SearchResult> temp = new ArrayList<SearchResult>();
+        String result="红色的花\r\n" +
+                "#红色#花 - 花\r\n" +
+                "红色 - None\r\n" +
+                "花 - None";
+        String[] results=result.split("\r\n");
+        try (Session session = db.getDriver().session()){
+            if(result.contains("#")){
+                int pos=0;
+                for(int i=0;i<results.length;i++){
+                    if(results[i].contains("#"))
+                    {
+                        pos=i;
+                        String[] str=results[pos].split(" - ");
+                        String[] str2=str[0].split("#");
+                        String cypher;
+                        if(str2[0].equals("")){
+                            cypher="match(n:Plant)-[r:hasFlower]->(m:Flower) where r.reference contains \""+str2[1]+"\"";
+                            for(int j=2;j<str2.length;j++){
+                                cypher+=" and r.reference contains \""+str2[j]+"\"";
+                            }
+                        }
+                        else{
+                            cypher="match(n:Plant)-[r:hasFlower]->(m:Flower) where r.reference contains \""+str2[0]+"\"";
+                            for(int j=1;j<str2.length;j++){
+                                cypher+=" and r.reference contains \""+str2[j]+"\"";
+                            }
+                        }
+
+                        cypher+=" return n.name,n.pic1";
+                        StatementResult cypherresult=session.run(cypher);
+                        if(cypherresult.hasNext()){
+                            while(cypherresult.hasNext()){
+                                Record record=cypherresult.next();
+                                String plantname = record.get("n.name").asString();
+                                String imglink = record.get("n.pic1").asString();
+                                temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
+
+                            }
+                            return temp;
+                        }else{
+
+                        }
+
+                    }
+                }
+
+
+            }else{
+
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     public static void main(String[] arge){
 
-        getPlantDetail("二翅六道木（中国高等植物图鉴）图版31：1-2");
+        getPlantDetail("醉鱼草状六道木（中国高等植物图鉴）图版30:1-2");
     }
 }
