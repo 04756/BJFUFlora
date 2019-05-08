@@ -221,7 +221,48 @@ public class Cypther {
         return temp;
     }
 
+    public static Planet getPlantDetail(String name){
+        long startTime = System.currentTimeMillis();
+        Planet planet=new Planet();
+        planet.setcName(name);
+        try (Session session = db.getDriver().session()) {
+            StatementResult result = session.run("match(n:Plant{name:\""+name+"\"})-[r]->(m:Tradition) return m.name,n.engname,n.describe,n.pic1,n.pic2,n.pic3,n.pic4");
+            if (result.hasNext()) {
+                Record record = result.next();
+                String race=record.get("m.name").asString();
+                String describe=record.get("n.describe").asString();
+                String engname=record.get("n.engname").asString();
+                for(int j=1;j<=4;j++){
+                    String imglink=record.get("n.pic"+j).asString();
+                    planet.getImglist().add(imglink);
+                }
+                planet.setContent(describe);
+                planet.seteName(engname);
+
+                planet.getRace().add(0,new SearchResult(race,race));
+
+                StatementResult result2 = session.run("match(n:Tradition{name:\""+race+"\"})-[r:isSubClass]->(m:Tradition) return m.name");
+                while(result2.hasNext())
+                {
+                    Record record2=result2.next();
+                    race=record2.get("m.name").asString();
+                    planet.getRace().add(0,new SearchResult(race,race));
+                    result2 = session.run("match(n:Tradition{name:\""+race+"\"})-[r:isSubClass]->(m:Tradition) return m.name");
+                }
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+
+        return planet;
+    }
+
     public static void main(String[] arge){
-        plantLocation("6. 醉鱼草状六道木（中国高等植物图鉴）图版30: 1-2");
+
+        getPlantDetail("二翅六道木（中国高等植物图鉴）图版31：1-2");
     }
 }
