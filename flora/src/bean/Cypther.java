@@ -174,7 +174,7 @@ public class Cypther {
 //        返回一个TreeNode的数组，js需要小改动
         String node1="";
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n:Plant{name:\"9. 伞花六道木（中国高等植物图鉴）图版32: 6-7\"})-[r]->(m) return n.indexname,r.reference,m.name");
+            StatementResult result = session.run("match(n:Plant{name:\""+nodename+"\"})-[r]->(m) return n.indexname,r.reference,m.name");
             while (result.hasNext()) {
                 Record record = result.next();
                  node1= record.get("n.indexname").asString();
@@ -212,7 +212,6 @@ public class Cypther {
                 String plantname = record.get("n.name").asString();
                 String imglink = record.get("n.pic1").asString();
                 temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
-
             }
         }catch (Exception e){
             e.printStackTrace();
