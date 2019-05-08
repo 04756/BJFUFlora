@@ -1,5 +1,6 @@
 package controller;
 
+import bean.Cypther;
 import bean.Image;
 import bean.Planet;
 import bean.SearchResult;
@@ -30,16 +31,11 @@ public class ViewController {
     @RequestMapping(path = "/planet/{planetName}", method = RequestMethod.GET)
     public String planetPage(@PathVariable String planetName, Model model, HttpServletRequest request) throws IOException {
 //        所属类群，一个SearchResult的list
-        List race = new ArrayList();
-        race.add(new SearchResult("是服务范围",""));
-        race.add(new SearchResult("是服务范围",""));
-        race.add(new SearchResult("是服务范围",""));
-        race.add(new SearchResult("是服务范围",""));
-        race.add(new SearchResult("是服务范围",""));
-        model.addAttribute("race",race);
-        model.addAttribute("imgList", new Image().getPlanetImgLinks(planetName, request));
+        Planet planet=Cypther.getPlantDetail(planetName);
+        model.addAttribute("race",planet.getRace());
+        model.addAttribute("imgList", planet.getImglist());
 //        植物的详细信息
-        model.addAttribute("planet",new Planet("六道木属","AAAAAAA ssss","迥旺建瓯评价我怕v经常我怕v紧哦碰我的"));
+        model.addAttribute("planet",planet);
 
         return "detail";
     }
