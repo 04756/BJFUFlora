@@ -74,58 +74,7 @@ public class DataController {
     //如果更改返回参数为list，将@ResponseBody的注释取消
     @RequestMapping(value = "/graph", method = RequestMethod.POST)
     @ResponseBody
-    public String graphData(@RequestBody Planet planet){
-        System.out.println(planet.getcName());
-        List lines = new ArrayList<Line>();
-        List nodes = new ArrayList<Planet>();
-        List result = new ArrayList();
-        result.add(lines);
-        result.add(nodes);
-        //返回一个lines和nodes的集合，解析为json为类似下面的json字符串
-        return "{\n" +
-                "\t\"nodes\":[\n" +
-                "\t\t{\n" +
-                "\t\t\t\"name\" : \"给微软\",\n" +
-                "\t\t\t\"e-name\" : \"dccd\",\n" +
-                "\t\t\t\"status\" : 0,\n" +
-                "\t\t\t\"r\" : 32\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"name\" : \"上的v二\",\n" +
-                "\t\t\t\"e-name\" : \"fever\",\n" +
-                "\t\t\t\"status\" : 0,\n" +
-                "\t\t\t\"r\" : 38\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"name\" : \"fweweg\",\n" +
-                "\t\t\t\"e-name\" : \"vger\",\n" +
-                "\t\t\t\"status\" : 0,\n" +
-                "\t\t\t\"r\" : 38\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"name\" : \"围观我\",\n" +
-                "\t\t\t\"e-name\" : \"dsffever\",\n" +
-                "\t\t\t\"status\" : 0,\n" +
-                "\t\t\t\"r\" : 32\n" +
-                "\t\t}\n" +
-                "\t],\n" +
-                "\t\"lines\":[\n" +
-                "\t\t{\n" +
-                "\t\t\t\"source\": \"给微软\",\n" +
-                "\t\t\t\"target\": \"围观我\",\n" +
-                "\t\t\t\"text\" : \"11111\"\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"source\": \"围观我\",\n" +
-                "\t\t\t\"target\": \"fweweg\",\n" +
-                "\t\t\t\"text\" : \"22222\"\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"source\": \"上的v二\",\n" +
-                "\t\t\t\"target\": \"fweweg\",\n" +
-                "\t\t\t\"text\" : \"333\"\n" +
-                "\t\t}\n" +
-                "\t]\n" +
-                "}";
+    public List graphData(@RequestBody Planet planet){
+        return Cypther.graphData(planet.getcName());
     }
 }
