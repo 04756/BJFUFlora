@@ -1,5 +1,6 @@
 package bean;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,13 @@ public class GraphSearch implements SInterface{
     @Override
     public List<SearchResult> search(String keyWords){
 //        return null;
-        return Cypther.graphSearch(keyWords);
+        Cypther cypther=new Cypther();
+        try {
+            return cypther.graphSearch(keyWords);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

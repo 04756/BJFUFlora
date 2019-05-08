@@ -5,6 +5,10 @@ import org.neo4j.driver.v1.Record;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -262,15 +266,29 @@ public class Cypther {
         return planet;
     }
 
-    public static List graphSearch(String keyword){
+    public List graphSearch(String keyword) throws IOException {
 
         //在此处调用python 分析keyword
+        File writefile=new File("test.txt");
+        try{
+            FileWriter tofile=new FileWriter(writefile);
+            BufferedWriter out=new BufferedWriter(tofile);
+            out.write(keyword);
+
+            out.close();
+            tofile.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        SyncPipe out = new SyncPipe(null, null);
+        String pyPath = this.getClass().getResource("").getPath()+"/AnalyseInput.py";
+        pyPath = pyPath.replaceFirst("/","");
+        String result = new InvokePythonProject().invokePython(pyPath,"", out);
+
 
         List<SearchResult> temp = new ArrayList<SearchResult>();
-        String result="红色的花\r\n" +
-                "#红色#花 - 花\r\n" +
-                "红色 - None\r\n" +
-                "花 - None";
+
         String[] results=result.split("\r\n");
         try (Session session = db.getDriver().session()){
             if(result.contains("#")){
@@ -359,6 +377,5 @@ public class Cypther {
 
     public static void main(String[] arge){
 
-        graphSearch("");
     }
 }
