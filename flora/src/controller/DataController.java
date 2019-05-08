@@ -6,6 +6,7 @@ import db.Neo4jDB;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,7 +61,7 @@ public class DataController {
 //    自动装配有问题，暂未解决，暂时不重要，因为页面效果不一定。。再说吧
     public List search(@RequestBody String s){
         try{
-            Search search = new Gson().fromJson(s, Search.class);
+            Search search = new Gson().fromJson(new String(s.getBytes("iso-8859-1"),"UTF-8"), Search.class);
             return search.search();
         }
         catch (Exception e){
