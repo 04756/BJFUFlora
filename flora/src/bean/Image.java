@@ -14,10 +14,14 @@ public class Image {
     }
 
     public List<String> getPlanetImgLinks(String planet, HttpServletRequest request) throws IOException {
+
         SyncPipe out = new SyncPipe(null, null);
         String pyPath = this.getClass().getResource("").getPath()+"/test.py";
         pyPath = pyPath.replaceFirst("/","");
         String result = new InvokePythonProject().invokePython(pyPath,planet, out);
+
+
+
         List list = new ArrayList();
         for(String i : result.split("\r\n"))
             if(i.contains("http"))

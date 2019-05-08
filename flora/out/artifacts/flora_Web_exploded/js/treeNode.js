@@ -39,7 +39,7 @@ $(function(){
         $(document).on('click', '.leaf', function(){
             $("ul.result").empty();
             var temp = {
-                type : "graphSearch",
+                type : "commonSearch",
                 keyWords : $(this).text()
             }
             getResultData(temp);
