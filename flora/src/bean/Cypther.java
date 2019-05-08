@@ -169,7 +169,7 @@ public class Cypther {
     public static List graphData(String nodename){
 
         List lines = new ArrayList<Line>();
-        List nodes = new ArrayList<Planet>();
+        List nodes = new ArrayList<Node>();
         List graphresult = new ArrayList();
 //        返回一个TreeNode的数组，js需要小改动
         String node1="";
@@ -185,14 +185,12 @@ public class Cypther {
                 line.setTarget(node2);
                 line.setText(text);
                 lines.add(line);
-                Planet planet=new Planet();
-                planet.setcName(node2);
+                Node node=new Node(node2);
                 nodes.add(node2);
 
             }
-            Planet planet=new Planet();
-            planet.setcName(node1);
-            nodes.add(planet);
+            Node plant=new Node(node1);
+            nodes.add(plant);
             graphresult.add(lines);
             graphresult.add(nodes);
             return graphresult;
