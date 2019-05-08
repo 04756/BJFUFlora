@@ -107,7 +107,7 @@ Chart.prototype.drawing = function(nodes, lines){
         .links(lines);
     f_link.distance(function(d){//指定连线长度
         var distance = 50;
-        distance += distance*Math.random()*10 + 50;
+        distance += distance*Math.random()*5 + 50;
         return distance;
     });
 
