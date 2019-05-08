@@ -214,9 +214,43 @@ public class Neo4jDB {
         Neo4jDB.close();
     }
 
+    public static void LoadPlantEngname(){
+        Neo4jDB.connectGraphDB();
+        Neo4jDB db=new Neo4jDB();
+        try (Session session = db.getDriver().session()) {
+            for (int i=1;i<=35;i++)
+            {
+                //导入所有植物英文名
+                String cypher="load csv with headers from \"file:///界门纲目科属种//"+i+".0千组.csv\" as line match(n:Plant{indexname:line.son}) set n.engname=line.sonEnglish";
+                session.run(cypher);
+                System.out.println(i);
+            }
+
+
+        }
+        Neo4jDB.close();
+    }
+
+    public static void ChangePlantName(){
+        Neo4jDB.connectGraphDB();
+        Neo4jDB db=new Neo4jDB();
+        try (Session session = db.getDriver().session()) {
+            for (int i=1;i<=35;i++)
+            {
+                //优化植物名字
+                String cypher="load csv with headers from \"file:///植物名字优化//"+i+".0千组.csv\" as line match(n:Plant{name:line.Plantname}) set n.name=line.FixName";
+                session.run(cypher);
+                System.out.println(i);
+            }
+
+
+        }
+        Neo4jDB.close();
+    }
+
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        Neo4jDB.LoadDescribe();
+        Neo4jDB.ChangePlantName();
         long endTime = System.currentTimeMillis();    //获取结束时间
         System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
 
