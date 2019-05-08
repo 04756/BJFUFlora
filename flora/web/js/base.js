@@ -33,7 +33,7 @@ function getResultData(temp) {
         dataType : 'json',
         success : function(data){
             for ( i =0; i < data.length; ++i ){
-                $("ul.result").append('<li><a href="'+ data[i].resultLink +'">'+ data[i].resultName +'</a></li>')
+                $("ul.result").append('<li><img src="'+data[i].imageLink+'"><a href="'+ data[i].resultLink +'">'+ data[i].resultName +'</a></li>')
             }
             if(data.length == 0)
                 $("ul.result").append("无搜索结果......");
