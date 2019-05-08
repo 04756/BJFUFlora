@@ -179,9 +179,44 @@ public class Neo4jDB {
 
     }
 
+    public static void LoadFlowerColor(){
+        Neo4jDB.connectGraphDB();
+        Neo4jDB db=new Neo4jDB();
+        try (Session session = db.getDriver().session()) {
+            for (int i=1;i<=35;i++)
+            {
+                //导入所有花的相关颜色
+                String cypher="load csv with headers from \"file:///花颜色//"+i+".0千组.csv\" as line match(n:Plant{name:line.Plantname}),(m:Flower{name:line.Divname}) merge (n)-[r:hasFlower{reference:line.reference}]->(m)";
+                session.run(cypher);
+                System.out.println(i);
+            }
+
+
+        }
+        Neo4jDB.close();
+
+    }
+
+    public static void LoadDescribe(){
+        Neo4jDB.connectGraphDB();
+        Neo4jDB db=new Neo4jDB();
+        try (Session session = db.getDriver().session()) {
+            for (int i=1;i<=35;i++)
+            {
+                //导入所有植物描述
+                String cypher="load csv with headers from \"file:///植物描述//"+i+".0千组.csv\" as line match(n:Plant{name:line.Plantname}) set n.describe=line.Describe";
+                session.run(cypher);
+                System.out.println(i);
+            }
+
+
+        }
+        Neo4jDB.close();
+    }
+
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        Neo4jDB.LoadLocationRelationship();
+        Neo4jDB.LoadDescribe();
         long endTime = System.currentTimeMillis();    //获取结束时间
         System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
 
