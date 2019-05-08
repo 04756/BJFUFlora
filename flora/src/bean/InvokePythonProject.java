@@ -29,10 +29,10 @@ public class InvokePythonProject extends Thread implements Callable<String> {
 //        先启动cmd，再运行命令，查看报错。
 //        该方法能够详细的查看到报错
 //        直接模拟cmd执行命令只能从waitfor返回的数字猜测原因不能查看具体错误
-        String[] args = new String[] { "python", command, planet};
+        String[] args = new String[] { "python", command};
         Process p = null;//创建一个线程池对象
         ExecutorService pool = Executors.newCachedThreadPool(); //创建一个有返回值的任务
-        String returnValue = "";//创建一个字符串存放返回结果
+        String returnValue = "";//· 创建一个字符串存放返回结果
 
         try {
             p = Runtime.getRuntime().exec(args);
