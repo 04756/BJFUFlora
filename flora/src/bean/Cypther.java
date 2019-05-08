@@ -202,6 +202,28 @@ public class Cypther {
         return graphresult;
     }
 
+    public static List<SearchResult> commonsearch(String keyword){
+        long startTime = System.currentTimeMillis();
+
+        List<SearchResult> temp = new ArrayList<SearchResult>();
+//        植物名字的数组
+        try (Session session = db.getDriver().session()) {
+            StatementResult result = session.run("match(n:Plant) where n.name contains \"" + keyword + "\" return n.name,n.pic1");
+            while (result.hasNext()) {
+                Record record = result.next();
+                String plantname = record.get("n.name").asString();
+                String imglink = record.get("n.pic1").asString();
+                temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+        return temp;
+    }
+
     public static void main(String[] arge){
         plantLocation("6. 醉鱼草状六道木（中国高等植物图鉴）图版30: 1-2");
     }
