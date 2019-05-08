@@ -18,6 +18,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -273,5 +274,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>
