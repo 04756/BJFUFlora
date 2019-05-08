@@ -106,8 +106,8 @@ Chart.prototype.drawing = function(nodes, lines){
     f_link = simulation.force("link")
         .links(lines);
     f_link.distance(function(d){//指定连线长度
-        var distance = 120;
-        distance += distance*Math.random()*1;
+        var distance = 50;
+        distance += distance*Math.random()*10 + 50;
         return distance;
     });
 
@@ -213,5 +213,5 @@ Chart.prototype.drawing = function(nodes, lines){
         //
         //     });
         // }
-        _this.drawing(_this.data.nodes,_this.data.lines);
+        _this.drawing(_this.data[0],_this.data[1]);
     }

@@ -8,7 +8,10 @@ public class Node {
 
     public Node(String name) {
         this.name = name;
-        this.r = this.name.length() * 8;
+        if(this.name.length() == 1)
+            this.r = 15;
+        else
+            this.r = this.name.length() * 10;
     }
 
     public String getName() {

@@ -1,6 +1,6 @@
 $(function(){
     $(".left-guid").slideDown(1000);
-    $(".t").animate({marginLeft:'250px'},1000);
+    $(".t").animate({marginLeft:'200px'},1000);
 
 	// 搜索方式选择
 	$(".search-type p").click(function(){
@@ -33,7 +33,7 @@ function getResultData(temp) {
         dataType : 'json',
         success : function(data){
             for ( i =0; i < data.length; ++i ){
-                $("ul.result").append('<li><a href="'+ data[i].resultLink +'">'+ data[i].resultName +'</a></li>')
+                $("ul.result").append('<li><img src="'+data[i].imageLink+'"><a href="'+ data[i].resultLink +'">'+ data[i].resultName +'</a></li>')
             }
             if(data.length == 0)
                 $("ul.result").append("无搜索结果......");
