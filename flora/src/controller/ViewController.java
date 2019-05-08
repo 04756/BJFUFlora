@@ -18,6 +18,12 @@ import java.util.List;
 @Controller
 public class ViewController {
 
+    @RequestMapping("/index") public String homepage(Model model){
+        System.out.println("this is homepage!!!");
+        return "index";
+    }
+
+
     @RequestMapping(value = "hello", method = RequestMethod.GET)
     public String hello(){
         return "index";

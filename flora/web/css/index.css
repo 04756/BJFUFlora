@@ -54,12 +54,12 @@ ul.popular-search{
 	/*background-color: white;*/
 }
 .block{
-	width: 300px;
+	width: 350px;
 	height: 96%;
 	color: white;
 	font-size: 28px;
 	text-align: center;
 	/*border: 4px solid #97a39d;*/
 	float: left;
-	margin-right: 50px;
+	/*margin-right: 50px;*/
 }
