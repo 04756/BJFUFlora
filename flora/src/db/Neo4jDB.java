@@ -9,7 +9,7 @@ public class Neo4jDB {
     private static Driver driver;
 
     public static void connectGraphDB(){
-        String uri = "bolt://localhost:7687";
+        String uri = "bolt://39.96.176.150:7687";
         driver = GraphDatabase.driver(uri, AuthTokens.basic("neo4j", "1234"));
 
     }
