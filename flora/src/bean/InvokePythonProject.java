@@ -42,28 +42,30 @@ public class InvokePythonProject extends Thread implements Callable<String> {
             // 执行任务并获取Future对象
             Future<String> future1 = pool.submit(t1);
             Future<String> future2 = pool.submit(t2);
-//            PrintWriter stdin = new PrintWriter(p.getOutputStream());
+            //PrintWriter stdin = new PrintWriter(p.getOutputStream());
             /** 以下可以输入自己想输入的cmd命令 */
-//            stdin.println("python "+command+" "+planet);//此处自行填写，切记有空格，跟cmd的执行语句一致。
-//            stdin.close();
+            //stdin.println("python "+command+" "+planet);//此处自行填写，切记有空格，跟cmd的执行语句一致。
+            //stdin.close();
+            //stdin.println("python "+command+" "+planet);//此处自行填写，切记有空格，跟cmd的执行语句一致。
+            //stdin.close();
             //从 Future 对象 获取任务返回值
-             while(true) {
-                 //可以用isDone()方法来查询Future是否已经完成，任务完成后，可以调用get()方法来获取结果
-                 // 注意： 如果不加判断直接调用get方法，此时如果线程未完成，get将阻塞，直至结果准备就绪
-                  if(future2.isDone()) {
-                      try {
-                          returnValue = future2.get().toString();
-                          System.out.println("线程返回值:"+returnValue);
-                      }catch (Exception e){
-                          e.printStackTrace();
-                      }
-                      //关闭线程池
-                       pool.shutdown();
-                      //跳出循环
-                       break;
-                  }
-             }
-             return returnValue;
+            while(true) {
+                //可以用isDone()方法来查询Future是否已经完成，任务完成后，可以调用get()方法来获取结果
+                // 注意： 如果不加判断直接调用get方法，此时如果线程未完成，get将阻塞，直至结果准备就绪
+                if(future2.isDone()) {
+                    try {
+                        returnValue = future2.get().toString();
+                        System.out.println("线程返回值:"+returnValue);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    //关闭线程池
+                    pool.shutdown();
+                    //跳出循环
+                    break;
+                }
+            }
+            return returnValue;
         } catch (Exception e) {
             throw new RuntimeException("编译出现错误：" + e.getMessage());
         }
