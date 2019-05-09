@@ -62,6 +62,8 @@ public class DataController {
     public List search(@RequestBody String s){
         try{
             Search search = new Gson().fromJson(new String(s.getBytes("iso-8859-1"),"UTF-8"), Search.class);
+            if(search.getKeywords().contains("??"))
+                search = new Gson().fromJson(s, Search.class);
             return search.search();
         }
         catch (Exception e){
