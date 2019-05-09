@@ -286,6 +286,21 @@ public class Cypther {
         String result = new InvokePythonProject().invokePython(pyPath,"", out);
 
 
+        File writefile2=new File(this.getClass().getResource("").getPath()+"result22.txt");
+        try{
+            FileWriter tofile2=new FileWriter(writefile2);
+            BufferedWriter out2=new BufferedWriter(tofile2);
+            out2.write(result);
+            if(result.contains("\r\n"))
+                out2.write("true");
+            else
+                out2.write("false");
+            out2.close();
+            tofile2.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         List<SearchResult> temp = new ArrayList<SearchResult>();
 
         String[] results=result.split("\r\n");
@@ -377,7 +392,7 @@ public class Cypther {
     public static void main(String[] arge){
             Cypther cypther=new Cypther();
         try {
-            cypther.graphSearch("测试关键词");
+            cypther.graphSearch("矩圆形的叶子");
         } catch (IOException e) {
             e.printStackTrace();
         }
