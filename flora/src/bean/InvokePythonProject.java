@@ -43,7 +43,7 @@ public class InvokePythonProject extends Thread implements Callable<String> {
             Future<String> future1 = pool.submit(t1);
             Future<String> future2 = pool.submit(t2);
             //PrintWriter stdin = new PrintWriter(p.getOutputStream());
-            /* 以下可以输入自己想输入的cmd命令 */
+            /*以下可以输入自己想输入的cmd命令 */
             //stdin.println("python "+command+" "+planet);//此处自行填写，切记有空格，跟cmd的执行语句一致。
             //stdin.close();
             //从 Future 对象 获取任务返回值
