@@ -269,12 +269,11 @@ public class Cypther {
     public List graphSearch(String keyword) throws IOException {
 
         //在此处调用python 分析keyword
-        File writefile=new File("test.txt");
+        File writefile=new File(this.getClass().getResource("").getPath()+"test.txt");
         try{
             FileWriter tofile=new FileWriter(writefile);
             BufferedWriter out=new BufferedWriter(tofile);
             out.write(keyword);
-
             out.close();
             tofile.close();
         }catch (Exception e){
@@ -376,6 +375,12 @@ public class Cypther {
     }
 
     public static void main(String[] arge){
+            Cypther cypther=new Cypther();
+        try {
+            cypther.graphSearch("测试关键词");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
