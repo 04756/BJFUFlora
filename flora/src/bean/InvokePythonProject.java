@@ -29,7 +29,7 @@ public class InvokePythonProject extends Thread implements Callable<String> {
 //        先启动cmd，再运行命令，查看报错。
 //        该方法能够详细的查看到报错
 //        直接模拟cmd执行命令只能从waitfor返回的数字猜测原因不能查看具体错误
-        String[] args = new String[] { "python", command};
+        String[] args = new String[] { "/usr/python3/Python-3.5.3/python", command};
         Process p = null;//创建一个线程池对象
         ExecutorService pool = Executors.newCachedThreadPool(); //创建一个有返回值的任务
         String returnValue = "";//· 创建一个字符串存放返回结果
@@ -42,10 +42,10 @@ public class InvokePythonProject extends Thread implements Callable<String> {
             // 执行任务并获取Future对象
             Future<String> future1 = pool.submit(t1);
             Future<String> future2 = pool.submit(t2);
-            PrintWriter stdin = new PrintWriter(p.getOutputStream());
+//            PrintWriter stdin = new PrintWriter(p.getOutputStream());
             /** 以下可以输入自己想输入的cmd命令 */
-            stdin.println("python "+command+" "+planet);//此处自行填写，切记有空格，跟cmd的执行语句一致。
-            stdin.close();
+//            stdin.println("python "+command+" "+planet);//此处自行填写，切记有空格，跟cmd的执行语句一致。
+//            stdin.close();
             //从 Future 对象 获取任务返回值
              while(true) {
                  //可以用isDone()方法来查询Future是否已经完成，任务完成后，可以调用get()方法来获取结果

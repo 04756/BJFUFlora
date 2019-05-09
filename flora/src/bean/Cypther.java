@@ -5,10 +5,7 @@ import org.neo4j.driver.v1.Record;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -269,14 +266,13 @@ public class Cypther {
     public List graphSearch(String keyword) throws IOException {
 
         //在此处调用python 分析keyword
-        File writefile=new File("test.txt");
-        try{
-            FileWriter tofile=new FileWriter(writefile);
-            BufferedWriter out=new BufferedWriter(tofile);
-            out.write(keyword);
 
+        try{
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("test.txt"),"GBK"));
+            out.write(keyword);
+            out.flush();
             out.close();
-            tofile.close();
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -377,5 +373,15 @@ public class Cypther {
 
     public static void main(String[] arge){
 
+        String key="红色的花朵";
+        try{
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("D:\\test.txt"),"GBK"));
+            out.write(key);
+            out.flush();
+            out.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
