@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="flora" />
+      <artifact name="flora:Web exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/flora.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/flora_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/flora_Web_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flora.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flora.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/InvokePythonProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/InvokePythonProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/Neo4jDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/Neo4jDB.java" afterDir="false" />
+    <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="修改前端搜索传参以及后端验证">
+      <change afterPath="$PROJECT_DIR$/src/bean/Jython.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,91 +22,109 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+        <entry file="file://$PROJECT_DIR$/web/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+            <state relative-caret-position="-699">
+              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/index.jsp">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+            <state relative-caret-position="102">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/search.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bean/InvokePythonProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1063#1064#0" expanded="true" />
+                <element signature="e#1325#1326#0" expanded="true" />
+                <element signature="e#1376#1377#0" expanded="true" />
+                <element signature="e#1516#1517#0" expanded="true" />
+                <element signature="e#1568#1569#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bean/Jython.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bean/GraphSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bean/Cypther.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="301" column="9" lean-forward="true" selection-start-line="301" selection-start-column="9" selection-end-line="301" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bean/CommonSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/base.css">
+        <entry file="file://$PROJECT_DIR$/src/bean/Search.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-24">
-              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/images/logo.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/Graph.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bean/Image.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/bean/InvokePythonProject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db/Neo4jDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+            <state relative-caret-position="285">
+              <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+              <folding>
+                <element signature="e#706#707#0" expanded="true" />
+                <element signature="e#733#734#0" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,7 +157,6 @@
         <option value="$PROJECT_DIR$/web/js/detail.js" />
         <option value="$PROJECT_DIR$/web/js/map.js" />
         <option value="$PROJECT_DIR$/src/bean.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/detail.jsp" />
         <option value="$PROJECT_DIR$/src/bean/GraphSearch.java" />
         <option value="$PROJECT_DIR$/src/bean/Planet.java" />
         <option value="$PROJECT_DIR$/web/css/base.css" />
@@ -153,24 +165,25 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/view/map.jsp" />
         <option value="$PROJECT_DIR$/web/css/map.css" />
         <option value="E:/neo4j-community-3.5.5/conf/neo4j.conf" />
-        <option value="$PROJECT_DIR$/src/controller/DataController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/bean/Search.java" />
-        <option value="$PROJECT_DIR$/web/css/detail.css" />
         <option value="$PROJECT_DIR$/src/bean/SearchResult.java" />
-        <option value="$PROJECT_DIR$/src/bean/Cypther.java" />
         <option value="$PROJECT_DIR$/src/bean/Node.java" />
         <option value="$PROJECT_DIR$/web/css/search.css" />
-        <option value="$PROJECT_DIR$/web/js/base.js" />
         <option value="$PROJECT_DIR$/src/bean/Image.java" />
         <option value="$PROJECT_DIR$/src/controller/ViewController.java" />
-        <option value="$PROJECT_DIR$/web/js/treeNode.js" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" />
         <option value="$PROJECT_DIR$/web/css/index.css" />
         <option value="$PROJECT_DIR$/web/js/Graph.js" />
-        <option value="$PROJECT_DIR$/src/db/Neo4jDB.java" />
+        <option value="$PROJECT_DIR$/src/bean/Cypther.java" />
         <option value="$PROJECT_DIR$/src/bean/InvokePythonProject.java" />
+        <option value="$PROJECT_DIR$/src/db/Neo4jDB.java" />
+        <option value="$PROJECT_DIR$/web/js/base.js" />
+        <option value="$PROJECT_DIR$/web/js/treeNode.js" />
+        <option value="$PROJECT_DIR$/src/controller/DataController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/detail.jsp" />
+        <option value="$PROJECT_DIR$/web/css/detail.css" />
       </list>
     </option>
   </component>
@@ -199,8 +212,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -246,12 +257,6 @@
               <item name="flora" type="b2602c69:ProjectViewProjectNode" />
               <item name="flora" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flora" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flora" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -271,17 +276,19 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557324777127" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557488920020" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -310,7 +317,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.201">
+    <configuration name="Cypther" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bean.Cypther" />
+      <module name="flora" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Neo4jDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="db.Neo4jDB" />
+      <module name="flora" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.0.201" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.201" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <deployment>
         <artifact name="flora:Web exploded">
@@ -378,7 +411,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="flora" />
+          <artifact name="flora:Web exploded" />
         </option>
       </method>
     </configuration>
@@ -445,6 +478,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Cypther" />
+      <item itemvalue="Application.Neo4jDB" />
+      <item itemvalue="Tomcat Server.Tomcat 8.0.201" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Neo4jDB" />
+        <item itemvalue="Application.Cypther" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -474,7 +518,8 @@
       <workItem from="1557195730298" duration="2083000" />
       <workItem from="1557202017230" duration="10073000" />
       <workItem from="1557228942222" duration="927000" />
-      <workItem from="1557305838372" duration="13027000" />
+      <workItem from="1557305838372" duration="27817000" />
+      <workItem from="1557484812741" duration="829000" />
     </task>
     <task id="LOCAL-00001" summary="仓库合并后基本配置以及测试完成">
       <created>1553839332668</created>
@@ -581,11 +626,53 @@
       <option name="project" value="LOCAL" />
       <updated>1557322891694</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="更改">
+      <created>1557324801321</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1557324801321</updated>
+    </task>
+    <task id="LOCAL-00017" summary="更改2">
+      <created>1557373569625</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1557373569625</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Merge branch 'cypher' of https://github.com/04756/BJFUFlora into cypher&#10;&#10;# Conflicts:&#10;#&#9;flora/src/bean/Cypther.java">
+      <created>1557373912510</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1557373912510</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Merge branch 'cypher' of https://github.com/04756/BJFUFlora into cypher&#10;&#10;# Conflicts:&#10;#&#9;flora/src/bean/Cypther.java">
+      <created>1557383749913</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1557383749913</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Merge branch 'cypher' of https://github.com/04756/BJFUFlora into cypher&#10;&#10;# Conflicts:&#10;#&#9;flora/src/bean/InvokePythonProject.java">
+      <created>1557395397551</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1557395397551</updated>
+    </task>
+    <task id="LOCAL-00021" summary="修改前端搜索传参以及后端验证">
+      <created>1557401304581</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1557401304582</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74412000" />
+    <option name="totallyTimeSpent" value="90331000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,25 +687,25 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77040815" visible="true" weight="0.33055976" />
-      <window_info id="Structure" order="1" sideWeight="0.36239782" side_tool="true" weight="0.24130106" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.675" visible="true" weight="0.18532526" />
+      <window_info id="Structure" order="1" sideWeight="0.325" side_tool="true" visible="true" weight="0.18532526" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.22959183" side_tool="true" visible="true" weight="0.33055976" />
+      <window_info id="Favorites" order="5" sideWeight="0.22786885" side_tool="true" weight="0.33055976" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info id="Persistence" order="8" sideWeight="0.32828283" side_tool="true" weight="0.28441754" />
       <window_info anchor="bottom" id="Spring" order="0" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49924356" weight="0.32786885" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.35737705" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3442623" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5015129" side_tool="true" weight="0.38360655" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" weight="0.35737705" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4969743" weight="0.3442623" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5030257" side_tool="true" visible="true" weight="0.3442623" />
       <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48487142" weight="0.3622951" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" sideWeight="0.49848714" weight="0.32786885" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32786885" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49621785" weight="0.32786885" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49546143" weight="0.32786885" />
       <window_info anchor="bottom" id="Application Servers" order="10" sideWeight="0.4977307" weight="0.32459018" />
       <window_info anchor="bottom" id="Message" order="11" />
       <window_info anchor="bottom" id="Find" order="12" weight="0.32786885" />
@@ -668,7 +755,12 @@
     <MESSAGE value="搜索界面前端优化" />
     <MESSAGE value="界面前端优化" />
     <MESSAGE value="python调用" />
-    <option name="LAST_COMMIT_MESSAGE" value="python调用" />
+    <MESSAGE value="更改" />
+    <MESSAGE value="更改2" />
+    <MESSAGE value="Merge branch 'cypher' of https://github.com/04756/BJFUFlora into cypher&#10;&#10;# Conflicts:&#10;#&#9;flora/src/bean/Cypther.java" />
+    <MESSAGE value="Merge branch 'cypher' of https://github.com/04756/BJFUFlora into cypher&#10;&#10;# Conflicts:&#10;#&#9;flora/src/bean/InvokePythonProject.java" />
+    <MESSAGE value="修改前端搜索传参以及后端验证" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改前端搜索传参以及后端验证" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -687,19 +779,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/bean/Cypther.java</url>
-          <line>52</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/bean/Cypther.java</url>
-          <line>218</line>
+          <line>226</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/bean/Cypther.java</url>
+          <line>380</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/DataController.java</url>
+          <line>63</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/controller/DataController.java</url>
-          <line>77</line>
+          <line>79</line>
           <properties class="controller.DataController" method="graphData">
             <option name="EMULATED" value="true" />
           </properties>
@@ -711,47 +815,47 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>arr</expression-string>
+        <expression-string>search.getKeywords().indexOf(&quot;?&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>pyPath.replaceFirst(&quot;/&quot;,&quot;&quot;)</expression-string>
+        <expression-string>search.getKeywords().contains(&quot;??&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>pyPath = this.getClass().getResource(&quot;&quot;).getPath()+&quot;/test.py&quot;</expression-string>
+        <expression-string>search.getKeywords().contains(&quot;?&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>this.getClass().getResource(&quot;&quot;).path</expression-string>
+        <expression-string>s</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>this.getClass().getResource(&quot;&quot;).file</expression-string>
+        <expression-string>new Gson().fromJson(&quot;{\&quot;type\&quot;:\&quot;commonSearch\&quot;,\&quot;keywords\&quot;:\&quot;多枝霉草（新拟）\&quot;}&quot;, Search.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>this.getClass().getResource(&quot;&quot;).file()</expression-string>
+        <expression-string>new Gson().fromJson(&quot;{\&quot;type\&quot;:\&quot;commonSearch\&quot;,\&quot;keyWords\&quot;:\&quot;多枝霉草（新拟）\&quot;}&quot;, Search.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>this.getClass().getResource(&quot;&quot;)</expression-string>
+        <expression-string>new Gson().fromJson(&quot;{\&quot;type\&quot;:\&quot;commonSearch\&quot;,\&quot;keyWords\&quot;:\&quot;多枝霉\&quot;}&quot;, Search.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>this.getClass().getResource()</expression-string>
+        <expression-string>new Gson().fromJson(&quot;{\&quot;type\&quot;:\&quot;commonSearch\&quot;,\&quot;keyWords\&quot;:\&quot;多枝霉草（新拟）\&quot;}&quot;, &quot;utf-8&quot;), Search.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>this.getClass().getDeclaredFields()</expression-string>
+        <expression-string>new Gson().fromJson(new String(s.getBytes(), &quot;utf-8&quot;), Search.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -772,13 +876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" column="32" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -936,13 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -955,48 +1045,10 @@
         <state relative-caret-position="-318" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/SearchResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="15" column="35" selection-start-line="12" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/Cypther.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="266" column="5" lean-forward="true" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,38 +1062,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/GraphSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="98" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/Search.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="285">
+          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding>
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/search.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+        <state relative-caret-position="267">
+          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1087,24 +1124,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/GraphSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/Cypther.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="301" column="9" lean-forward="true" selection-start-line="301" selection-start-column="9" selection-end-line="301" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="300">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db/Neo4jDB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/InvokePythonProject.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-699">
+          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="e#1516#1517#0" expanded="true" />
+            <element signature="e#1568#1569#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/Jython.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1116,7 +1236,7 @@
           <artifact-editor>
             <show-sorted>false</show-sorted>
           </artifact-editor>
-          <last-edited>flora</last-edited>
+          <last-edited>flora:Web exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1188,7 +1308,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>gson-2.0</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
