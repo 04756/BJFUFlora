@@ -7,69 +7,69 @@ import os
 import jieba.posseg as pseg
 
 curPath = os.path.abspath(os.path.realpath(__file__))
-curPath = curPath[:curPath.find("\\AnalyseInput")]
+curPath = curPath[:curPath.find("/AnalyseInput")]
 
 
 frequant = 5000000  #极大词频值
 
 YeWordsDicNames = []
-YeWordsPath = curPath+"\\directory\基于HMM分类\叶子"
+YeWordsPath = curPath+"/directory/基于HMM分类/叶子"
 
 HuaWordsDicNames = []
-HuaWordsPath = curPath+"\\directory\基于HMM分类\花"
+HuaWordsPath = curPath+"/directory/基于HMM分类/花"
 
 GuoWordsDicNames = []
-GuoWordsPath = curPath+"\\directory\基于HMM分类\果"
+GuoWordsPath = curPath+"/directory/基于HMM分类/果"
 
 GJWordsDicNames = []
-GJWordsPath = curPath+"\\directory\基于HMM分类\根茎"
+GJWordsPath = curPath+"/directory/基于HMM分类/根茎"
 
 wordsDicNames = locals()  # 记录txt文本数据
 DirNames = []  # 记录文件夹名
 
 #引入分类词典
-allWordsWeight = pd.read_csv(curPath+'\\devidingDir\ALLkwordsWeight(DF).csv')
+allWordsWeight = pd.read_csv(curPath+'/devidingDir/ALLkwordsWeight(DF).csv')
 allWords = allWordsWeight["word"]
 allWordsList=[]
 for w in allWords:
     s = str(w).replace("\n","")
     allWordsList.append(s)
 #print(allWordsWeight["ye"][allWordsList.index("一年生草本")])
-with open(curPath+"\\devidingDir\\yeDivDir.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/devidingDir/yeDivDir.txt", 'r',encoding='UTF-8') as f:
     yewords = f.readlines()
     Ly = len(yewords)/100
-with open(curPath+"\\devidingDir\\gjDivDir.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/devidingDir/gjDivDir.txt", 'r',encoding='UTF-8') as f:
     gjwords = f.readlines()
     Lgj = len(gjwords)/100
-with open(curPath+"\\devidingDir\\huaDivDir.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/devidingDir/huaDivDir.txt", 'r',encoding='UTF-8') as f:
     huawords = f.readlines()
     Lhua = len(huawords)/100
-with open(curPath+"\\devidingDir\\guoDivDir.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/devidingDir/guoDivDir.txt", 'r',encoding='UTF-8') as f:
     guowords = f.readlines()
     Lguo = len(guowords)/100
-with open("G:\刘宇琦计算机\python\\NLPTest\\directory\\tingyongCN.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/directory/tingyongCN.txt", 'r',encoding='UTF-8') as f:
     tywords = f.readlines()
 
 #引入用户自定义词典
-with open(curPath+"\\directory\\ye.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/directory/ye.txt", 'r',encoding='UTF-8') as f:
     Ayewords = []
     tempAwye = f.readlines()
     for aw in tempAwye:
         aw = (str(aw).split(" "))[0]
         Ayewords.append(aw)
-with open(curPath+"\\directory\\genjin.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/directory/genjin.txt", 'r',encoding='UTF-8') as f:
     Agjwords = []
     tempAwgj = f.readlines()
     for aw in tempAwgj:
         aw = (str(aw).split(" "))[0]
         Agjwords.append(aw)
-with open(curPath+"\\directory\\hua.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/directory/hua.txt", 'r',encoding='UTF-8') as f:
     Ahuawords = []
     tempAwhua = f.readlines()
     for aw in tempAwhua:
         aw = (str(aw).split(" "))[0]
         Ahuawords.append(aw)
-with open(curPath+"\\directory\\guo.txt", 'r',encoding='UTF-8') as f:
+with open(curPath+"/directory/guo.txt", 'r',encoding='UTF-8') as f:
     Aguowords = []
     tempAwguo = f.readlines()
     for aw in tempAwguo:
@@ -79,13 +79,13 @@ with open(curPath+"\\directory\\guo.txt", 'r',encoding='UTF-8') as f:
 
 #根据判断结果修改相应词频，用极大值方法突出专有名词
 def changeAllDirFran(a):
-    with open(curPath+"\\directory\\ye.txt", 'r', encoding='UTF-8') as f:
+    with open(curPath+"/directory/ye.txt", 'r', encoding='UTF-8') as f:
         tempAwye = f.readlines()
-    with open(curPath+"\\directory\\genjin.txt", 'r', encoding='UTF-8') as f:
+    with open(curPath+"/directory/genjin.txt", 'r', encoding='UTF-8') as f:
         tempAwgj = f.readlines()
-    with open(curPath+"\\directory\\hua.txt", 'r', encoding='UTF-8') as f:
+    with open(curPath+"/directory/hua.txt", 'r', encoding='UTF-8') as f:
         tempAwhua = f.readlines()
-    with open(curPath+"\\directory\\guo.txt", 'r', encoding='UTF-8') as f:
+    with open(curPath+"/directory/guo.txt", 'r', encoding='UTF-8') as f:
         tempAwguo = f.readlines()
     AllDirLyqWords = []
     tempAwgjLyq = tempAwgj
@@ -120,7 +120,7 @@ def changeAllDirFran(a):
             aw = str(aw).replace(str(frequant)+" ", str(frequant * 200)+" ")
             guoguo.append(aw)
         AllDirLyqWords = tempAwgjLyq + guoguo + tempAwhuaLyq + tempAwyeLyq
-    with open(curPath+"\\directory\\all.txt", 'w',encoding='UTF-8') as f:
+    with open(curPath+"/directory/all.txt", 'w',encoding='UTF-8') as f:
         f.writelines(list(set(AllDirLyqWords)))
 
 
@@ -281,8 +281,8 @@ def anaylse(dir,wordlist,DicNames):
 def input(path,DicNames):
     dic = {}
     for filename in os.listdir(path):
-        if os.path.isfile(path + "\\" + filename):
-            with open(path + "\\" + filename, 'r', encoding='UTF-8') as f:
+        if os.path.isfile(path + "/" + filename):
+            with open(path + "/" + filename, 'r', encoding='UTF-8') as f:
                 tempcontent = []
                 words = f.readlines()
                 # 去掉转行符
@@ -293,7 +293,7 @@ def input(path,DicNames):
             dic[filename.replace(".txt", "")]=""
         else:
             DirNames.append(filename)
-            dic[filename.replace(".txt", "")] = input(path + "\\" + filename,DicNames)
+            dic[filename.replace(".txt", "")] = input(path + "/" + filename,DicNames)
     return dic
 
 #生成植物和器官关系列表
@@ -361,7 +361,7 @@ def AnalyseInput(Str = ""):
     #完全匹配字符串为最佳匹配放在结果第一行
     resultDir.append(Str)
     #判别语句结果并分词，提取检索要素
-    divideKeyList = analyseScentense(Str, curPath+"\\devidingDir\\allDivDir.txt")
+    divideKeyList = analyseScentense(Str, curPath+"/devidingDir/allDivDir.txt")
 
     yesegment = []
     gjsegment = []
@@ -372,7 +372,7 @@ def AnalyseInput(Str = ""):
         #print(dk)
         if dk == "ye":
             changeAllDirFran("ye")
-            jieba.load_userdict(curPath+"\\directory\\all.txt")
+            jieba.load_userdict(curPath+"/directory/all.txt")
             zxq = "/".join(jieba.cut(Str, HMM=True))
             # print(zxq)
             rel = betterMathWord(zxq).split("/")
@@ -381,7 +381,7 @@ def AnalyseInput(Str = ""):
                     yesegment.append(reli)
         elif dk == "gj":
             changeAllDirFran("gj")
-            jieba.load_userdict(curPath+"\\directory\\all.txt")
+            jieba.load_userdict(curPath+"/directory/all.txt")
             zxq = "/".join(jieba.cut(Str, HMM=True))
             # print(zxq)
             rel = betterMathWord(zxq).split("/")
@@ -391,7 +391,7 @@ def AnalyseInput(Str = ""):
                         gjsegment.append(reli)
         elif dk == "hua":
             changeAllDirFran("hua")
-            jieba.load_userdict(curPath+"\\directory\\all.txt")
+            jieba.load_userdict(curPath+"/directory/all.txt")
             zxq = "/".join(jieba.cut(Str, HMM=True))
             # print(zxq)
             rel = betterMathWord(zxq).split("/")
@@ -423,7 +423,7 @@ def AnalyseInput(Str = ""):
                 resultDir.append(fontWord + "#" + YanseWord + "#" + LaterWord + " - " + "花")
         elif dk == "guo":
             changeAllDirFran("guo")
-            jieba.load_userdict(curPath+"\\directory\\all.txt")
+            jieba.load_userdict(curPath+"/directory/all.txt")
             zxq = "/".join(jieba.cut(Str, HMM=True))
             # print(zxq)
             rel = betterMathWord(zxq).split("/")
@@ -431,7 +431,7 @@ def AnalyseInput(Str = ""):
                 if reli not in tywords and reli in Aguowords:
                     guosegment.append(reli)
         else:
-            jieba.load_userdict(curPath+"\\directory\\all.txt")
+            jieba.load_userdict(curPath+"/directory/all.txt")
             zxq = "/".join(jieba.cut(Str, HMM=True))
             # print(zxq)
             rel = betterMathWord(zxq).split("/")
@@ -455,7 +455,7 @@ def AnalyseInput(Str = ""):
             for item in demo:
                 resultDir.append(item["reference"]+" - "+item["rootName"])
 
-    jieba.load_userdict(curPath+"\\directory\\all.txt")
+    jieba.load_userdict(curPath+"/directory/all.txt")
     lyq = pseg.cut(Str, HMM=True)
     for word, flag in lyq:
         #print(word +"   "+ flag)
@@ -467,7 +467,7 @@ def AnalyseInput(Str = ""):
 if __name__ == '__main__':
     result = []
     count = 0
-    with open(curPath+"\\test.txt","r",encoding="GBK") as f:
+    with open(curPath+"/test.txt","r",encoding="utf-8") as f:
         strs = f.readlines()
     for Str in strs:
         count = count + 1
@@ -475,7 +475,8 @@ if __name__ == '__main__':
         temp = AnalyseInput(Str.replace("\n",""))
         result.append(temp)
         #print(temp)
-    for i in range(0, len(result)):
-        for line in result[i]:
-            print(line)
-        print("\n")
+    with open(curPath+"/result.txt","w") as f:
+        for i in range(0, len(result)):
+            for line in result[i]:
+               f.write(line+"\n")
+            f.write("\n")

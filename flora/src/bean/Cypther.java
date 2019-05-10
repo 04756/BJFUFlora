@@ -103,7 +103,7 @@ public class Cypther {
 //        返回一个TreeNode的数组，js需要小改动
 
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n)-[r:isSubClass]->(m{name:\""+nodename+"\"})return n.name");
+            StatementResult result = session.run("match(n:Untradition)-[r:isSubClass]->(m:Untradition{name:\""+nodename+"\"})return n.name");
             while (result.hasNext()) {
                 Record record = result.next();
                 String son = record.get("n.name").asString();
@@ -161,7 +161,7 @@ public class Cypther {
 //        返回一个TreeNode的数组，js需要小改动
 
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n)-[r:isSubClass]->(m{name:\""+nodename+"\"})return n.name");
+            StatementResult result = session.run("match(n:Tradition)-[r:isSubClass]->(m:Tradition{name:\""+nodename+"\"})return n.name");
             while (result.hasNext()) {
                 Record record = result.next();
                 String son = record.get("n.name").asString();
