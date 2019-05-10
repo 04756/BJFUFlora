@@ -8,16 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/CommonSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/CommonSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/GraphSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/GraphSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/SInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/SInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/Search.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/searchResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/searchResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/treeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/treeNode.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,15 +21,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/base.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1185">
-              <caret line="90" column="18" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bean/SInterface.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,14 +76,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+            <state relative-caret-position="210">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bean.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="54" lean-forward="true" selection-end-line="12" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -299,7 +289,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557503065279" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557503267395" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -536,7 +526,7 @@
       <workItem from="1557228942222" duration="927000" />
       <workItem from="1557305838372" duration="27817000" />
       <workItem from="1557484812741" duration="829000" />
-      <workItem from="1557500910704" duration="2037000" />
+      <workItem from="1557500910704" duration="2329000" />
     </task>
     <task id="LOCAL-00001" summary="仓库合并后基本配置以及测试完成">
       <created>1553839332668</created>
@@ -713,11 +703,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557502969147</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="准备合并cypher分支入master">
+      <created>1557503190907</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1557503190907</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94604000" />
+    <option name="totallyTimeSpent" value="94896000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,8 +729,8 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67317075" visible="true" weight="0.18835099" />
-      <window_info id="Structure" order="1" sideWeight="0.32682925" side_tool="true" visible="true" weight="0.18835099" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6737705" visible="true" weight="0.18835099" />
+      <window_info id="Structure" order="1" sideWeight="0.3262295" side_tool="true" visible="true" weight="0.18835099" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -750,7 +747,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" sideWeight="0.49848714" weight="0.32786885" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32786885" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.494705" visible="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.494705" weight="0.32786885" />
       <window_info anchor="bottom" id="Application Servers" order="10" sideWeight="0.4977307" weight="0.32459018" />
       <window_info anchor="bottom" id="Message" order="11" />
       <window_info anchor="bottom" id="Find" order="12" weight="0.32786885" />
@@ -808,7 +805,8 @@
     <MESSAGE value="添加jython类，功能为调用python文件" />
     <MESSAGE value="前端错误修改" />
     <MESSAGE value="merge oringin/cypher分支新代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge oringin/cypher分支新代码" />
+    <MESSAGE value="准备合并cypher分支入master" />
+    <option name="LAST_COMMIT_MESSAGE" value="准备合并cypher分支入master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -966,13 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="63" lean-forward="true" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1258,11 +1249,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        <state relative-caret-position="210">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="54" lean-forward="true" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
     </entry>
