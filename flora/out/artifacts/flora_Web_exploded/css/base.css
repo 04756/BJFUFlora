@@ -3,7 +3,7 @@
     padding: 0 auto;
 }
 body{
-    background-color: #77cfa2;
+    background-color: #175c39;
 }
 /*页头区域*/
 .header{
@@ -14,16 +14,16 @@ body{
 }
 /*页头导航栏区域*/
 .guid{
-    width: 1200px;
+    width: 1100px;
     height: 100%;
     line-height: 50px;
+    position: relative;
 }
 ul.left-guid, ul.right-guid{
     padding-left: 0px;
 }
 /*头部左导航栏*/
 ul.left-guid{
-    float: left;
 }
 ul.left-guid li{
     margin-right: 30px;
@@ -41,7 +41,9 @@ li > a{
 }
 /*头部有导航栏*/
 .right-guid{
-    float: right;
+    top: 0px;
+    right: 50px;
+    position: absolute;
 }
 ul.right-guid li{
     display: inline-block;
@@ -52,7 +54,7 @@ ul.right-guid li{
     -ms-transform: scale(1, 1.2);
 }
 .middle{
-    width: 1200px;
+    width: 1100px;
     margin-top: 40px;
     background-color: white;
 }

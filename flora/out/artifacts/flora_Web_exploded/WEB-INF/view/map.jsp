@@ -18,6 +18,10 @@
 
 <div class="middle">
     <div class="left">
+        <select onchange="classifyType(this.value)">
+            <option value="1">生物分类法</option>
+            <option value="2">新维度分类</option>
+        </select>
         <ul class="tree">
 
         </ul>
@@ -28,11 +32,13 @@
     </div>
 </div>
 
+<script>
 
+</script>
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/base.js"></script>
-<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/map.js" defer="defer"></script>
 <script type="text/javascript" src="js/NodeLink.js"></script>
 <script type="text/javascript" src="js/treeNode.js"></script>
 </html>

@@ -11,15 +11,38 @@ public class Planet {
     private String cName;//植物中文名
     private String eName;//植物英文名
     private String content;//植物介绍内容
+    private List race;
+    private List imglist;
+
+
 
     public Planet(){
-
+        race = new ArrayList();
+        imglist = new ArrayList();
     }
 
     public Planet(String cName, String eName, String content) {
+        race = new ArrayList();
+        imglist = new ArrayList();
         this.cName = cName;
         this.eName = eName;
         this.content = content;
+    }
+
+    public List getRace() {
+        return race;
+    }
+
+    public void setRace(List race) {
+        this.race = race;
+    }
+
+    public List getImglist() {
+        return imglist;
+    }
+
+    public void setImglist(List imglist) {
+        this.imglist = imglist;
     }
 
     public String getcName() {

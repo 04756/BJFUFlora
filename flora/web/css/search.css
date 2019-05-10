@@ -75,13 +75,45 @@ ul.result{
 	margin-top: 15px;
 }
 ul.result li{
+    width: 130px;
 	display: inline-block;
-	margin-right: 15px;
+	margin-right: 20px;
+    padding-bottom: 10px;
 }
 ul.result li a{
+    width: 120px;
+    height: 30px;
 	text-decoration: underline;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: block;
 }
 ul.result li a:hover{
 	color: blue;
 	text-decoration: underline;
+}
+ul.result > li > img {
+    width: 100px;
+    display: block;
+    height: 100px;
+}
+#more{
+    width: 180px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 25px;
+    background-color: transparent;
+    cursor: pointer;
+}
+#over{
+    width: 220px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
 }

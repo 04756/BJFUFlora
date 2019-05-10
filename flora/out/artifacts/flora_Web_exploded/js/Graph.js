@@ -106,8 +106,8 @@ Chart.prototype.drawing = function(nodes, lines){
     f_link = simulation.force("link")
         .links(lines);
     f_link.distance(function(d){//指定连线长度
-        var distance = 120;
-        distance += distance*Math.random()*1;
+        var distance = 100;
+        distance += distance*Math.random()*5 + 50;
         return distance;
     });
 
@@ -120,13 +120,11 @@ Chart.prototype.drawing = function(nodes, lines){
             .attr("x2", function(d) { return d.target.x; })
             .attr("y2", function(d) { return d.target.y; });
         link.select("text").attr('x', function(d){
-            var x1 = d.source.x,
-                x2 = d.target.x,
-                halfX  = x1-(x1-x2)/2,
-                x3 = x1-(x1-halfX)/2;
+            var halfX  = d.source.x-(d.source.x-d.target.x)/2;
+                // x3 = x1-(x1-halfX)/2;
 
             //线段3分之-处
-            return x3;
+            return halfX;
             //return d.source.x-(d.source.x-d.target.x)/2;
         })
             .attr('y',function(d){
@@ -206,12 +204,12 @@ Chart.prototype.drawing = function(nodes, lines){
     Chart.prototype.init = function(){
 
         var _this = this;
-        if(typeStr(_this.data)=='[object string]'){
-            $.getJSON(_this.data,"",function(data){
-                // if(error) throw error ;
-                _this.data = data;
-                _this.drawing(_this.data.nodes,_this.data.lines);
-            });
-        }
-
-}
+        // if(typeStr(_this.data)=='[object string]'){
+        //     $.getJSON(_this.data,"",function(data){
+        //         // if(error) throw error ;
+        //         _this.data = data;
+        //
+        //     });
+        // }
+        _this.drawing(_this.data[0],_this.data[1]);
+    }

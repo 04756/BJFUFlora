@@ -13,7 +13,7 @@
 	<div class="middle">
 		<div class="search-block">
 			<div class="search-type">
-				<p>普通搜索</p>
+				<p class="select">普通搜索</p>
 				<img src="images/split.png">
 				<p>概念搜索</p>
 			</div>
@@ -21,6 +21,10 @@
 			<img src="images/searchbar.png" class="search-bar">
 		</div>
 		<div class="folder">
+            <select onchange="classifyType(this.value)">
+                <option value="1">生物分类法</option>
+                <option value="2">新维度分类</option>
+            </select>
             <ul class="tree">
 
             </ul>
@@ -29,12 +33,9 @@
 			<p>搜索结果:</p>
 			<hr style="border: 0.5px solid #c0baba;">
 			<ul class="result">
-				<!--<li><a href="">ssdsbdhn</a></li>-->
-				<!--<li><a href="">ssdsbdhn</a></li>-->
-				<!--<li><a href="">ssdsbdhn</a></li>-->
-				<!--<li><a href="">ssdsbdhn</a></li>-->
-				<!--<li><a href="">ssdsbdhn</a></li>-->
 			</ul>
+            <div id="more">获取更多</div>
+            <div id="over">无更多显示啦~</div>
 		</div>
 	</div>
 	
