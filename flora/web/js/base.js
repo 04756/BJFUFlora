@@ -57,10 +57,10 @@ function getResultData(temp) {
             }
             if(data.length == 0 && $(".result").children("li").length == 0) {
                 $("ul.result").append("无搜索结果......");
-                $("#more").hidden();
+                $("#more").hide();
             }
             else if(data.length == 0){
-                $("#more").hidden();
+                $("#more").hide();
                 $("#over").show();
             }
         },

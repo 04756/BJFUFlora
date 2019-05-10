@@ -41,7 +41,7 @@ public class Search {
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
 
         SInterface s = (SInterface) context.getBean(type);
-        return s.search(keywords);
+        return s.search(keywords, page);
     }
 
 }

@@ -12,7 +12,7 @@ import java.util.List;
 public class GraphSearch implements SInterface{
 
     @Override
-    public List<SearchResult> search(String keyWords){
+    public List<SearchResult> search(String keyWords, int page){
 //        return null;
         Cypther cypther=new Cypther();
         try {
