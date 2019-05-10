@@ -40,7 +40,7 @@ $(function(){
             $("ul.result").empty();
             var temp = {
                 type : "commonSearch",
-                keyWords : $(this).text()
+                keywords : $(this).text()
             }
             getResultData(temp);
         });
