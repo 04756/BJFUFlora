@@ -99,3 +99,21 @@ ul.result > li > img {
     display: block;
     height: 100px;
 }
+#more{
+    width: 180px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 25px;
+    background-color: transparent;
+    cursor: pointer;
+}
+#over{
+    width: 220px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}

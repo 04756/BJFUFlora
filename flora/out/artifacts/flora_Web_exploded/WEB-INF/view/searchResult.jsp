@@ -33,12 +33,9 @@
 			<p>搜索结果:</p>
 			<hr style="border: 0.5px solid #c0baba;">
 			<ul class="result">
-				<!--<li><a href="">ssdsbdhn</a></li>-->
-				<!--<li><a href="">ssdsbdhn</a></li>-->
-				<!--<li><a href="">ssdsbdhn</a></li>-->
-				<!--<li><a href="">ssdsbdhn</a></li>-->
-				<!--<li><a href="">ssdsbdhn</a></li>-->
 			</ul>
+            <div id="more">获取更多</div>
+            <div id="over">无更多显示啦~</div>
 		</div>
 	</div>
 	
