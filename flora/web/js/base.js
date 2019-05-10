@@ -59,7 +59,7 @@ function getResultData(temp) {
                 $("ul.result").append("无搜索结果......");
                 $("#more").hide();
             }
-            else if(data.length == 0){
+            else if(data.length <20 ){
                 $("#more").hide();
                 $("#over").show();
             }
