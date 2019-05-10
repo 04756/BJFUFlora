@@ -5,10 +5,7 @@ import org.neo4j.driver.v1.Record;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,26 +14,44 @@ public class Cypther {
     private static Neo4jDB db=new Neo4jDB();
 
     static{
-        Neo4jDB.connectGraphDB();
+        try{
+            Neo4jDB.connectGraphDB();
+        }catch (Exception e){
+            File writefile2=new File("/usr/local/tomcat/apache-tomcat-8.5.40/webapps/flora/WEB-INF/classes/bean/CypherStaticmessage.txt");
+            try{
+                FileWriter tofile2=new FileWriter(writefile2);
+                BufferedWriter out2=new BufferedWriter(tofile2);
+                out2.write(e.getMessage());
+                out2.flush();
+                out2.close();
+                tofile2.close();
+            }catch (Exception e2){
+                e2.printStackTrace();
+            }
+        }
+
     }
 
     //返回传统生物学分类的根节点
     public static List racetraditionalData(){
         long startTime = System.currentTimeMillis();
         List arr = new ArrayList();
-//        返回一个TreeNode的数组，js需要小改动
-        try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n:Tradition) where apoc.node.degree.out(n,\"isSubClass\")=0 return n.name");
-            while (result.hasNext()) {
-                Record record = result.next();
-                String son = record.get("n.name").asString();
-                TreeNode t=new TreeNode(son,son,son);
-                arr.add(t);
-                System.out.println(son);
-            }
-        }
-        long endTime = System.currentTimeMillis();    //获取结束时间
-        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+////        返回一个TreeNode的数组，js需要小改动
+//        try (Session session = db.getDriver().session()) {
+//            StatementResult result = session.run("match(n:Tradition) where apoc.node.degree.out(n,\"isSubClass\")=0 return n.name");
+//            while (result.hasNext()) {
+//                Record record = result.next();
+//                String son = record.get("n.name").asString();
+//                TreeNode t=new TreeNode(son,son,son);
+//                arr.add(t);
+//                System.out.println(son);
+//            }
+//        }
+//        long endTime = System.currentTimeMillis();    //获取结束时间
+//        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+        arr.add(new TreeNode("被子植物门","被子植物门","被子植物门"));
+        arr.add(new TreeNode("裸子植物门","裸子植物门","裸子植物门"));
+        arr.add(new TreeNode("蕨类植物门","蕨类植物门","蕨类植物门"));
         return arr;
     }
 
@@ -62,17 +77,21 @@ public class Cypther {
         long startTime = System.currentTimeMillis();
         List arr = new ArrayList();
 //        返回一个TreeNode的数组，js需要小改动
-        try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n:Untradition) where apoc.node.degree.out(n,\"isSubClass\")=0 return n.name");
-            while (result.hasNext()) {
-                Record record = result.next();
-                String son = record.get("n.name").asString();
-                TreeNode t=new TreeNode(son,son,son);
-                arr.add(t);
-            }
-        }
-        long endTime = System.currentTimeMillis();    //获取结束时间
-        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+//        try (Session session = db.getDriver().session()) {
+//            StatementResult result = session.run("match(n:Untradition) where apoc.node.degree.out(n,\"isSubClass\")=0 return n.name");
+//            while (result.hasNext()) {
+//                Record record = result.next();
+//                String son = record.get("n.name").asString();
+//                TreeNode t=new TreeNode(son,son,son);
+//                arr.add(t);
+//            }
+//        }
+//        long endTime = System.currentTimeMillis();    //获取结束时间
+//        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+        arr.add(new TreeNode("花","花","花"));
+        arr.add(new TreeNode("叶","叶","叶"));
+        arr.add(new TreeNode("果","果","果"));
+        arr.add(new TreeNode("根茎","根茎","根茎"));
         return arr;
     }
 
@@ -118,7 +137,7 @@ public class Cypther {
                 String reference=keyword[0];
                 reference=reference.replace("或","|");
                 try (Session session = db.getDriver().session()) {
-                    StatementResult result = session.run("match(n:Plant)-[r]->(m:Untradition{name:\""+node+"\"}) where r.reference=\""+reference+"\" and apoc.node.degree.out(n,\"located\")>0 return distinct n.name");
+                    StatementResult result = session.run("match(n:Plant)-[r]->(m:Untradition{name:\""+node+"\"}) where r.reference=\""+reference+"\"  return distinct n.name");
                     while (result.hasNext()) {
                         Record record = result.next();
                         String son = record.get("n.name").asString();
@@ -154,7 +173,7 @@ public class Cypther {
         if(arr.isEmpty()){
             System.out.println("是传统叶子节点");
             try (Session session = db.getDriver().session()) {
-                StatementResult result = session.run("match(n:Plant)-[r:traditionalType]->(m:Tradition{name:\""+nodename+"\"}) where apoc.node.degree.out(n,\"located\")>0 return n.name");
+                StatementResult result = session.run("match(n:Plant)-[r:traditionalType]->(m:Tradition{name:\""+nodename+"\"})  return n.name");
                 while (result.hasNext()) {
                     Record record = result.next();
                     String son = record.get("n.name").asString();
@@ -187,6 +206,8 @@ public class Cypther {
                 Line line=new Line();
                 line.setSource(node1);
                 line.setTarget(node2);
+                if(text.equals("null"))
+                    text="位于";
                 line.setText(text);
                 lines.add(line);
                 Node node=new Node(node2);
@@ -279,25 +300,26 @@ public class Cypther {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-        SyncPipe out = new SyncPipe(null, null);
-        String pyPath = this.getClass().getResource("").getPath()+"/AnalyseInput.py";
-        pyPath = pyPath.replaceFirst("/","");
-        String result = new InvokePythonProject().invokePython(pyPath,"", out);
-
-
-        File writefile2=new File(this.getClass().getResource("").getPath()+"result22.txt");
+        //调用python
+        Jython jython=new Jython();
+        jython.RunPython();
+        //读取result
+        String result="";
+        File readfile=new File(this.getClass().getResource("").getPath()+"result.txt");
         try{
-            FileWriter tofile2=new FileWriter(writefile2);
-            BufferedWriter out2=new BufferedWriter(tofile2);
-            out2.write(result);
-            if(result.contains("\r\n"))
-                out2.write("true");
-            else
-                out2.write("false");
-            out2.close();
-            tofile2.close();
-        }catch (Exception e){
+            FileReader fileReader=new FileReader(readfile);
+            BufferedReader in=new BufferedReader(fileReader);
+            String s="";
+
+            while((s=in.readLine())!=null){
+                result+=s+"\r\n";
+            }
+            in.close();
+            fileReader.close();
+
+            System.out.println(result);
+
+        }catch(IOException e){
             e.printStackTrace();
         }
 
@@ -338,9 +360,6 @@ public class Cypther {
 
                             }
                             return temp;
-                        }else{//没找到
-                            temp.add(new SearchResult("无相应结果", "",""));
-                            return temp;
                         }
 
                     }
@@ -370,10 +389,7 @@ public class Cypther {
                                 temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
 
                             }
-                            return temp;
-                        }else{//没找到
-                            temp.add(new SearchResult("无相应结果", "",""));
-                            return temp;
+
                         }
                     }
                 }
@@ -382,20 +398,12 @@ public class Cypther {
         }catch (Exception e)
         {
             e.printStackTrace();
-            temp.add(new SearchResult("无相应结果", "",""));
-            return temp;
         }
-        temp.add(new SearchResult("无相应结果", "",""));
         return temp;
     }
 
     public static void main(String[] arge){
-            Cypther cypther=new Cypther();
-        try {
-            cypther.graphSearch("矩圆形的叶子");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        graphData("伞花野丁香（新拟）");
 
     }
 }
