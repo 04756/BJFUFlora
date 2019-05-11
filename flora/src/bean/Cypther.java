@@ -111,38 +111,48 @@ public class Cypther {
                 System.out.println(son+" "+nodename);
             }
         }
-        String str="单复叶,叶基,叶尖,叶序,叶片形状,叶缘,叶脉序,叶裂,叶质地,托叶,毛,颜色,复果,聚合果,肉质果,裂果,闭果,子房着生,排列方式,胎座,胚珠,花冠形态,花序,花药,雄蕊,雌蕊,木本植物,茎,草本植物,藤本植物";
+        String str="单复叶,叶基,叶尖,叶序,叶片形状,叶缘,叶脉序,叶裂,叶质地,托叶,毛,花颜色,复果,聚合果,肉质果,裂果,闭果,子房着生,排列方式,胎座,胚珠,花冠形态,花序,花药,雄蕊,雌蕊,木本植物,茎,草本植物,藤本植物";
 
         if(arr.isEmpty()){
-            if(str.contains(nodename)){
+
+
+            if (nodename.equals("花颜色")) {
+
+                String color="红色,黄色,白色,绿色,青色,蓝色,紫色,褐色,灰色,粉色,黑色,棕色";
+                String[] colors=color.split(",");
+                for(int i=0;i<colors.length;i++){
+
+                    String son=colors[i]+"的"+"花颜色";
+                    TreeNode t = new TreeNode(son, son, nodename);
+                    arr.add(t);
+                }
+            } else if (str.contains(nodename)) {
                 System.out.println("是非传统叶子节点,返回形状");
                 try (Session session = db.getDriver().session()) {
-                    StatementResult result = session.run("match(:Plant)-[r]->(m:Untradition{name:\""+nodename+"\"}) return distinct r.reference");
+                    StatementResult result = session.run("match(:Plant)-[r]->(m:Untradition{name:\"" + nodename + "\"}) return distinct r.reference");
                     while (result.hasNext()) {
                         Record record = result.next();
                         String son = record.get("r.reference").asString();
-                        son+="的"+nodename;
-                        son=son.replace("|","或");
-                        TreeNode t=new TreeNode(son,son,nodename);
+                        son += "的" + nodename;
+                        son = son.replace("|", "或");
+                        TreeNode t = new TreeNode(son, son, nodename);
                         arr.add(t);
-                        System.out.println(son+" "+nodename);
+                        System.out.println(son + " " + nodename);
                     }
                 }
-            }
-            else{
+            } else {
                 System.out.println("是形状，返回植物");
-                String[] keyword=nodename.split("的");
-                String node=keyword[keyword.length-1];
-                String reference=keyword[0];
-                reference=reference.replace("或","|");
+                String[] keyword = nodename.split("的");
+                String node = keyword[keyword.length - 1];
+                String reference = keyword[0];
+                reference = reference.replace("或", "|");
                 try (Session session = db.getDriver().session()) {
-                    StatementResult result = session.run("match(n:Plant)-[r]->(m:Untradition{name:\""+node+"\"}) where r.reference=\""+reference+"\"  return distinct n.name");
+                    StatementResult result = session.run("match(n:Plant)-[r]->(m:Untradition{name:\"" + node + "\"}) where r.reference contains \"" + reference + "\"  return distinct n.name");
                     while (result.hasNext()) {
                         Record record = result.next();
                         String son = record.get("n.name").asString();
-                        TreeNode t=new TreeNode(son,son,nodename);
+                        TreeNode t = new TreeNode(son, son, nodename);
                         arr.add(t);
-                        System.out.println(son+" "+nodename);
                     }
                 }
             }
