@@ -6,8 +6,7 @@ import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Cypther {
 
@@ -196,26 +195,78 @@ public class Cypther {
         List graphresult = new ArrayList();
 //        返回一个TreeNode的数组，js需要小改动
         String node1="";
+        String node2="";
+        String text="";
         try (Session session = db.getDriver().session()) {
             StatementResult result = session.run("match(n:Plant{name:\""+nodename+"\"})-[r]->(m) return n.indexname,r.reference,m.name");
             while (result.hasNext()) {
                 Record record = result.next();
-                 node1= record.get("n.indexname").asString();
-                String node2=record.get("m.name").asString();
-                String text=record.get("r.reference").asString();
+                node1= record.get("n.indexname").asString();
+                node2=record.get("m.name").asString();
+                text=record.get("r.reference").asString();
+                if(text.equals("null"))
+                    text="位于";
                 Line line=new Line();
                 line.setSource(node1);
                 line.setTarget(node2);
-                if(text.equals("null"))
-                    text="位于";
                 line.setText(text);
-                lines.add(line);
                 Node node=new Node(node2);
+                //如果包含一样的节点，就不往里加节点和边
+                int flag=0;
+                for(int j=0;j<nodes.size();j++){
+                    Node tempnode=(Node)nodes.get(j);
+                    if(tempnode.getName().equals(node2)){
+                        for(int i=0;i<lines.size();i++){
+                            Line templine=(Line)lines.get(i);
+                            if(templine.getTarget().equals(node2))
+                            {
+                                String nowtext=templine.getText();
+                                if(nowtext.contains(text))
+                                    break;
+                                templine.setText(nowtext+"|"+text);
+                                lines.remove(i);
+                                lines.add(templine);
+
+                            }
+
+                        }
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==1)
+                    continue;
+                lines.add(line);
                 nodes.add(node);
 
             }
             Node plant=new Node(node1);
-            nodes.add(plant);
+            int flag=0;
+            for(int j=0;j<nodes.size();j++){
+                Node tempnode=(Node)nodes.get(j);
+                if(tempnode.getName().equals(node1)){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0)
+                nodes.add(plant);
+
+            for(int i=0;i<lines.size();i++){
+                Line temp=(Line)lines.get(i);
+                String oldtext=temp.getText();
+                oldtext=oldtext.replace("|","#");
+                String[] unique=oldtext.split("#");
+                unique=Cypther.array_unique(unique);
+                String afterunique="";
+                for(int j=0;j<unique.length;j++){
+                   afterunique +=unique[j]+"|";
+                }
+                temp.setText(afterunique);
+                lines.remove(i);
+                lines.add(i,temp);
+            }
+
             graphresult.add(nodes);
             graphresult.add(lines);
             return graphresult;
@@ -225,13 +276,13 @@ public class Cypther {
         return graphresult;
     }
 
-    public static List<SearchResult> commonsearch(String keyword){
+    public static List<SearchResult> commonsearch(String keyword,int page){
         long startTime = System.currentTimeMillis();
 
         List<SearchResult> temp = new ArrayList<SearchResult>();
 //        植物名字的数组
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n:Plant) where n.name contains \"" + keyword + "\" return n.name,n.pic1 limit 50");
+            StatementResult result = session.run("match(n:Plant) where n.name contains \"" + keyword + "\" return n.name,n.pic1 skip "+page*20+" limit 20");
             while (result.hasNext()) {
                 Record record = result.next();
                 String plantname = record.get("n.name").asString();
@@ -287,7 +338,7 @@ public class Cypther {
         return planet;
     }
 
-    public List graphSearch(String keyword) throws IOException {
+    public List graphSearch(String keyword,int page) throws IOException {
 
         //在此处调用python 分析keyword
         File writefile=new File(this.getClass().getResource("").getPath()+"test.txt");
@@ -349,7 +400,7 @@ public class Cypther {
                             }
                         }
 
-                        cypher+=" return n.name,n.pic1 limit 50";
+                        cypher+=" return n.name,n.pic1 skip "+page*20+" limit 20";
                         StatementResult cypherresult=session.run(cypher);
                         if(cypherresult.hasNext()){
                             while(cypherresult.hasNext()){
@@ -372,13 +423,13 @@ public class Cypther {
                         String[] str2=results[i].split(" - ");
                         String cypher="";
                         if(results[i].contains("叶"))
-                            cypher="match(n:Plant)-[r:hasLeave]->(m:Leave) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 limit 50";
+                            cypher="match(n:Plant)-[r:hasLeave]->(m:Leave) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" skip "+page*20+" limit 20";
                         if(results[i].contains("花"))
-                            cypher="match(n:Plant)-[r:hasFlower]->(m:Flower) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 limit 50";
+                            cypher="match(n:Plant)-[r:hasFlower]->(m:Flower) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
                         if(results[i].contains("果"))
-                            cypher="match(n:Plant)-[r:hasGuo]->(m:Guo) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 limit 50";
+                            cypher="match(n:Plant)-[r:hasGuo]->(m:Guo) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
                         if(results[i].contains("根茎"))
-                            cypher="match(n:Plant)-[r:hasRhizome]->(m:Rhizome) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 limit 50";
+                            cypher="match(n:Plant)-[r:hasRhizome]->(m:Rhizome) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
 
                         StatementResult cypherresult=session.run(cypher);
                         if(cypherresult.hasNext()){
@@ -401,6 +452,18 @@ public class Cypther {
         }
         return temp;
     }
+
+    public static String[] array_unique(String[] ss) {
+        // array_unique
+        List<String> list =new ArrayList<String>();
+        for(String s:ss){
+            if(!list.contains(s))			//或者list.indexOf(s)!=-1
+                list.add(s);
+        }
+        return list.toArray(new String[list.size()]);
+    }
+
+
 
     public static void main(String[] arge){
         graphData("伞花野丁香（新拟）");

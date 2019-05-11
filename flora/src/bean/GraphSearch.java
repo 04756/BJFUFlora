@@ -16,7 +16,7 @@ public class GraphSearch implements SInterface{
 //        return null;
         Cypther cypther=new Cypther();
         try {
-            return cypther.graphSearch(keyWords);
+            return cypther.graphSearch(keyWords,page);
         } catch (IOException e) {
             e.printStackTrace();
         }

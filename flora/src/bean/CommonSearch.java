@@ -10,7 +10,7 @@ import java.util.List;
 public class CommonSearch implements SInterface{
     @Override
     public List<SearchResult> search(String keyWords, int page) {
-       return Cypther.commonsearch(keyWords);
+       return Cypther.commonsearch(keyWords, page);
     }
 
 }
