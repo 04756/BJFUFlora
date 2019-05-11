@@ -208,7 +208,7 @@ public class Cypther {
         String node2="";
         String text="";
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n:Plant{name:\""+nodename+"\"})-[r]->(m) return n.indexname,r.reference,m.name");
+            StatementResult result = session.run("match(n:Plant)-[r]->(m) where n.name contains \""+nodename+"\" return n.indexname,r.reference,m.name");
             while (result.hasNext()) {
                 Record record = result.next();
                 node1= record.get("n.indexname").asString();
@@ -312,7 +312,7 @@ public class Cypther {
         Planet planet=new Planet();
         planet.setcName(name);
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n:Plant{name:\""+name+"\"})-[r]->(m:Tradition) return m.name,n.engname,n.describe,n.pic1,n.pic2,n.pic3,n.pic4");
+            StatementResult result = session.run("match(n:Plant)-[r]->(m:Tradition) where n.name contains \""+name+"\" return m.name,n.engname,n.describe,n.pic1,n.pic2,n.pic3,n.pic4");
             if (result.hasNext()) {
                 Record record = result.next();
                 String race=record.get("m.name").asString();
