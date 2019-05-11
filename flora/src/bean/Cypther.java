@@ -362,8 +362,8 @@ public class Cypther {
             e.printStackTrace();
         }
         //调用python
-        //Jython jython=new Jython();
-       // jython.RunPython();
+        Jython jython=new Jython();
+        jython.RunPython();
         //读取result
         String result="";
         File readfile=new File(this.getClass().getResource("").getPath()+"result.txt");
