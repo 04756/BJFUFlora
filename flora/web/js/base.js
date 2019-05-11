@@ -83,12 +83,12 @@ function searchTurnTo(key, type) {
 }
 
 function searchAction(clean) {
+    if(clean == 1)
+        $("ul.result").empty();
     var temp = {
         type : $(".select").text()=="普通搜索"?'commonSearch':'graphSearch',
         keywords :$("input[name='search-bar']").val(),
         page : parseInt($(".result").children("li").length / 20)
     }
-    if(clean == 1)
-        $("ul.result").empty();
     getResultData(temp);
 }
