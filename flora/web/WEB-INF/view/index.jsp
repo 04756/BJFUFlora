@@ -22,7 +22,7 @@
 			<li>热门搜索:</li>
 			<a href="planet/伞花六道木（中国高等植物图鉴）图版32:6-7"><li>伞花六道木</li></a>
 			<a href="planet/古城玫瑰树（新拟）"><li>古城玫瑰树</li></a>
-            <a href="planet/玫瑰茄（岭南农刊）山茄子（广州）图版22：5-8）"><li>玫瑰茄</li></a>
+            <a href="planet/玫瑰茄（岭南农刊）山茄子（广州）图版22：5-8"><li>玫瑰茄</li></a>
 		</ul>
 		<img src="images/bac.png" class="search-logo">
 	</div>
