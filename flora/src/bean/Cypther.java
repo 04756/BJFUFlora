@@ -362,8 +362,8 @@ public class Cypther {
             e.printStackTrace();
         }
         //调用python
-        Jython jython=new Jython();
-        jython.RunPython();
+        //Jython jython=new Jython();
+       // jython.RunPython();
         //读取result
         String result="";
         File readfile=new File(this.getClass().getResource("").getPath()+"result.txt");
@@ -433,7 +433,7 @@ public class Cypther {
                         String[] str2=results[i].split(" - ");
                         String cypher="";
                         if(results[i].contains("叶"))
-                            cypher="match(n:Plant)-[r:hasLeave]->(m:Leave) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" skip "+page*20+" limit 20";
+                            cypher="match(n:Plant)-[r:hasLeave]->(m:Leave) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
                         if(results[i].contains("花"))
                             cypher="match(n:Plant)-[r:hasFlower]->(m:Flower) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
                         if(results[i].contains("果"))
