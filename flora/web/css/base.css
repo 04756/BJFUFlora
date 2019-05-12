@@ -115,6 +115,8 @@ span{
 ul.tree{
     padding-left: 0px;
     list-style: none;
+    overflow: scroll;
+    height: 100%;
 }
 ul.sub-tree{
     list-style: none;
@@ -126,9 +128,14 @@ ul.tree > li{
     padding-bottom : 10px;
 }
 ul.tree > li, ul.sub-tree > li{
+    /*width: 180px;*/
     vertical-align: middle;
     line-height: 26px;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
 }
 .node,.leaf{
     display: inline-block;

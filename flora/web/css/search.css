@@ -38,8 +38,9 @@ input[name='search-bar']{
 	margin-top: 60px;
 	margin-left: 80px;
 	/*background-color: black;*/
-	overflow: scroll;
+	/*overflow: scroll;*/
 	display: inline-block;
+    overflow: hidden;
 }
 .folder > select{
     width: 100%;
@@ -87,7 +88,6 @@ ul.result li a{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
     display: block;
 }
 ul.result li a:hover{

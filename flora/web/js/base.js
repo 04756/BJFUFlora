@@ -83,11 +83,14 @@ function searchTurnTo(key, type) {
 }
 
 function searchAction(clean) {
-    if(clean == 1)
+    if(clean == 1) {
         $("ul.result").empty();
+        $("#more").show();
+        $("#over").hide();
+    }
     var temp = {
-        type : $(".select").text()=="普通搜索"?'commonSearch':'graphSearch',
-        keywords :$("input[name='search-bar']").val(),
+        type : getUrlParam("type") == null ? $(".select").text()=="普通搜索"?'commonSearch':'graphSearch' : getUrlParam("type"),
+        keywords :$("input[name='search-bar']").val() == ""? getUrlParam("keyWords") : $("input[name='search-bar']").val(),
         page : parseInt($(".result").children("li").length / 20)
     }
     getResultData(temp);
