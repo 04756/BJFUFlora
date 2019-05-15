@@ -362,8 +362,8 @@ public class Cypther {
             e.printStackTrace();
         }
         //调用python
-        Jython jython=new Jython();
-        jython.RunPython();
+        //Jython jython=new Jython();
+        //jython.RunPython();
         //读取result
         String result="";
         File readfile=new File(this.getClass().getResource("").getPath()+"result.txt");
@@ -452,6 +452,54 @@ public class Cypther {
                             }
 
                         }
+                    }
+                }
+                if(temp.isEmpty()){
+
+                    String cypher="match(n:Plant)-[r]->(m:Untradition) where";
+                    for(int i=0;i<results.length;i++){
+                        if(results[i].contains("None")){
+                            String[] str2=results[i].split(" - ");
+                            if(str2[0].contains("叶")) {
+                                str2[0] = "";
+                                cypher=cypher.replace("Untradition","Leave");
+                                cypher=cypher.replace("[r]","[r:hasLeave]");
+                            }
+                            if(str2[0].contains("果")){
+                                str2[0]="";
+                                cypher=cypher.replace("Untradition","Guo");
+                                cypher=cypher.replace("[r]","[r:hasGuo]");
+                            }
+
+                            if(str2[0].contains("根茎")){
+                                str2[0]="";
+                                cypher=cypher.replace("Untradition","Rhizome");
+                                cypher=cypher.replace("[r]","[r:hasRhizome]");
+                            }
+
+                            if(str2[0].contains("花")){
+                                str2[0]="";
+                                cypher=cypher.replace("Untradition","Flower");
+                                cypher=cypher.replace("[r]","[r:hasFlower]");
+                            }
+
+
+                            if(cypher.contains("contains")&&!str2[0].equals(""))
+                                cypher+=" and r.reference contains \""+str2[0]+"\"";
+                            else
+                                if(!str2[0].equals(""))
+                                     cypher+=" r.reference contains \""+str2[0]+"\"";
+                        }
+                    }
+                    cypher+=" return n.name,n.pic1 skip "+page*20+" limit 20";
+
+                    StatementResult cypherresult=session.run(cypher);
+                    while(cypherresult.hasNext()){
+                        Record record=cypherresult.next();
+                        String plantname = record.get("n.name").asString();
+                        String imglink = record.get("n.pic1").asString();
+                        temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
+
                     }
                 }
 
