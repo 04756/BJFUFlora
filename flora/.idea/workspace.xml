@@ -70,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+            <state relative-caret-position="105">
+              <caret line="117" selection-start-line="117" selection-end-line="117" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -273,7 +273,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557988050204" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557988176154" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -514,7 +514,7 @@
       <workItem from="1557503437142" duration="1284000" />
       <workItem from="1557582490616" duration="1491000" />
       <workItem from="1557641817773" duration="3151000" />
-      <workItem from="1557984301986" duration="3652000" />
+      <workItem from="1557984301986" duration="3766000" />
     </task>
     <task id="LOCAL-00001" summary="仓库合并后基本配置以及测试完成">
       <created>1553839332668</created>
@@ -726,11 +726,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557987881728</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="前端bug修改，解决左侧层级表双重滑动条">
+      <created>1557988077186</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1557988077186</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104474000" />
+    <option name="totallyTimeSpent" value="104588000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -743,6 +750,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6658537" visible="true" weight="0.20045386" />
       <window_info id="Structure" order="1" sideWeight="0.33414635" side_tool="true" visible="true" weight="0.20045386" />
@@ -798,7 +806,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加程序注释" />
     <MESSAGE value="完善接口以及说明" />
     <MESSAGE value="更改部分treenode.js以及增加一个Data接口用于分批获取层级数据" />
     <MESSAGE value="修改层级表下拉样式效果错误" />
@@ -823,7 +830,8 @@
     <MESSAGE value="前端bug修改，请检查是否缺少某些文件" />
     <MESSAGE value="前端bug修改，解决进入搜索页面二次搜索无法搜索问题" />
     <MESSAGE value="前端bug修改，解决左侧层级表超出字符省略显示错误问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端bug修改，解决左侧层级表超出字符省略显示错误问题" />
+    <MESSAGE value="前端bug修改，解决左侧层级表双重滑动条" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端bug修改，解决左侧层级表双重滑动条" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1278,8 +1286,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+        <state relative-caret-position="105">
+          <caret line="117" selection-start-line="117" selection-end-line="117" selection-end-column="21" />
         </state>
       </provider>
     </entry>

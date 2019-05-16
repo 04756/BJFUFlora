@@ -5,7 +5,6 @@
 .left{
 	width: 300px;
 	height: 600px;
-	overflow: scroll;
 	margin-left: 10px;
 	display: inline-block;
 }
