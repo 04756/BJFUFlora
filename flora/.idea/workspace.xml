@@ -6,10 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="">
+    <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="前端bug修改，解决进入搜索页面二次搜索无法搜索问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/CommonSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/CommonSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/GraphSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/GraphSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/base.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,7 +33,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="750">
               <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -41,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            <state relative-caret-position="345">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -50,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+            <state relative-caret-position="226">
+              <caret line="53" column="36" lean-forward="true" selection-start-line="48" selection-end-line="49" />
             </state>
           </provider>
         </entry>
@@ -60,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/web/css/map.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -68,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/search.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="630">
               <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
             </state>
           </provider>
@@ -77,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="1935">
               <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
             </state>
           </provider>
@@ -86,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bean/Jython.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="345">
               <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
@@ -96,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/web/css/detail.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
-              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -104,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/map.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
+            <state relative-caret-position="195">
               <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
             </state>
           </provider>
@@ -113,7 +119,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bean/Search.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
+            <state relative-caret-position="345">
               <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#706#707#0" expanded="true" />
@@ -209,6 +215,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,14 +281,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557648431780" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557986465696" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -520,7 +526,8 @@
       <workItem from="1557500910704" duration="2329000" />
       <workItem from="1557503437142" duration="1284000" />
       <workItem from="1557582490616" duration="1491000" />
-      <workItem from="1557641817773" duration="2480000" />
+      <workItem from="1557641817773" duration="3151000" />
+      <workItem from="1557984301986" duration="2294000" />
     </task>
     <task id="LOCAL-00001" summary="仓库合并后基本配置以及测试完成">
       <created>1553839332668</created>
@@ -711,11 +718,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557583350082</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="前端bug修改，请检查是否缺少某些文件">
+      <created>1557648472752</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1557648472752</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100151000" />
+    <option name="totallyTimeSpent" value="103116000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -730,8 +744,8 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.66831684" visible="true" weight="0.19742814" />
-      <window_info id="Structure" order="1" sideWeight="0.33168316" side_tool="true" visible="true" weight="0.19742814" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6658537" visible="true" weight="0.20045386" />
+      <window_info id="Structure" order="1" sideWeight="0.33414635" side_tool="true" visible="true" weight="0.20045386" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -741,14 +755,14 @@
       <window_info id="Persistence" order="8" sideWeight="0.32828283" side_tool="true" weight="0.28441754" />
       <window_info anchor="bottom" id="Spring" order="0" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49924356" weight="0.32786885" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969743" visible="true" weight="0.33770493" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969743" weight="0.33770493" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" weight="0.3442623" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50378215" side_tool="true" weight="0.3442623" />
       <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48411497" weight="0.3622951" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" sideWeight="0.49848714" weight="0.32786885" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32786885" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.494705" weight="0.32786885" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.494705" visible="true" weight="0.32786885" />
       <window_info anchor="bottom" id="Application Servers" order="10" sideWeight="0.4977307" weight="0.32459018" />
       <window_info anchor="bottom" id="Message" order="11" />
       <window_info anchor="bottom" id="Find" order="12" weight="0.32786885" />
@@ -784,7 +798,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="仓库合并后基本配置以及测试完成" />
     <MESSAGE value="python调用图片接口基本测试完成" />
     <MESSAGE value="添加程序注释" />
     <MESSAGE value="完善接口以及说明" />
@@ -808,7 +821,9 @@
     <MESSAGE value="merge oringin/cypher分支新代码" />
     <MESSAGE value="准备合并cypher分支入master" />
     <MESSAGE value="修改搜索页结果懒加载的page传参bug问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改搜索页结果懒加载的page传参bug问题" />
+    <MESSAGE value="前端bug修改，请检查是否缺少某些文件" />
+    <MESSAGE value="前端bug修改，解决进入搜索页面二次搜索无法搜索问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端bug修改，解决进入搜索页面二次搜索无法搜索问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1180,37 +1195,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/index.jsp">
+    <entry file="jar://$PROJECT_DIR$/lib/spring-beans-4.3.18.RELEASE.jar!/org/springframework/beans/factory/xml/XmlBeanDefinitionReader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/map.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/map.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+        <state relative-caret-position="126">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
+        <state relative-caret-position="750">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1220,16 +1214,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/spring-beans-4.3.18.RELEASE.jar!/org/springframework/beans/factory/xml/XmlBeanDefinitionReader.class">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        <state relative-caret-position="345">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/map.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/search.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/Jython.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/map.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/Search.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
+        <state relative-caret-position="345">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#706#707#0" expanded="true" />
@@ -1240,31 +1276,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/search.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/Jython.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+        <state relative-caret-position="226">
+          <caret line="53" column="36" lean-forward="true" selection-start-line="48" selection-end-line="49" />
         </state>
       </provider>
     </entry>

@@ -59,7 +59,7 @@ function getResultData(temp) {
                 $("ul.result").append("无搜索结果......");
                 $("#more").hide();
             }
-            else if(data.length == 0){
+            else if(data.length <20 ){
                 $("#more").hide();
                 $("#over").show();
             }
@@ -83,12 +83,15 @@ function searchTurnTo(key, type) {
 }
 
 function searchAction(clean) {
+    if(clean == 1) {
+        $("ul.result").empty();
+        $("#more").show();
+        $("#over").hide();
+    }
     var temp = {
         type : $(".select").text()=="普通搜索"?'commonSearch':'graphSearch',
         keywords :$("input[name='search-bar']").val(),
         page : parseInt($(".result").children("li").length / 20)
     }
-    if(clean == 1)
-        $("ul.result").empty();
     getResultData(temp);
 }

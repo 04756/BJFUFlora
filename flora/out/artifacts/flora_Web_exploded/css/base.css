@@ -124,11 +124,17 @@ ul.tree > li{
     border-top:2px solid #eee;
     padding-top : 10px;
     padding-bottom : 10px;
+    overflow: scroll;
 }
 ul.tree > li, ul.sub-tree > li{
+    /*width: 180px;*/
     vertical-align: middle;
     line-height: 26px;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
 }
 .node,.leaf{
     display: inline-block;

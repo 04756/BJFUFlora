@@ -12,7 +12,7 @@ $(function(){
         searchAction(0);
     });
 
-	if(window.location.href.search("keyWords") >= 0) {
+	if(window.location.href.search("search") >= 0) {
         var temp = {
             type : getUrlParam("type"),
             keywords :getUrlParam("keyWords"),
@@ -45,6 +45,8 @@ $(function(){
 })
 
 function getResultData(temp) {
+    if(temp.keywords == "" || temp.keywords == null)
+        return;
     $.ajax({
         type : "POST",
         contentType : 'application/json;charset=UTF-8',
@@ -88,9 +90,10 @@ function searchAction(clean) {
         $("#more").show();
         $("#over").hide();
     }
+    var empty = function a() {return $("input[name='search-bar']").val() == ""}();
     var temp = {
-        type : getUrlParam("type") == null ? $(".select").text()=="普通搜索"?'commonSearch':'graphSearch' : getUrlParam("type"),
-        keywords :$("input[name='search-bar']").val() == ""? getUrlParam("keyWords") : $("input[name='search-bar']").val(),
+        type : empty? getUrlParam("type") : $(".select").text()=="普通搜索"?'commonSearch':'graphSearch',
+        keywords :empty? getUrlParam("keyWords") : $("input[name='search-bar']").val(),
         page : parseInt($(".result").children("li").length / 20)
     }
     getResultData(temp);
