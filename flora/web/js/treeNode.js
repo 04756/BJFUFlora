@@ -87,7 +87,7 @@ function PlanetLayer(url, d){
 
 
 function addTreeNode(parentId, text, id){
-	var node = "<li id='"+id+"'><span class='plus'></span><div class='node'>"+text+"</div></li>";
+	var node = "<li id='"+id+"'><span class='plus'></span><div class='node' title='"+text.replace(/\s*/g, "")+"'>"+text.replace(/\s*/g, "")+"</div></li>";
 	if(parentId == "" || parentId == id)
 		$("ul.tree").append(node);
 	else{

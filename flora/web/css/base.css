@@ -128,15 +128,21 @@ ul.tree > li{
     padding-bottom : 10px;
 }
 ul.tree > li, ul.sub-tree > li{
-    /*width: 180px;*/
+    width: 250px;
     vertical-align: middle;
     line-height: 26px;
     cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*display: block;*/
 }
 .node,.leaf{
     display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    vertical-align: bottom;
+    vertical-align: bottom;
 }
