@@ -9,7 +9,6 @@
     <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/treeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/treeNode.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="89" column="109" selection-start-line="89" selection-start-column="109" selection-end-line="89" selection-end-column="109" />
+            <state relative-caret-position="240">
+              <caret line="97" column="49" lean-forward="true" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -68,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="123" column="1" lean-forward="true" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
+            <state relative-caret-position="240">
+              <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -173,8 +172,8 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/view/header.jsp" />
         <option value="$PROJECT_DIR$/web/css/search.css" />
         <option value="$PROJECT_DIR$/web/js/base.js" />
-        <option value="$PROJECT_DIR$/web/css/base.css" />
         <option value="$PROJECT_DIR$/web/js/treeNode.js" />
+        <option value="$PROJECT_DIR$/web/css/base.css" />
       </list>
     </option>
   </component>
@@ -274,7 +273,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557987787927" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557988050204" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -515,7 +514,7 @@
       <workItem from="1557503437142" duration="1284000" />
       <workItem from="1557582490616" duration="1491000" />
       <workItem from="1557641817773" duration="3151000" />
-      <workItem from="1557984301986" duration="3387000" />
+      <workItem from="1557984301986" duration="3652000" />
     </task>
     <task id="LOCAL-00001" summary="仓库合并后基本配置以及测试完成">
       <created>1553839332668</created>
@@ -720,11 +719,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557986681399</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="前端bug修改，解决左侧层级表超出字符省略显示错误问题">
+      <created>1557987881728</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1557987881728</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104209000" />
+    <option name="totallyTimeSpent" value="104474000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -737,7 +743,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6658537" visible="true" weight="0.20045386" />
       <window_info id="Structure" order="1" sideWeight="0.33414635" side_tool="true" visible="true" weight="0.20045386" />
@@ -793,7 +798,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="python调用图片接口基本测试完成" />
     <MESSAGE value="添加程序注释" />
     <MESSAGE value="完善接口以及说明" />
     <MESSAGE value="更改部分treenode.js以及增加一个Data接口用于分批获取层级数据" />
@@ -818,7 +822,8 @@
     <MESSAGE value="修改搜索页结果懒加载的page传参bug问题" />
     <MESSAGE value="前端bug修改，请检查是否缺少某些文件" />
     <MESSAGE value="前端bug修改，解决进入搜索页面二次搜索无法搜索问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端bug修改，解决进入搜索页面二次搜索无法搜索问题" />
+    <MESSAGE value="前端bug修改，解决左侧层级表超出字符省略显示错误问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端bug修改，解决左侧层级表超出字符省略显示错误问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,17 +1269,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/base.css">
+    <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="123" column="1" lean-forward="true" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
+        <state relative-caret-position="240">
+          <caret line="97" column="49" lean-forward="true" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
+    <entry file="file://$PROJECT_DIR$/web/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="89" column="109" selection-start-line="89" selection-start-column="109" selection-end-line="89" selection-end-column="109" />
+        <state relative-caret-position="240">
+          <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
         </state>
       </provider>
     </entry>
