@@ -87,7 +87,7 @@ function PlanetLayer(url, d){
 
 
 function addTreeNode(parentId, text, id){
-	var node = "<li id='"+id+"'><span class='plus'></span><div class='node'>"+text+"</div></li>";
+	var node = "<li id='"+id+"'><span class='plus'></span><div class='node' title='"+text.replace(/\s*/g, "")+"'>"+text.replace(/\s*/g, "")+"</div></li>";
 	if(parentId == "" || parentId == id)
 		$("ul.tree").append(node);
 	else{
@@ -100,10 +100,6 @@ function addTreeNode(parentId, text, id){
 		}
 		if($('li#'+parentId).children("ul.sub-tree").length <= 0){
 			$('li#'+parentId).append("<ul class='sub-tree'></ul>");
-			// $('li#'+parentId).children("span").removeClass("minus");
-			// $('li#'+parentId).children("span").addClass("plus");
-			// $('li#'+parentId).children("div").removeClass("leaf");
-			// $('li#'+parentId).children("div").addClass("node");
 		}
 		$('li#'+parentId).children("ul.sub-tree").append(node);
 	}

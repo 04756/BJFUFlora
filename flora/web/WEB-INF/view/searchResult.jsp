@@ -4,7 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>PLANET SEARCH</title>
-	<link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/search.css">
 </head>
 <body>
@@ -17,8 +18,18 @@
 				<img src="images/split.png">
 				<p>概念搜索</p>
 			</div>
-			<input type="text" name="search-bar">
-			<img src="images/searchbar.png" class="search-bar">
+			<div class="search-input-block">
+                <input type="text" name="search-bar">
+                <img src="images/searchbar.png" class="search-bar">
+                <div class="result_box">
+                    <ul>
+                        <li>cwec冒出来的冒出来我们</li>
+                        <li>cwec冒出来的冒出来我们</li>
+                        <li>cwec冒出来的冒出来我们</li>
+                        <li>cwec冒出来的冒出来我们</li>
+                    </ul>
+                </div>
+            </div>
 		</div>
 		<div class="folder">
             <select onchange="classifyType(this.value)">

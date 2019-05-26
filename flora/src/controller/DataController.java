@@ -80,4 +80,13 @@ public class DataController {
     public List graphData(@RequestBody Planet planet){
         return Cypther.graphData(planet.getcName());
     }
+
+    @RequestMapping(value = "keyAutoComplete", method = RequestMethod.POST)
+    @ResponseBody
+    public List keyAutoComplete(@RequestBody String key){
+        System.out.println(key);
+        return null;
+    }
 }
+
+

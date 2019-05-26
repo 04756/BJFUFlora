@@ -100,10 +100,6 @@ function addTreeNode(parentId, text, id){
 		}
 		if($('li#'+parentId).children("ul.sub-tree").length <= 0){
 			$('li#'+parentId).append("<ul class='sub-tree'></ul>");
-			// $('li#'+parentId).children("span").removeClass("minus");
-			// $('li#'+parentId).children("span").addClass("plus");
-			// $('li#'+parentId).children("div").removeClass("leaf");
-			// $('li#'+parentId).children("div").addClass("node");
 		}
 		$('li#'+parentId).children("ul.sub-tree").append(node);
 	}

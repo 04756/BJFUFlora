@@ -72,6 +72,31 @@ ul.right-guid li{
 input[name='search-bar']:focus{
     outline: none;
 }
+.result_box{
+    width: 700px;
+    border: 4px solid #707070;
+    border-top-color: transparent;
+    display: none;
+    position: relative;
+    top: 50%;
+    left: 22px;
+    background-color: white;
+    z-index: 999;
+}
+.result_box > ul{
+    width: 100%;
+    list-style: none;
+}
+.result_box > ul > li{
+    width: 100%;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.back-245{
+    background-color: rgba(245, 245, 245, 0.8);
+}
 /*+图标*/
 span{
     height:10px;
@@ -115,6 +140,8 @@ span{
 ul.tree{
     padding-left: 0px;
     list-style: none;
+    overflow: scroll;
+    height: 100%;
 }
 ul.sub-tree{
     list-style: none;
@@ -124,18 +151,23 @@ ul.tree > li{
     border-top:2px solid #eee;
     padding-top : 10px;
     padding-bottom : 10px;
-    overflow: scroll;
 }
 ul.tree > li, ul.sub-tree > li{
-    /*width: 180px;*/
+    width: 250px;
     vertical-align: middle;
     line-height: 26px;
     cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*display: block;*/
 }
 .node,.leaf{
     display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    vertical-align: bottom;
+    vertical-align: bottom;
 }

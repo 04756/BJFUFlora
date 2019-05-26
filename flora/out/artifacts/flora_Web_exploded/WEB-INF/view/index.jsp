@@ -17,6 +17,10 @@
 			<p>概念搜索</p>
 		</div>
 		<input type="text" name="search-bar">
+        <div class="result_box">
+            <ul>
+            </ul>
+        </div>
 		<img src="images/searchbar.png" class="search-bar">
 		<ul class="popular-search">
 			<li>热门搜索:</li>

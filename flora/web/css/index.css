@@ -63,3 +63,6 @@ ul.popular-search{
 	float: left;
 	/*margin-right: 50px;*/
 }
+.result_box, .result_box > ul{
+    width: 700px;
+}

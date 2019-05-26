@@ -16,21 +16,35 @@
 	cursor:pointer;/*鼠标箭头移到变为手型*/
     letter-spacing: 10px;
 }
+.block{
+    width: 100%;
+}
+.search-input-block{
+    width: 600px;
+    margin-left: 25px;
+    margin-top: 30px;
+    display: inline-block;
+    position: relative;
+}
 input[name='search-bar']{
-	width: 600px;
+	width: 100%;
 	height: 40px;
 	border-radius: 10px;
 	border: 4px solid #707070;
-	margin-left: 25px;
-	margin-top: 30px;
 	font-size: 20px;
 }
+.result_box{
+    width: 600px;
+    left: 0px;
+    position: absolute;
+    top: 60px;
+}
+
 .search-bar{
-	transform: scale(0.7);
-	display: inline-block;
-	margin-left: -62px;
-	margin-top: 30px;
-	position: absolute;
+    transform: scale(0.7);
+    display: inline-block;
+    margin-top: -50px;
+    float: right;
 }
 .folder{
 	width: 250px;
@@ -116,4 +130,18 @@ ul.result > li > img {
     text-align: center;
     cursor: pointer;
     display: none;
+}
+.loading{
+    width: 100%;
+    height: 80%;
+    /*background-color: black;*/
+}
+.circle{
+    width: 80px;
+    height: 80px;
+    border-top: solid 6px;
+    border-radius: 50%;
+    animation: load 1s linear infinite;
+    position: relative;
+    padding: 10px;
 }
