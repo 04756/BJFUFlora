@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/css/animation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/index.jsp" afterDir="false" />
@@ -17,22 +16,8 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/map.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/map.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/detail.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/treeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/treeNode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Image.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/detail.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/treeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/treeNode.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="144" column="20" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="20" />
+            <state relative-caret-position="216">
+              <caret line="156" column="21" selection-start-line="156" selection-start-column="21" selection-end-line="156" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -85,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="35">
+              <caret line="75" column="28" lean-forward="true" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#474#475#0" expanded="true" />
@@ -286,7 +271,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558873932820" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558874259281" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -530,7 +515,7 @@
       <workItem from="1557582490616" duration="1491000" />
       <workItem from="1557641817773" duration="3151000" />
       <workItem from="1557984301986" duration="3878000" />
-      <workItem from="1558855620613" duration="9774000" />
+      <workItem from="1558855620613" duration="10095000" />
     </task>
     <task id="LOCAL-00001" summary="仓库合并后基本配置以及测试完成">
       <created>1553839332668</created>
@@ -763,11 +748,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558856299154</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="增加搜索框关键字推荐显示，添加搜索结果加载动画">
+      <created>1558874034266</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1558874034267</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114474000" />
+    <option name="totallyTimeSpent" value="114795000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,7 +827,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更改部分treenode.js以及增加一个Data接口用于分批获取层级数据" />
     <MESSAGE value="修改层级表下拉样式效果错误" />
     <MESSAGE value="添加非传统分类子类展开控制和方法" />
     <MESSAGE value="修改地图页前端样式" />
@@ -860,7 +851,8 @@
     <MESSAGE value="前端bug修改，解决左侧层级表超出字符省略显示错误问题" />
     <MESSAGE value="前端bug修改，解决左侧层级表双重滑动条" />
     <MESSAGE value="删除djust分支" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除djust分支" />
+    <MESSAGE value="增加搜索框关键字推荐显示，添加搜索结果加载动画" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加搜索框关键字推荐显示，添加搜索结果加载动画" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1270,20 +1262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -1314,8 +1292,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="35">
+          <caret line="75" column="28" lean-forward="true" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#474#475#0" expanded="true" />
@@ -1326,10 +1304,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/treeNode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="144" column="20" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="20" />
+        <state relative-caret-position="216">
+          <caret line="156" column="21" selection-start-line="156" selection-start-column="21" selection-end-line="156" selection-end-column="21" />
         </state>
       </provider>
     </entry>

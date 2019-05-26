@@ -85,6 +85,8 @@ public class DataController {
     @ResponseBody
     public List keyAutoComplete(@RequestBody String key){
         System.out.println(key);
+        //返回一个关键字的list。
+        //List keysArr = new ArrayList<String>();
         return null;
     }
 }

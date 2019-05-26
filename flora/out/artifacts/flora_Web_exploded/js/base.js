@@ -135,27 +135,25 @@ function searchAction(clean) {
 }
 
 function SearchKeyAutoComplete() {
-    // var temp = {
-    //
-    // }
-    // $.post("keyAutoComplete", JSON.stringify(temp), function (data) {
-    //
-    // }, "json");
+    POST("keyAutoComplete", JSON.stringify({keywords : $("input[name='search-bar']").val()}), function(data){
+        var ul = $(".result_box > ul");
+        ul.empty();
+        for(var i = 0, len = data.length; i < len; ++i){
+            ul.append("<li>"+ data[i] + "</li>");
+        }
+    }, function(){
+        alert("error");
+    })
+}
+
+function POST(URL, DATA, SUCCESS, ERROR) {
     $.ajax({
         type : "POST",
         contentType : 'application/json;charset=UTF-8',
-        url : 'keyAutoComplete',
-        data : JSON.stringify({keywords : $("input[name='search-bar']").val()}),
+        url : URL,
+        data : DATA,
         dataType : 'json',
-        success : function(data){
-            var ul = $(".result_box > ul");
-            ul.empty();
-            for(var i = 0, len = data.length; i < len; ++i){
-                ul.append("<li>"+ data[i] + "</li>");
-            }
-        },
-        error : function(){
-            alert("error");
-        }
+        success : SUCCESS,
+        error : ERROR
     });
 }

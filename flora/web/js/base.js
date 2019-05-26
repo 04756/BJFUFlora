@@ -76,31 +76,23 @@ $(function(){
 function getResultData(temp) {
     if(temp.keywords == "" || temp.keywords == null)
         return;
-    $.ajax({
-        type : "POST",
-        contentType : 'application/json;charset=UTF-8',
-        url : 'search',
-        data : JSON.stringify(temp),
-        dataType : 'json',
-        success : function(data){
-            $("ul.result > .loading").remove();
-            for ( i =0; i < data.length; ++i ){
-                $("ul.result").append('<li><img src="'+data[i].imageLink+'"><a href="'+ data[i].resultLink +'" title="'+data[i].resultName+'">'+ data[i].resultName +'</a></li>')
-            }
-            if(data.length == 0 && $(".result").children("li").length == 0) {
-                $("ul.result").append("无搜索结果......");
-                $("#more").hide();
-            }
-            else if(data.length <20 ){
-                $("#more").hide();
-                $("#over").show();
-            }
-        },
-        error : function(){
-            $("ul.result > .loading").remove();
-            alert("error");
-            $("ul.result").append("无搜索结果......");
+    POST(search, JSON.stringify(temp), function(data){
+        $("ul.result > .loading").remove();
+        for ( i =0; i < data.length; ++i ){
+            $("ul.result").append('<li><img src="'+data[i].imageLink+'"><a href="'+ data[i].resultLink +'" title="'+data[i].resultName+'">'+ data[i].resultName +'</a></li>')
         }
+        if(data.length == 0 && $(".result").children("li").length == 0) {
+            $("ul.result").append("无搜索结果......");
+            $("#more").hide();
+        }
+        else if(data.length <20 ){
+            $("#more").hide();
+            $("#over").show();
+        }
+    }, function(){
+        $("ul.result > .loading").remove();
+        alert("error");
+        $("ul.result").append("无搜索结果......");
     });
 }
 
@@ -135,27 +127,25 @@ function searchAction(clean) {
 }
 
 function SearchKeyAutoComplete() {
-    // var temp = {
-    //
-    // }
-    // $.post("keyAutoComplete", JSON.stringify(temp), function (data) {
-    //
-    // }, "json");
+    POST("keyAutoComplete", JSON.stringify({keywords : $("input[name='search-bar']").val()}), function(data){
+        var ul = $(".result_box > ul");
+        ul.empty();
+        for(var i = 0, len = data.length; i < len; ++i){
+            ul.append("<li>"+ data[i] + "</li>");
+        }
+    }, function(){
+        alert("error");
+    })
+}
+
+function POST(URL, DATA, SUCCESS, ERROR) {
     $.ajax({
         type : "POST",
         contentType : 'application/json;charset=UTF-8',
-        url : 'keyAutoComplete',
-        data : JSON.stringify({keywords : $("input[name='search-bar']").val()}),
+        url : URL,
+        data : DATA,
         dataType : 'json',
-        success : function(data){
-            var ul = $(".result_box > ul");
-            ul.empty();
-            for(var i = 0, len = data.length; i < len; ++i){
-                ul.append("<li>"+ data[i] + "</li>");
-            }
-        },
-        error : function(){
-            alert("error");
-        }
+        success : SUCCESS,
+        error : ERROR
     });
 }
