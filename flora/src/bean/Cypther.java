@@ -511,6 +511,23 @@ public class Cypther {
         return temp;
     }
 
+    public static List<String> getKeywords(String keyword){
+        long startTime = System.currentTimeMillis();
+        List<String> arr = new ArrayList<>();
+        try (Session session = db.getDriver().session()) {
+            StatementResult result = session.run("match(n:Plant) where n.name contains \""+keyword+"\" return distinct n.name limit 10");
+            while (result.hasNext()) {
+                Record record = result.next();
+                String name = record.get("n.name").asString();
+                arr.add(name);
+            }
+        }
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+        return arr;
+    }
+
+
     public static String[] array_unique(String[] ss) {
         // array_unique
         List<String> list =new ArrayList<String>();
