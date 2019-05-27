@@ -292,7 +292,7 @@ public class Cypther {
         List<SearchResult> temp = new ArrayList<SearchResult>();
 //        植物名字的数组
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n:Plant) where n.name contains \"" + keyword + "\" return n.name,n.pic1 skip "+page*20+" limit 20");
+            StatementResult result = session.run("match(n:Plant) where n.name contains \"" + keyword + "\" and n.describe is not null return distinct n.name,n.pic1 skip "+page*20+" limit 20");
             while (result.hasNext()) {
                 Record record = result.next();
                 String plantname = record.get("n.name").asString();
@@ -410,7 +410,7 @@ public class Cypther {
                             }
                         }
 
-                        cypher+=" return n.name,n.pic1 skip "+page*20+" limit 20";
+                        cypher+="and n.describe is not null return distinct n.name,n.pic1 skip "+page*20+" limit 20";
                         StatementResult cypherresult=session.run(cypher);
                         if(cypherresult.hasNext()){
                             while(cypherresult.hasNext()){
@@ -433,13 +433,13 @@ public class Cypther {
                         String[] str2=results[i].split(" - ");
                         String cypher="";
                         if(results[i].contains("叶"))
-                            cypher="match(n:Plant)-[r:hasLeave]->(m:Leave) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
+                            cypher="match(n:Plant)-[r:hasLeave]->(m:Leave) where r.reference contains \""+str2[0]+"\" and n.describe is not null return distinct n.name,n.pic1 skip "+page*20+" limit 20";
                         if(results[i].contains("花"))
-                            cypher="match(n:Plant)-[r:hasFlower]->(m:Flower) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
+                            cypher="match(n:Plant)-[r:hasFlower]->(m:Flower) where r.reference contains \""+str2[0]+"\" and n.describe is not null return distinct n.name,n.pic1 skip "+page*20+" limit 20";
                         if(results[i].contains("果"))
-                            cypher="match(n:Plant)-[r:hasGuo]->(m:Guo) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
+                            cypher="match(n:Plant)-[r:hasGuo]->(m:Guo) where r.reference contains \""+str2[0]+"\" and n.describe is not null return distinct n.name,n.pic1 skip "+page*20+" limit 20";
                         if(results[i].contains("根茎"))
-                            cypher="match(n:Plant)-[r:hasRhizome]->(m:Rhizome) where r.reference contains \""+str2[0]+"\" return n.name,n.pic1 skip "+page*20+" limit 20";
+                            cypher="match(n:Plant)-[r:hasRhizome]->(m:Rhizome) where r.reference contains \""+str2[0]+"\" and n.describe is not null return distinct n.name,n.pic1 skip "+page*20+" limit 20";
 
                         StatementResult cypherresult=session.run(cypher);
                         if(cypherresult.hasNext()){
@@ -491,7 +491,7 @@ public class Cypther {
                                      cypher+=" r.reference contains \""+str2[0]+"\"";
                         }
                     }
-                    cypher+=" return n.name,n.pic1 skip "+page*20+" limit 20";
+                    cypher+=" and n.describe is not null return distinct n.name,n.pic1 skip "+page*20+" limit 20";
 
                     StatementResult cypherresult=session.run(cypher);
                     while(cypherresult.hasNext()){
