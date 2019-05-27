@@ -3,6 +3,8 @@ package controller;
 import bean.*;
 import com.google.gson.Gson;
 import db.Neo4jDB;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -83,11 +85,12 @@ public class DataController {
 
     @RequestMapping(value = "keyAutoComplete", method = RequestMethod.POST)
     @ResponseBody
-    public List keyAutoComplete(@RequestBody String key){
-        System.out.println(key);
+    @Autowired
+    public List keyAutoComplete(@RequestBody Search search){
+        System.out.println(search.getKeywords());
         //返回一个关键字的list。
         //List keysArr = new ArrayList<String>();
-        return Cypther.getKeywords(key);
+        return Cypther.getKeywords(search.getKeywords());
     }
 }
 

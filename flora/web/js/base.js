@@ -1,5 +1,4 @@
 var search_entry = $('input[name=\'search-bar\']');
-var result_box_li = $("div.result_box > ul > li");
 
 $(function(){
     $(".left-guid").slideDown(1000);
@@ -19,16 +18,14 @@ $(function(){
         $(".result_box").show();
         SearchKeyAutoComplete();
     })
-
-    result_box_li.mouseover(function () {
+    $(document).on("mouseover", "div.result_box > ul > li", function () {
         $(this).addClass("back-245");
     });
-
-    result_box_li.mouseout(function () {
+    $(document).on("mouseout", "div.result_box > ul > li", function () {
         $(this).removeClass("back-245");
     });
 
-    $("div.result_box > ul > li").on("click", function () {
+    $(document).on("click", "div.result_box > ul > li", function () {
         $('input[name=\'search-bar\']').val($(this).text());
         $(".result_box").hide();
     });
@@ -76,7 +73,7 @@ $(function(){
 function getResultData(temp) {
     if(temp.keywords == "" || temp.keywords == null)
         return;
-    POST(search, JSON.stringify(temp), function(data){
+    POST("search", JSON.stringify(temp), function(data){
         $("ul.result > .loading").remove();
         for ( i =0; i < data.length; ++i ){
             $("ul.result").append('<li><img src="'+data[i].imageLink+'"><a href="'+ data[i].resultLink +'" title="'+data[i].resultName+'">'+ data[i].resultName +'</a></li>')
@@ -135,7 +132,7 @@ function SearchKeyAutoComplete() {
         }
     }, function(){
         alert("error");
-    })
+    });
 }
 
 function POST(URL, DATA, SUCCESS, ERROR) {
