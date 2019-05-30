@@ -4,7 +4,9 @@ import db.Neo4jDB;
 import org.neo4j.driver.v1.Record;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
+import org.springframework.web.context.ContextLoader;
 
+import javax.servlet.ServletContext;
 import java.io.*;
 import java.util.*;
 
@@ -288,6 +290,7 @@ public class Cypther {
 
     public static List<SearchResult> commonsearch(String keyword,int page){
         long startTime = System.currentTimeMillis();
+        ServletContext sc= ContextLoader.getCurrentWebApplicationContext().getServletContext();
 
         List<SearchResult> temp = new ArrayList<SearchResult>();
 //        植物名字的数组
@@ -514,8 +517,10 @@ public class Cypther {
     public static List<String> getKeywords(String keyword){
         long startTime = System.currentTimeMillis();
         List<String> arr = new ArrayList<>();
+
+        keyword=keyword.replace("'","");
         try (Session session = db.getDriver().session()) {
-            String cypher="match(n:Plant) where n.name contains \""+keyword+"\" return distinct n.name limit 10";
+            String cypher="match(n:Plant) where n.pinyin contains \""+keyword+"\" return distinct n.name limit 10";
             StatementResult result = session.run(cypher);
             while (result.hasNext()) {
                 Record record = result.next();
@@ -524,6 +529,20 @@ public class Cypther {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }
+
+        if (arr.isEmpty()) {
+            try (Session session = db.getDriver().session()) {
+                String cypher="match(n:Plant) where n.name contains \""+keyword+"\" return distinct n.name limit 10";
+                StatementResult result = session.run(cypher);
+                while (result.hasNext()) {
+                    Record record = result.next();
+                    String name = record.get("n.name").asString();
+                    arr.add(name);
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
         long endTime = System.currentTimeMillis();    //获取结束时间
         System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
