@@ -25,7 +25,7 @@
                 <li><a href="javascript:void (0)" onclick="email()">联系我们</a></li>
                 <script>
                     function email() {
-                        alert("tianxuan@bjfu.edu.cn");
+                        alert("指导老师田萱邮箱：tianxuan@bjfu.edu.cn");
                     }
                 </script>
             </ul>
