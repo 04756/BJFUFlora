@@ -14,24 +14,24 @@
     <link rel="stylesheet" type="text/css" href="css/map.css">
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+    <jsp:include page="header.jsp"/>
+    <div class="full-width-block">
+        <div class="middle">
+            <div class="left">
+                <select onchange="classifyType(this.value)">
+                    <option value="1">生物分类法</option>
+                    <option value="2">新维度分类</option>
+                </select>
+                <ul class="tree">
 
-<div class="middle">
-    <div class="left">
-        <select onchange="classifyType(this.value)">
-            <option value="1">生物分类法</option>
-            <option value="2">新维度分类</option>
-        </select>
-        <ul class="tree">
-
-        </ul>
-    </div><!--
-		<hr style="border-left:1px solid black;width:0px;height:500px;display: inline-block;margin-left: 20px;" /> -->
-    <div class="right">
-        <div id="map"></div>
+                </ul>
+            </div><!--
+                <hr style="border-left:1px solid black;width:0px;height:500px;display: inline-block;margin-left: 20px;" /> -->
+            <div class="right">
+                <div id="map"></div>
+            </div>
+        </div>
     </div>
-</div>
-
 <script>
 
 </script>

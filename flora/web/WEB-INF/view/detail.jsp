@@ -35,15 +35,14 @@
             </div>
         </div>
         <%--知识图谱可视化--%>
-        <div id="graph" style="position: absolute;width:100%;height: 150%;background-color: rgba(0,0,0,0.6);display: none;top:0px;">
-            <div id="Container" style="overflow: scroll;height: 600px;width: 1200px;margin: 0 auto;margin-top: 80px;background-color: #f0e8e8;">
-                <img id="close" style="position: absolute;z-index: 9999;right: 8%;" src="../images/close.png"/>
+        <div id="graph" style="width:100%;min-width:1200px;height: 100%;min-height:1400px;position: absolute;background-color: rgba(0,0,0,0.6);display: none;top:0px;">
+            <div id="Container" style="overflow: scroll;height: 60%;margin: 0 auto;top: 80px;background-color: #f0e8e8;width:  80%;position:  relative;">
+                <img id="close" style="position: fixed;right: 12%;" src="../images/close.png"/>
             </div>
         </div>
     </div>
     <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../js/base.js"></script>
-    <script type="text/javascript" src="../js/detail.js"></script>
     <script type="text/javascript" src="../js/d3.v4.min.js"></script>
     <script type="text/javascript" src="../js/Graph.js"></script>
     <script type="text/javascript" src="../js/graph.activity.js"></script>
@@ -61,8 +60,8 @@
                 var tpoption = {
                     container:'#Container',
                     data: datas,
-                    width:window.innerWidth || document.documentElement.clientWidth,
-                    height:window.innerHeight || document.documentElement.innerHeight
+                    width: window.innerWidth || document.documentElement.clientWidth,
+                    height: 1.4 * window.innerHeight || document.documentElement.innerHeight
                 };
                 var tp = new Chart(tpoption);
                 tp.init();

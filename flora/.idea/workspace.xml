@@ -7,23 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e44aa1dd-990a-409f-90cc-8ecc975d96f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/DataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Cypther.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Cypther.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Planet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Plant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/bean/Planet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/classes/controller/ViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/map.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/map.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/searchResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/WEB-INF/view/searchResult.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/css/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/Graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flora_Web_exploded/js/Graph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/map.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/map.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/Graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/Graph.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,40 +35,51 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp">
+        <entry file="file://$PROJECT_DIR$/web/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+            <state relative-caret-position="1080">
+              <caret line="72" column="30" lean-forward="true" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/detail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="63" column="22" lean-forward="true" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+            <state relative-caret-position="224">
+              <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bean/SearchResult.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="15" column="35" selection-start-line="12" selection-end-line="13" />
+            <state relative-caret-position="193">
+              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/detail.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/Graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-122">
-              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+            <state relative-caret-position="-2747">
+              <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/graph.activity.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -90,15 +98,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bean/Search.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="178">
@@ -109,15 +108,6 @@
                 <element signature="e#770#771#0" expanded="true" />
                 <element signature="e#802#803#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/map.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -183,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/bean/Node.java" />
         <option value="$PROJECT_DIR$/src/bean/Image.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/js/Graph.js" />
         <option value="$PROJECT_DIR$/src/bean/InvokePythonProject.java" />
         <option value="$PROJECT_DIR$/src/db/Neo4jDB.java" />
         <option value="$PROJECT_DIR$/web/css/detail.css" />
@@ -203,12 +192,13 @@
         <option value="$PROJECT_DIR$/web/css/search.css" />
         <option value="$PROJECT_DIR$/web/css/base.css" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/detail.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/map.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/searchResult.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/header.jsp" />
         <option value="$PROJECT_DIR$/src/controller/ViewController.java" />
         <option value="$PROJECT_DIR$/src/bean/Cypther.java" />
+        <option value="$PROJECT_DIR$/web/js/Graph.js" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/detail.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/header.jsp" />
       </list>
     </option>
   </component>
@@ -308,7 +298,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559196622912" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559199057033" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -554,7 +544,7 @@
       <workItem from="1557984301986" duration="3878000" />
       <workItem from="1558855620613" duration="10690000" />
       <workItem from="1558969475110" duration="3388000" />
-      <workItem from="1559183845994" duration="3457000" />
+      <workItem from="1559183845994" duration="5948000" />
     </task>
     <task id="LOCAL-00001" summary="仓库合并后基本配置以及测试完成">
       <created>1553839332668</created>
@@ -808,11 +798,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558972756573</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="前端搜索结果页结果显示效果改为竖版瀑布流，更改所有文件和类中的planet为plant">
+      <created>1559196652467</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1559196652467</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122235000" />
+    <option name="totallyTimeSpent" value="124726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -881,7 +878,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cypher优化前端层级" />
     <MESSAGE value="搜索页面添加图片" />
     <MESSAGE value="知识图谱部分优化" />
     <MESSAGE value="搜索界面前端优化" />
@@ -906,7 +902,8 @@
     <MESSAGE value="简化base.js代码" />
     <MESSAGE value="简化base.js的POST代码" />
     <MESSAGE value="搜索框功能实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="搜索框功能实现" />
+    <MESSAGE value="前端搜索结果页结果显示效果改为竖版瀑布流，更改所有文件和类中的planet为plant" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端搜索结果页结果显示效果改为竖版瀑布流，更改所有文件和类中的planet为plant" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1159,13 +1156,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/detail.js" />
-    <entry file="file://$PROJECT_DIR$/web/js/graph.activity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/index.jsp" />
     <entry file="file://$PROJECT_DIR$/web/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1242,20 +1232,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/Graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1120">
-          <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1284,13 +1260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/DataController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1298,13 +1267,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/SearchResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="15" column="35" selection-start-line="12" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -1349,10 +1311,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/graph.activity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2747">
+          <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/SearchResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="15" column="35" selection-start-line="12" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="30" lean-forward="true" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/detail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
-          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+        <state relative-caret-position="224">
+          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
         </state>
       </provider>
     </entry>

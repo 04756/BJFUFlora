@@ -2,7 +2,7 @@
 function Chart(option){
     var _defaultOption = {
         width:300,
-        height:300,
+        height:800,
         data:'',
         container:''
     };

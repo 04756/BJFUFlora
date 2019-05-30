@@ -88,30 +88,31 @@ ul.result{
 	padding-left: 0px;
 	list-style: none;
 	margin-top: 15px;
+    column-count: 4;
+    column-gap: 10px;
 }
 ul.result li{
-    width: 130px;
+    width: 140px;
+    padding-top: 15px;
 	display: inline-block;
-	margin-right: 20px;
-    padding-bottom: 10px;
+    position: relative;
 }
 ul.result li a{
-    width: 120px;
-    height: 30px;
-	text-decoration: underline;
+    width: 100%;
+    text-decoration: underline;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
+    font-size: 14px;
 }
 ul.result li a:hover{
-	color: blue;
-	text-decoration: underline;
+	text-decoration: none;
 }
 ul.result > li > img {
-    width: 100px;
+    width: 100%;
+    border-radius: 10px;
     display: block;
-    height: 100px;
 }
 #more{
     width: 180px;
