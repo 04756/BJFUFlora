@@ -16,7 +16,7 @@
             <ul class="left-guid" style="display: none;">
                 <li style="vertical-align: middle"><img src="${pageContext.request.contextPath}/images/logo.png"></li>
                 <li class="t"><a href="${pageContext.request.contextPath}/hello">首页</a></li>
-                <li><a href="${pageContext.request.contextPath}/planetMap">植物地图</a></li>
+                <li><a href="${pageContext.request.contextPath}/plantMap">植物地图</a></li>
                 <li><a href="${pageContext.request.contextPath}/searchResult">植物搜索</a></li>
                 <li><a href="${pageContext.request.contextPath}/searchResult">植物分类</a></li>
                 <%--<li><a href="">植物图谱</a></li>--%>

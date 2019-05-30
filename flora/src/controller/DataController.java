@@ -4,12 +4,9 @@ import bean.*;
 import com.google.gson.Gson;
 import db.Neo4jDB;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.StringReader;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -59,8 +56,6 @@ public class DataController {
     //    搜索结果数据
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     @ResponseBody
-//    @Autowired
-//    自动装配有问题，暂未解决，暂时不重要，因为页面效果不一定。。再说吧
     public List search(@RequestBody String s){
         try{
             Search search = new Gson().fromJson(new String(s.getBytes("iso-8859-1"),"UTF-8"), Search.class);
@@ -79,8 +74,8 @@ public class DataController {
     //如果更改返回参数为list，将@ResponseBody的注释取消
     @RequestMapping(value = "/graph", method = RequestMethod.POST)
     @ResponseBody
-    public List graphData(@RequestBody Planet planet){
-        return Cypther.graphData(planet.getcName());
+    public List graphData(@RequestBody Plant plant){
+        return Cypther.graphData(plant.getcName());
     }
 
     @RequestMapping(value = "keyAutoComplete", method = RequestMethod.POST)
@@ -90,6 +85,7 @@ public class DataController {
         System.out.println(search.getKeywords());
         //返回一个关键字的list。
         //List keysArr = new ArrayList<String>();
+
         return Cypther.getKeywords(search.getKeywords());
     }
 }

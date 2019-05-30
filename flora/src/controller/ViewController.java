@@ -1,7 +1,7 @@
 package controller;
 
 import bean.Cypther;
-import bean.Planet;
+import bean.Plant;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,19 +30,19 @@ public class ViewController {
         return "searchResult";
     }
 
-    @RequestMapping(path = "/planet/{planetName}", method = RequestMethod.GET)
-    public String planetPage(@PathVariable String planetName, Model model, HttpServletRequest request) throws IOException {
+    @RequestMapping(path = "/plant/{plantName}", method = RequestMethod.GET)
+    public String planetPage(@PathVariable String plantName, Model model, HttpServletRequest request) throws IOException {
 //        所属类群，一个SearchResult的list
-        Planet planet=Cypther.getPlantDetail(planetName);
-        model.addAttribute("race",planet.getRace());
-        model.addAttribute("imgList", planet.getImglist());
+        Plant plant =Cypther.getPlantDetail(plantName);
+        model.addAttribute("race", plant.getRace());
+        model.addAttribute("imgList", plant.getImglist());
 //        植物的详细信息
-        model.addAttribute("planet",planet);
+        model.addAttribute("plant", plant);
 
         return "detail";
     }
 
-    @RequestMapping(path = "/planetMap", method = RequestMethod.GET)
+    @RequestMapping(path = "/plantMap", method = RequestMethod.GET)
     public String mapPage(Model model){
         return "map";
     }

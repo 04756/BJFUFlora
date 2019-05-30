@@ -5,6 +5,9 @@
 body{
     background-color: #175c39;
 }
+.full-width-block{
+    min-width: 1200px;
+}
 /*页头区域*/
 .header{
     min-width: 1200px;

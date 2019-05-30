@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 植物类
  */
-public class Planet {
+public class Plant {
 
     private String cName;//植物中文名
     private String eName;//植物英文名
@@ -16,12 +16,12 @@ public class Planet {
 
 
 
-    public Planet(){
+    public Plant(){
         race = new ArrayList();
         imglist = new ArrayList();
     }
 
-    public Planet(String cName, String eName, String content) {
+    public Plant(String cName, String eName, String content) {
         race = new ArrayList();
         imglist = new ArrayList();
         this.cName = cName;

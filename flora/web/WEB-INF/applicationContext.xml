@@ -9,5 +9,5 @@
         <property name="type" value="CommonSearch"/>
         <property name="keywords" value=""/>
     </bean>
-    <bean id="Planet" name="Planet" class="bean.Planet"></bean>
+    <bean id="Planet" name="Planet" class="bean.Plant"></bean>
 </beans>

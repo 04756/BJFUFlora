@@ -5,6 +5,9 @@
 body{
     background-color: #175c39;
 }
+.full-width-block{
+    min-width: 1200px;
+}
 /*页头区域*/
 .header{
     min-width: 1200px;
@@ -86,16 +89,21 @@ input[name='search-bar']:focus{
 .result_box > ul{
     width: 100%;
     list-style: none;
+    padding-left: 0px;
 }
 .result_box > ul > li{
-    width: 100%;
+    width: 90%;
     line-height: 30px;
     padding-left: 10px;
     font-size: 16px;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: #707070 solid 1px;
 }
 .back-245{
-    background-color: rgba(245, 245, 245, 0.8);
+    background-color: rgba(122, 122, 122, 0.8);
 }
 /*+图标*/
 span{

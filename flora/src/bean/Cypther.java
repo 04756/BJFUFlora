@@ -300,7 +300,7 @@ public class Cypther {
                 Record record = result.next();
                 String plantname = record.get("n.name").asString();
                 String imglink = record.get("n.pic1").asString();
-                temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
+                temp.add(new SearchResult(plantname, "plant/"+plantname,imglink));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -310,10 +310,10 @@ public class Cypther {
         return temp;
     }
 
-    public static Planet getPlantDetail(String name){
+    public static Plant getPlantDetail(String name){
         long startTime = System.currentTimeMillis();
-        Planet planet=new Planet();
-        planet.setcName(name);
+        Plant plant =new Plant();
+        plant.setcName(name);
         try (Session session = db.getDriver().session()) {
             StatementResult result = session.run("match(n:Plant)-[r]->(m:Tradition) where n.name contains \""+name+"\" return m.name,n.engname,n.describe,n.pic1,n.pic2,n.pic3,n.pic4");
             if (result.hasNext()) {
@@ -324,19 +324,19 @@ public class Cypther {
                 String engname=record.get("n.engname").asString();
                 for(int j=1;j<=4;j++){
                     String imglink=record.get("n.pic"+j).asString();
-                    planet.getImglist().add(imglink);
+                    plant.getImglist().add(imglink);
                 }
-                planet.setContent(describe);
-                planet.seteName(engname);
+                plant.setContent(describe);
+                plant.seteName(engname);
 
-                planet.getRace().add(0,new SearchResult(race,race));
+                plant.getRace().add(0,new SearchResult(race,race));
 
                 StatementResult result2 = session.run("match(n:Tradition{name:\""+race+"\"})-[r:isSubClass]->(m:Tradition) return m.name");
                 while(result2.hasNext())
                 {
                     Record record2=result2.next();
                     race=record2.get("m.name").asString();
-                    planet.getRace().add(0,new SearchResult(race,race));
+                    plant.getRace().add(0,new SearchResult(race,race));
                     result2 = session.run("match(n:Tradition{name:\""+race+"\"})-[r:isSubClass]->(m:Tradition) return m.name");
                 }
             }
@@ -348,7 +348,7 @@ public class Cypther {
         long endTime = System.currentTimeMillis();    //获取结束时间
         System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
 
-        return planet;
+        return plant;
     }
 
     public List graphSearch(String keyword,int page) throws IOException {
@@ -420,7 +420,7 @@ public class Cypther {
                                 Record record=cypherresult.next();
                                 String plantname = record.get("n.name").asString();
                                 String imglink = record.get("n.pic1").asString();
-                                temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
+                                temp.add(new SearchResult(plantname, "plant/"+plantname,imglink));
 
                             }
                             return temp;
@@ -450,7 +450,7 @@ public class Cypther {
                                 Record record=cypherresult.next();
                                 String plantname = record.get("n.name").asString();
                                 String imglink = record.get("n.pic1").asString();
-                                temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
+                                temp.add(new SearchResult(plantname, "plant/"+plantname,imglink));
 
                             }
 
@@ -501,7 +501,7 @@ public class Cypther {
                         Record record=cypherresult.next();
                         String plantname = record.get("n.name").asString();
                         String imglink = record.get("n.pic1").asString();
-                        temp.add(new SearchResult(plantname, "planet/"+plantname,imglink));
+                        temp.add(new SearchResult(plantname, "plant/"+plantname,imglink));
 
                     }
                 }
@@ -564,6 +564,5 @@ public class Cypther {
 
     public static void main(String[] arge){
         graphData("伞花野丁香（新拟）");
-
     }
 }
