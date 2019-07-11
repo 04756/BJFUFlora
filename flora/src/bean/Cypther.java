@@ -315,13 +315,37 @@ public class Cypther {
         Plant plant =new Plant();
         plant.setcName(name);
         try (Session session = db.getDriver().session()) {
-            StatementResult result = session.run("match(n:Plant)-[r]->(m:Tradition) where n.name contains \""+name+"\" return m.name,n.engname,n.describe,n.pic1,n.pic2,n.pic3,n.pic4");
+            StatementResult result = session.run("match(n:Plant)-[r]->(m:Tradition) where n.name contains \""+name+"\" return m.name,n.engname,n.describe,n.pic1,n.pic2,n.pic3,n.pic4,n.growingenvironment,n.mainvalue,n.cultivationtechnique,n.breedingmethod,n.medicaluse,n.growthhabit");
             if (result.hasNext()) {
                 Record record = result.next();
                 String race=record.get("m.name").asString();
                 String describe=record.get("n.describe").asString();
                 describe=describe.replace("\n","<br/>");
                 String engname=record.get("n.engname").asString();
+                String growingenvironment=record.get("n.growingenvironment").asString();
+                if(!growingenvironment.equals("null"))
+                    describe+="<br/><h4>生长环境:</h4><br/>"+growingenvironment+"<br/>";
+                String mainvalue=record.get("mainvalue").asString();
+                if(!mainvalue.equals("null"))
+                    describe+="<br/><h4>主要价值:</h4><br/>"+mainvalue+"<br/>";
+                String cultivationtechnique=record.get("n.cultivationtechnique").asString();
+                if(!cultivationtechnique.equals("null"))
+                    describe+="<br/><h4>栽培技术:</h4><br/>"+cultivationtechnique+"<br/>";
+                String breedingmethod=record.get("n.breedingmethod").asString();
+                if(!breedingmethod.equals("null"))
+                    describe+="<br/><h4>繁殖方法:</h4><br/>"+breedingmethod+"<br/>";
+                String medicaluse=record.get("n.medicaluse").asString();
+                if(!medicaluse.equals("null"))
+                    describe+="<br/><h4>医药用途:</h4><br/>"+medicaluse+"<br/>";
+                String growthhabit=record.get("n.growthhabit").asString();
+                if(!growthhabit.equals("null"))
+                    describe+="<br/><h4>生长习性:</h4><br/>"+growthhabit+"<br/>";
+
+                describe=describe.replace("形态:","<h4>形态:</h4>");
+                describe=describe.replace("叶:","<h4>叶:</h4>");
+                describe=describe.replace("花:","<h4>花:</h4>");
+                describe=describe.replace("果:","<h4>果:</h4>");
+
                 for(int j=1;j<=4;j++){
                     String imglink=record.get("n.pic"+j).asString();
                     plant.getImglist().add(imglink);
