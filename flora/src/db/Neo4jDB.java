@@ -10,6 +10,7 @@ public class Neo4jDB {
 
     public static void connectGraphDB(){
         String uri = "bolt://39.96.176.150:7687";
+        //String uri = "bolt://localhost:7687";
         driver = GraphDatabase.driver(uri, AuthTokens.basic("neo4j", "1234"));
 
     }
@@ -248,9 +249,56 @@ public class Neo4jDB {
         Neo4jDB.close();
     }
 
+
+    public static void BaikeProvince(){
+        Neo4jDB.connectGraphDB();
+        Neo4jDB db=new Neo4jDB();
+        try (Session session = db.getDriver().session()) {
+            for (int i=1;i<=32;i++)
+            {
+                //添加百科生长地
+                String cypher="load csv with headers from \"file:///百度百科数据//"+i+".0千组.csv\" as line match(father:Plant{indexname:line.植物名}),(son:Province{name:line.节点}) merge(father)-[r:located]->(son)";
+                session.run(cypher);
+                System.out.println(i);
+            }
+
+
+        }
+        Neo4jDB.close();
+    }
+
+    public static void BaikeProperty(){
+        Neo4jDB.connectGraphDB();
+        Neo4jDB db=new Neo4jDB();
+        try (Session session = db.getDriver().session()) {
+            for (int i=1;i<=32;i++)
+            {
+                //添加百科生长环境
+                String cypher="load csv with headers from \"file:///百度百科数据//"+i+".0千组.csv\" as line match(father:Plant{indexname:line.植物名}) where line.节点 = \"生长环境\" set father.growingenvironment=line.内容";
+                //添加主要价值
+                //String cypher="load csv with headers from \"file:///百度百科数据//"+i+".0千组.csv\" as line match(father:Plant{indexname:line.植物名}) where line.节点 = \"主要价值\" set father.mainvalue=line.内容";
+                //添加栽培技术
+                //String cypher="load csv with headers from \"file:///百度百科数据//"+i+".0千组.csv\" as line match(father:Plant{indexname:line.植物名}) where line.节点 = \"栽培技术\" set father.cultivationtechnique=line.内容";
+                //添加繁殖方法
+                //String cypher="load csv with headers from \"file:///百度百科数据//"+i+".0千组.csv\" as line match(father:Plant{indexname:line.植物名}) where line.节点 = \"繁殖方法\" set father.breedingmethod=line.内容";
+                //添加医药用途
+                //String cypher="load csv with headers from \"file:///百度百科数据//"+i+".0千组.csv\" as line match(father:Plant{indexname:line.植物名}) where line.节点 = \"医药用途\" set father.medicaluse=line.内容";
+                //添加生长习性
+                //String cypher="load csv with headers from \"file:///百度百科数据//"+i+".0千组.csv\" as line match(father:Plant{indexname:line.植物名}) where line.节点 = \"生长习性\" set father.growthhabit=line.内容";
+
+
+                session.run(cypher);
+                System.out.println(i);
+            }
+
+
+        }
+        Neo4jDB.close();
+    }
+
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        Neo4jDB.ChangePlantName();
+        Neo4jDB.BaikeProperty();
         long endTime = System.currentTimeMillis();    //获取结束时间
         System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
 
